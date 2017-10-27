@@ -154,6 +154,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         }
         configFrame.setVisible(true);
         try {
+            configFrame.setMaximum(true);
             configFrame.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);

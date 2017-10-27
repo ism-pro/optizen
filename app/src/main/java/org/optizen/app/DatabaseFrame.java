@@ -5,11 +5,34 @@
  */
 package org.optizen.app;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import org.optizen.listeners.DatabaseFrameListener;
+import org.optizen.model.DatabaseModel;
+import org.optizen.util.Util;
+
 /**
  *
  * @author r.hendrick
  */
 public class DatabaseFrame extends javax.swing.JDialog {
+
+    private DatabaseModel saveModel = null;
+    // Mange envent lister 
+    private ArrayList<DatabaseFrameListener> dbfListeners = new ArrayList<>();
+
+    public void addListener(DatabaseFrameListener listener) {
+        dbfListeners.add(listener);
+    }
+
+    private JTextField schemaReceiver = null;
 
     /**
      * Creates new form DatabaseFrame
@@ -29,23 +52,25 @@ public class DatabaseFrame extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        cbDriver = new javax.swing.JComboBox<>();
+        server = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField2 = new javax.swing.JTextField();
+        hostname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        port = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        user = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
+        btnValidate = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnCheckConnexion = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        databaseName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Paramètre de base de données");
@@ -54,31 +79,49 @@ public class DatabaseFrame extends javax.swing.JDialog {
 
         jLabel1.setText("Driver");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "com.microsoft.sqlserver.jdbc.SQLServerDriver", "0" }));
+        cbDriver.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "mysql", "sqlserver", "postgresql" }));
 
         jLabel2.setText("Server");
 
-        jTextField2.setEditable(false);
-
         jLabel3.setText("Hôte");
+        jLabel3.setPreferredSize(new java.awt.Dimension(82, 14));
 
         jLabel4.setText("Port");
+        jLabel4.setPreferredSize(new java.awt.Dimension(82, 14));
 
-        jTextField3.setEditable(false);
-        jTextField3.setText("1433");
+        port.setText("1433");
 
         jLabel5.setText("Utilisateur");
+        jLabel5.setPreferredSize(new java.awt.Dimension(82, 14));
 
-        jTextField4.setText("sa");
+        user.setText("sa");
 
         jLabel6.setText("Mot de passe");
+        jLabel6.setPreferredSize(new java.awt.Dimension(82, 14));
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
-        jButton2.setText(bundle.getString("BtnField_Save")); // NOI18N
+        btnValidate.setText(bundle.getString("BtnField_Validate")); // NOI18N
+        btnValidate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnValidateActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText(bundle.getString("BtnField_Cancel")); // NOI18N
+        btnCancel.setText(bundle.getString("BtnField_Cancel")); // NOI18N
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText(bundle.getString("BtnField_Save")); // NOI18N
+        btnCheckConnexion.setText(bundle.getString("BtnField_CheckConnexion")); // NOI18N
+        btnCheckConnexion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckConnexionActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Base de données");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,40 +130,42 @@ public class DatabaseFrame extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator3)
                     .addComponent(jSeparator1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, 0, 281, Short.MAX_VALUE)
-                            .addComponent(jTextField1)))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4)
-                            .addComponent(jPasswordField1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)))
+                            .addComponent(user)
+                            .addComponent(password)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCheckConnexion, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnValidate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(btnCancel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbDriver, 0, 382, Short.MAX_VALUE)
+                            .addComponent(server)
+                            .addComponent(databaseName)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(port)
+                            .addComponent(hostname)))
+                    .addComponent(jSeparator2))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -129,43 +174,83 @@ public class DatabaseFrame extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(server, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(databaseName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(port, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnCancel)
+                    .addComponent(btnValidate)
+                    .addComponent(btnCheckConnexion))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCheckConnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckConnexionActionPerformed
+
+        if (isConnectable()) {
+            JOptionPane.showMessageDialog(this, "Connexion réussie", "Tester la connexion", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Erreur de connexion avec les paramètres : "
+                    + "\nDriver : " + cbDriver.getSelectedItem().toString()
+                    + "\nUser : " + user.getText()
+                    + "\nPasswd : " + password.getText(), "Tester la connexion", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnCheckConnexionActionPerformed
+
+    private void btnValidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidateActionPerformed
+        if (isConnectable()) {
+            String schema = DatabaseModel.unparse(toModel());
+            schemaReceiver.setText(schema);
+            dbfListeners.stream().forEach((l) -> {
+                l.databaseFrameEventValidate(toModel());
+            });
+
+            setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Erreur de connexion avec les paramètres : "
+                    + "\nDriver : " + cbDriver.getSelectedItem().toString()
+                    + "\nUser : " + user.getText()
+                    + "\nPasswd : " + password.getText(), "Valider la connexion", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnValidateActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        dbfListeners.stream().forEach((l) -> {
+            l.databaseFrameEventCancel(saveModel);
+        });
+        setVisible(false);
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,23 +295,123 @@ public class DatabaseFrame extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnCheckConnexion;
+    private javax.swing.JButton btnValidate;
+    private javax.swing.JComboBox<String> cbDriver;
+    private javax.swing.JTextField databaseName;
+    private javax.swing.JTextField hostname;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField port;
+    private javax.swing.JTextField server;
+    private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * Allow to define model to the current Frame
+     *
+     * @param model containing available information about database
+     */
+    public void setModel(DatabaseModel model) {
+        this.saveModel = model;
+        this.cbDriver.setSelectedItem(model.getDriver());
+        this.server.setText(model.getServer());
+        this.databaseName.setText(model.getDatabaseName());
+
+        this.hostname.setText(model.getHostname());
+        this.port.setText(model.getPort());
+
+        this.user.setText(model.getUser());
+        this.password.setText(model.getPassword());
+    }
+
+    /**
+     * To model convert current setup to a database model
+     *
+     * @return the model defined by current parameter of database frame
+     */
+    private DatabaseModel toModel() {
+        DatabaseModel model = new DatabaseModel();
+        model.setDriver(this.cbDriver.getSelectedItem().toString());
+        model.setServer(this.server.getText());
+        model.setDatabaseName(databaseName.getText());
+        model.setHostname(hostname.getText());
+        model.setPort(port.getText());
+        model.setUser(user.getText());
+        model.setPassword(new String(password.getPassword()));
+        return model;
+    }
+
+    /**
+     * Convenient method to know if a database model can be connected with
+     * sepecified information. An url will be create from model in the like
+     * "jdbc:sqlserver://localhost:1433;\\SQLEXPRESS;databaseName=Tema6","sa","123456");
+     *
+     * @param model
+     * @return
+     */
+    public static Boolean isConnectable(DatabaseModel model) {
+        String url = "";
+        try {
+            // TODO add your handling code here:
+            Class.forName(DatabaseModel.mapReadableToDriver(model.getDriver()));
+            url = "jdbc:" + model.getDriver() + "://"
+                    + model.getServer() + (model.getPort().trim().isEmpty() ? "" : ":" + model.getPort())
+                    + ";databaseName=" + model.getDatabaseName();
+            Connection conn = DriverManager.getConnection(url, model.getUser(), model.getPassword());
+            return true;
+        } catch (ClassNotFoundException | SQLException ex) {
+            Util.out(DatabaseFrame.class.getName() + " >> isConnectable(DatabaseModel model) for url(" + url + ") : " + ex.getLocalizedMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Is Connectable allow to know if the current database model of the frame
+     * is connectable.
+     *
+     * @return true if it is connectable false otherwise
+     */
+    public Boolean isConnectable() {
+        return isConnectable(toModel());
+    }
+
+    void setSchemaReceiver(JTextField receiver) {
+        schemaReceiver = receiver;
+    }
+
+    /**
+     * Load Connection allow to get a driver manager connection from a database
+     * model
+     *
+     * @param model which containt information to connect over the system.
+     * @return a fonctionnal connection if correctly defined otherwise ull
+     */
+    public static Connection loadConnection(DatabaseModel model) {
+        String url = "";
+        try {
+            // TODO add your handling code here:
+            Class.forName(DatabaseModel.mapReadableToDriver(model.getDriver()));
+            url = "jdbc:" + model.getDriver() + "://"
+                    + model.getServer() 
+                    + (model.getPort()==null ? "" : (model.getPort().trim().isEmpty() ? "" : ":" + model.getPort()))
+                    + ";databaseName=" + model.getDatabaseName();
+            Connection conn = DriverManager.getConnection(url, model.getUser(), model.getPassword());
+            return conn;
+        } catch (ClassNotFoundException | SQLException ex) {
+            Util.out(DatabaseFrame.class.getName() + " >> isConnectable(DatabaseModel model) for url(" + url + ") : " + ex.getLocalizedMessage());
+            return null;
+        }
+    }
+
 }

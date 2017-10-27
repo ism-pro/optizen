@@ -5,19 +5,33 @@
  */
 package org.optizen.app;
 
+import com.sun.org.apache.xerces.internal.xs.StringList;
+import java.awt.List;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JDesktopPane;
 import javax.swing.WindowConstants;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
+import org.optizen.listeners.DatabaseFrameListener;
+import org.optizen.model.DatabaseModel;
+import org.optizen.model.TableParamDataModel;
 import org.optizen.util.Util;
 
 /**
  *
  * @author r.hendrick
  */
-public class ConfigFrame extends javax.swing.JInternalFrame implements InternalFrameListener {
+public class ConfigFrame extends javax.swing.JInternalFrame implements InternalFrameListener, DatabaseFrameListener {
 
     /**
      * Counter frame allow to count the frame
@@ -26,12 +40,57 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
     static final int xOffset = 30, yOffset = 30;
 
     /**
+     *
+     */
+    DatabaseFrame dbf = null;
+
+    /**
      * Creates new form ConfigFrame
      */
     public ConfigFrame() {
         initComponents();
+
+        // Read company
+        String company = "11";
+        tfCompany.setText(company);
+
+        // Read saved data
+        String urlOpti = "jdbc:sqlserver:10.116.26.35\\SQLSERVER:1433;databaseName=optimaint?sa?Opt!M@!nt";
+        String urlZen = "jdbc:sqlserver:10.243.59.27\\SQLSERVER;databaseName=scada?sa?s@z3non";
+        schemaOpti.setText(urlOpti);
+        schemaZen.setText(urlZen);
+
+        // Init the content
+        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(schemaZen.getText()));
+        if (conn != null) {
+            try {
+                ArrayList<String> l = new ArrayList<String>();
+                DatabaseMetaData md = conn.getMetaData();
+                ResultSet rs = md.getTables(null, null, null, new String[]{"TABLE"});
+                while (rs.next()) {
+                    String t = rs.getString(3);
+                    System.out.println(t);
+                    l.add(t);
+                }
+                DefaultComboBoxModel cbModelParam = new javax.swing.DefaultComboBoxModel<>(l.toArray());
+                DefaultComboBoxModel cbModelData = new javax.swing.DefaultComboBoxModel<>(l.toArray());
+                cbTableParam.setModel(cbModelParam);
+                cbTableData.setModel(cbModelData);
+
+            } catch (SQLException ex) {
+                Logger.getLogger(ConfigFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+
+        // Init table model
+        TableParamDataModel tableModel = new TableParamDataModel();
+        tableLink.setModel(tableModel);
+
+        // 
         this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         openFrameCount++; // increment configFrame counter
+
         this.setClosable(true);
         addInternalFrameListener(this);
     }
@@ -48,22 +107,23 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tfCompany = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        btnDBConnectOptimaint = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        btnDBConnectOpti = new javax.swing.JButton();
+        schemaOpti = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        btnDBConnectZenon = new javax.swing.JButton();
+        schemaZen = new javax.swing.JTextField();
+        btnDBConnectZen = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton5 = new javax.swing.JButton();
+        cbTableParam = new javax.swing.JComboBox<>();
+        btnAddLink = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jXTable1 = new org.jdesktop.swingx.JXTable();
+        cbTableData = new javax.swing.JComboBox<>();
+        btnUpdateLink = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableLink = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -85,7 +145,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText(bundle.getString("ConfigFrameField_companyCode")); // NOI18N
 
-        jTextField1.setText("11");
+        tfCompany.setText("11");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,7 +155,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+                .addComponent(tfCompany, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -104,8 +164,8 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(327, Short.MAX_VALUE))
+                    .addComponent(tfCompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(bundle.getString("ConfigFrameField_company"), jPanel1); // NOI18N
@@ -113,35 +173,66 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText(bundle.getString("ConfigFrameField_dbSchemaOptimaint")); // NOI18N
 
-        btnDBConnectOptimaint.setText(bundle.getString("BtnField_Edit")); // NOI18N
-        btnDBConnectOptimaint.addActionListener(new java.awt.event.ActionListener() {
+        btnDBConnectOpti.setText(bundle.getString("BtnField_Edit")); // NOI18N
+        btnDBConnectOpti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDBConnectOptimaintActionPerformed(evt);
+                btnDBConnectOptiActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("jdbc:sqlserver://10.116.26.35\\SQLSERVER:1433;databaseName=optimaint");
+        schemaOpti.setText("jdbc:sqlserver://10.116.26.35\\SQLSERVER:1433;databaseName=optimaint");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText(bundle.getString("ConfigFrameField_dbSchemaZenon")); // NOI18N
 
-        jTextField3.setText("jdbc:sqlserver://10.243.59.27\\SQLSERVER;databaseName=scada");
+        schemaZen.setText("jdbc:sqlserver://10.243.59.27\\SQLSERVER;databaseName=scada");
 
-        btnDBConnectZenon.setText(bundle.getString("BtnField_Edit")); // NOI18N
+        btnDBConnectZen.setText(bundle.getString("BtnField_Edit")); // NOI18N
+        btnDBConnectZen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDBConnectZenActionPerformed(evt);
+            }
+        });
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText(bundle.getString("ConfigFrameField_dbTableVariable")); // NOI18N
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton5.setText(bundle.getString("BtnField_Link")); // NOI18N
+        btnAddLink.setIcon(Ico.i32("/img/std/Down.png"));
+        btnAddLink.setToolTipText(bundle.getString("BtnField_Link")); // NOI18N
+        btnAddLink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddLinkActionPerformed(evt);
+            }
+        });
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText(bundle.getString("ConfigFrameField_dbTableData")); // NOI18N
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        btnUpdateLink.setIcon(Ico.i32("/img/std/Refresh.png"));
+        btnUpdateLink.setToolTipText(bundle.getString("BtnField_Refresh")); // NOI18N
+        btnUpdateLink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateLinkActionPerformed(evt);
+            }
+        });
 
-        jScrollPane1.setViewportView(jXTable1);
+        tableLink.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "N°", "Designation table des variables", "Designation table données"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tableLink);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -150,20 +241,20 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane2)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, 0, 486, Short.MAX_VALUE)))
+                        .addComponent(btnUpdateLink, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbTableData, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbTableParam, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAddLink, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -171,13 +262,13 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField2)
+                                .addComponent(schemaOpti, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnDBConnectOptimaint))
+                                .addComponent(btnDBConnectOpti))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField3)
+                                .addComponent(schemaZen)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnDBConnectZenon)))))
+                                .addComponent(btnDBConnectZen)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -186,13 +277,13 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(btnDBConnectOptimaint)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDBConnectOpti)
+                    .addComponent(schemaOpti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(btnDBConnectZenon)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDBConnectZen)
+                    .addComponent(schemaZen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -200,14 +291,15 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbTableParam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbTableData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnAddLink, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdateLink, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -247,32 +339,69 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDBConnectOptimaintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDBConnectOptimaintActionPerformed
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("Driver O.K.");
-
-            String url = "jdbc:sqlserver://10.116.26.35\\SQLSERVER:1433;databaseName=optimaint";
-            String user = "sa";
-            String passwd = "Opt!M@!nt";
-
-            Connection conn = DriverManager.getConnection(url, user, passwd);
-            System.out.println("Connexion effective !");
-
-        } catch (Exception e) {
-            e.printStackTrace();
+    private void btnDBConnectOptiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDBConnectOptiActionPerformed
+        if (dbf == null) {
+            dbf = new DatabaseFrame(null, false);
+            dbf.addListener(this);
         }
-    }//GEN-LAST:event_btnDBConnectOptimaintActionPerformed
+        dbf.setLocationRelativeTo(this);
+        dbf.setModel(DatabaseModel.parse(schemaOpti.getText()));
+        dbf.setSchemaReceiver(schemaOpti);
+        dbf.setVisible(true);
+
+    }//GEN-LAST:event_btnDBConnectOptiActionPerformed
+
+    private void btnDBConnectZenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDBConnectZenActionPerformed
+        if (dbf == null) {
+            dbf = new DatabaseFrame(null, false);
+            dbf.addListener(this);
+        }
+        dbf.setLocationRelativeTo(this);
+        dbf.setModel(DatabaseModel.parse(schemaZen.getText()));
+        dbf.setSchemaReceiver(schemaZen);
+        dbf.setVisible(true);
+    }//GEN-LAST:event_btnDBConnectZenActionPerformed
+
+    private void btnUpdateLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateLinkActionPerformed
+        // Init the content
+        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(schemaZen.getText()));
+        if (conn != null) {
+            try {
+                ArrayList<String> l = new ArrayList<String>();
+                DatabaseMetaData md = conn.getMetaData();
+                ResultSet rs = md.getTables(null, null, null, new String[]{"TABLE"});
+                while (rs.next()) {
+                    String t = rs.getString(3);
+                    System.out.println(t);
+                    l.add(t);
+                }
+                DefaultComboBoxModel cbModelParam = new javax.swing.DefaultComboBoxModel<>(l.toArray());
+                DefaultComboBoxModel cbModelData = new javax.swing.DefaultComboBoxModel<>(l.toArray());
+                cbTableParam.setModel(cbModelParam);
+                cbTableData.setModel(cbModelData);
+
+            } catch (SQLException ex) {
+                Logger.getLogger(ConfigFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+    }//GEN-LAST:event_btnUpdateLinkActionPerformed
+
+    private void btnAddLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLinkActionPerformed
+        TableParamDataModel tm = (TableParamDataModel) tableLink.getModel();
+        tm.addRow(cbTableParam.getSelectedItem().toString(), cbTableData.getSelectedItem().toString());
+    }//GEN-LAST:event_btnAddLinkActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDBConnectOptimaint;
-    private javax.swing.JButton btnDBConnectZenon;
+    private javax.swing.JButton btnAddLink;
+    private javax.swing.JButton btnDBConnectOpti;
+    private javax.swing.JButton btnDBConnectZen;
+    private javax.swing.JButton btnUpdateLink;
+    private javax.swing.JComboBox<String> cbTableData;
+    private javax.swing.JComboBox<String> cbTableParam;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -280,54 +409,76 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private org.jdesktop.swingx.JXTable jXTable1;
+    private javax.swing.JTextField schemaOpti;
+    private javax.swing.JTextField schemaZen;
+    private javax.swing.JTable tableLink;
+    private javax.swing.JTextField tfCompany;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void internalFrameOpened(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameOpened() >> ";
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : internalFrameOpened() >> ";
         System.out.println(methodName + "internalFrameOpened !");
     }
 
     @Override
     public void internalFrameClosing(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameClosing() >> ";
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : internalFrameClosing() >> ";
         System.out.println(methodName + "internalFrameClosing !");
     }
 
     @Override
     public void internalFrameClosed(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameClosed() >> ";
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : internalFrameClosed() >> ";
         System.out.println(methodName + "internalFrameClosed !");
     }
 
     @Override
     public void internalFrameIconified(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameIconified() >> ";
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : internalFrameIconified() >> ";
         System.out.println(methodName + "internalFrameIconified !");
     }
 
     @Override
     public void internalFrameDeiconified(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameDeiconified() >> ";
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : internalFrameDeiconified() >> ";
         System.out.println(methodName + "internalFrameDeiconified !");
     }
 
     @Override
     public void internalFrameActivated(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameActivated() >> ";
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : internalFrameActivated() >> ";
         System.out.println(methodName + "internalFrameActivated !");
     }
 
     @Override
     public void internalFrameDeactivated(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameDeactivated() >> ";
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : internalFrameDeactivated() >> ";
         System.out.println(methodName + "internalFrameDeactivated !");
+    }
+
+    @Override
+    public void databaseFrameEventValidate(DatabaseModel model) {
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : databaseFrameEventValidate() >> ";
+        System.out.println(methodName + "databaseFrameEventValidate !");
+        //schemaOpti.setText(DatabaseModel.unparse(model));
+    }
+
+    @Override
+    public void databaseFrameEventCancel(DatabaseModel model) {
+        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
+                .getName()).getResourceBundleName() + " : databaseFrameEventCancel() >> ";
+        System.out.println(methodName + "databaseFrameEventCancel !");
     }
 }
