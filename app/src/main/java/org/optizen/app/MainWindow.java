@@ -13,6 +13,7 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import org.optizen.util.Settings;
 import org.optizen.util.Util;
 
 /**
@@ -45,6 +46,8 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jToolBar1 = new javax.swing.JToolBar();
+        tbBtnConfigurations = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -63,6 +66,23 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         setName("MainWindowFrame"); // NOI18N
         setPreferredSize(new java.awt.Dimension(640, 480));
         setSize(new java.awt.Dimension(640, 480));
+
+        desktopPane.setLayout(new java.awt.BorderLayout());
+
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+
+        tbBtnConfigurations.setIcon(Ico.i48("/img/hr/company.png"));
+        tbBtnConfigurations.setText("Configurations");
+        tbBtnConfigurations.setFocusable(false);
+        tbBtnConfigurations.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbBtnConfigurations.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        tbBtnConfigurations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbBtnConfigurationsActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(tbBtnConfigurations);
 
         fileMenu.setMnemonic('f');
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
@@ -130,11 +150,15 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,6 +185,11 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         }
 
     }//GEN-LAST:event_menuItemConfigurationsActionPerformed
+
+    private void tbBtnConfigurationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbBtnConfigurationsActionPerformed
+        // TODO add your handling code here:
+        menuItemConfigurationsActionPerformed(evt);
+    }//GEN-LAST:event_tbBtnConfigurationsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,11 +221,22 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                Util.out("OptiZen - Start...");
+                Settings.iniFilename = "OptiZen.ini";
+                if (Settings.createIniFile()) {
+                    Settings.writeDefaultClientSetup();
+                }
+                
                 MainWindow w = new MainWindow();
                 w.setVisible(true);
                 w.addWindowListener(w);
                 w.addWindowFocusListener(w);
                 w.addWindowStateListener(w);
+                
+                
+                MainWindow iscreen = new MainWindow();
+                // Affichage plein écrant
+                Util.out("OptiZen - End run...");
             }
         });
     }
@@ -210,9 +250,11 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuItemConfigurations;
     private javax.swing.JMenuItem pasteMenuItem;
+    private javax.swing.JButton tbBtnConfigurations;
     // End of variables declaration//GEN-END:variables
 
     @Override

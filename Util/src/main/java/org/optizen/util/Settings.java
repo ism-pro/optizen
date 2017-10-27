@@ -7,6 +7,8 @@ package org.optizen.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.ini4j.Wini;
 
 /**
@@ -24,6 +26,13 @@ public class Settings {
     public static String sectSRV = "server";
     public static String sectSCREEN = "screen";
 
+    public static final String CONFIG = "CONFIG";
+    public static final String COMPANY = "company";
+    public static final String URL_OPTI = "urloptimaint";
+    public static final String URL_ZEN = "urlzenon";
+    public static final String LINK_ZEN = "LINKZEN";
+    public static final String COUNTER = "COUNTER";
+
     /**
      * Cette méthod permet de créer un fichier de préférence ini
      *
@@ -37,6 +46,7 @@ public class Settings {
             File file = new File(filePathName);
             if (file.createNewFile()) {
                 Util.out(methodName + "Le fichier " + filePathName + " vient d'être créé !");
+                return true;
             } else {
                 Util.out(methodName + "Le fichier " + filePathName + " existe déjà !");
                 return false;
@@ -45,7 +55,6 @@ public class Settings {
             Util.out(methodName + "Erreur suivante lors de la création du fichier : " + e.getMessage());
             return false;
         }
-        return true;
     }
 
     /**
@@ -103,26 +112,19 @@ public class Settings {
      * Création des paramètres de confirguration par défaut
      */
     public static void writeDefaultClientSetup() {
-        // Section client
-        // Remove and replaced by screen
-        //Settings.write("client", "isAdopted", false);
-
-        // SERVER
-//        Settings.write(Settings.sectSRV, Server.HOSTNAME, "undef");
-//        Settings.write(Settings.sectSRV, Server.ADDRESS, "undef");
-//        Settings.write(Settings.sectSRV, Server.PORT, 0);
-//
-//        // SCREEN
-//        Settings.write(Settings.sectSCREEN, Screen.ID, "0");
-//        Settings.write(Settings.sectSCREEN, Screen.HOSTNAME, "raspberry");
-//        Settings.write(Settings.sectSCREEN, Screen.ADDRESS, NetUtil.localIPAddress());
-//        Settings.write(Settings.sectSCREEN, Screen.PORT, Util.portDiscover);
-//        Settings.write(Settings.sectSCREEN, Screen.ADOPTED, false);
-//        Settings.write(Settings.sectSCREEN, Screen.CODE, null);
-//        Settings.write(Settings.sectSCREEN, Screen.GROUP, null);
-//        Settings.write(Settings.sectSCREEN, Screen.LOCATION, null);
-//        Settings.write(Settings.sectSCREEN, Screen.MNEMONIQUE, null);
-
+        try {
+            Wini ini = new Wini(new File(iniFilename));
+            ini.put(Settings.CONFIG, Settings.COMPANY, "11");
+            
+            ini.put(Settings.CONFIG, Settings.URL_OPTI, "jdbc:sqlserver:");
+            ini.put(Settings.CONFIG, Settings.URL_ZEN, "jdbc:sqlserver:");
+            
+            
+            
+            ini.store();
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -179,8 +181,6 @@ public class Settings {
 //            Util.out(methodName + "...Erreur suivante est survenue : " + ex.getMessage());
 //        }
     }
-
-
 
     /**
      * Get server defined in the ini file
