@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
@@ -59,26 +60,26 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         schemaZen.setText(urlZen);
 
         // Init the content
-        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(schemaZen.getText()));
-        if (conn != null) {
-            try {
-                ArrayList<String> l = new ArrayList<String>();
-                DatabaseMetaData md = conn.getMetaData();
-                ResultSet rs = md.getTables(null, null, null, new String[]{"TABLE"});
-                while (rs.next()) {
-                    String t = rs.getString(3);
-                    System.out.println(t);
-                    l.add(t);
-                }
-                DefaultComboBoxModel cbModelParam = new javax.swing.DefaultComboBoxModel<>(l.toArray());
-                DefaultComboBoxModel cbModelData = new javax.swing.DefaultComboBoxModel<>(l.toArray());
-                cbTableParam.setModel(cbModelParam);
-                cbTableData.setModel(cbModelData);
-
-            } catch (SQLException ex) {
-                Logger.getLogger(ConfigFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(schemaZen.getText()));
+//        if (conn != null) {
+//            try {
+//                ArrayList<String> l = new ArrayList<String>();
+//                DatabaseMetaData md = conn.getMetaData();
+//                ResultSet rs = md.getTables(null, null, null, new String[]{"TABLE"});
+//                while (rs.next()) {
+//                    String t = rs.getString(3);
+//                    System.out.println(t);
+//                    l.add(t);
+//                }
+//                DefaultComboBoxModel cbModelParam = new javax.swing.DefaultComboBoxModel<>(l.toArray());
+//                DefaultComboBoxModel cbModelData = new javax.swing.DefaultComboBoxModel<>(l.toArray());
+//                cbTableParam.setModel(cbModelParam);
+//                cbTableData.setModel(cbModelData);
+//
+//            } catch (SQLException ex) {
+//                Logger.getLogger(ConfigFrame.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
         // Init table model
         Integer counter = Integer.valueOf(Settings.read(Settings.LINK_ZEN, Settings.COUNTER).toString());
         TableParamDataModel tm = new TableParamDataModel();
@@ -391,7 +392,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(schemaZen.getText()));
         if (conn != null) {
             try {
-                ArrayList<String> l = new ArrayList<String>();
+                ArrayList<String> l = new ArrayList<>();
                 DatabaseMetaData md = conn.getMetaData();
                 ResultSet rs = md.getTables(null, null, null, new String[]{"TABLE"});
                 while (rs.next()) {
@@ -407,7 +408,10 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
             } catch (SQLException ex) {
                 Logger.getLogger(ConfigFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            JOptionPane.showMessageDialog(this, "Actualisation des données terminée", "Mise à jour des tables zenon", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, "Impossible de rafraichir les données du schéma ZENON \n" + DatabaseFrame.queryLastError, 
+                    "Mise à jour des tables zenon", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnUpdateLinkActionPerformed
 
@@ -447,6 +451,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                 //ini.put(Settings.LINK_ZEN, ""+row , tm.getValueAt(row, 1).toString() + " + " + tm.getValueAt(row, 2));
             }
             ini.store();
+            JOptionPane.showMessageDialog(this, "Sauvegarde terminée avec succès", "Sauvegarde", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
         }

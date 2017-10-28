@@ -9,9 +9,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import org.optizen.listeners.DatabaseFrameListener;
@@ -33,6 +30,8 @@ public class DatabaseFrame extends javax.swing.JDialog {
     }
 
     private JTextField schemaReceiver = null;
+    
+    public static String queryLastError ="";
 
     /**
      * Creates new form DatabaseFrame
@@ -409,7 +408,8 @@ public class DatabaseFrame extends javax.swing.JDialog {
             Connection conn = DriverManager.getConnection(url, model.getUser(), model.getPassword());
             return conn;
         } catch (ClassNotFoundException | SQLException ex) {
-            Util.out(DatabaseFrame.class.getName() + " >> isConnectable(DatabaseModel model) for url(" + url + ") : " + ex.getLocalizedMessage());
+            queryLastError = DatabaseFrame.class.getName() + " >> isConnectable(DatabaseModel model) for url(" + url + ") : " + ex.getLocalizedMessage();
+            Util.out(queryLastError);
             return null;
         }
     }
