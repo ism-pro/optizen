@@ -28,6 +28,11 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
      * Configuration Frame contains all configuration for alication.
      */
     private ConfigFrame configFrame = null;
+    /**
+     * Link Frame contains all link between zenon and optimaint and allow to 
+     * create and remove them
+     */
+    private LinkFrame linkFrame = null;
 
     /**
      * Creates new form MainWindow
@@ -48,12 +53,13 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         desktopPane = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
         tbBtnConfigurations = new javax.swing.JButton();
+        tbBtnLinks = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         menuItemConfigurations = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
+        menuItemLinks = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
@@ -83,6 +89,18 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
             }
         });
         jToolBar1.add(tbBtnConfigurations);
+
+        tbBtnLinks.setIcon(Ico.i48("/img/admin/smq_nc_actions.png"));
+        tbBtnLinks.setText("Correspondance");
+        tbBtnLinks.setFocusable(false);
+        tbBtnLinks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbBtnLinks.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        tbBtnLinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbBtnLinksActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(tbBtnLinks);
 
         fileMenu.setMnemonic('f');
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
@@ -116,11 +134,16 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         });
         editMenu.add(menuItemConfigurations);
 
-        copyMenuItem.setIcon(Ico.i16("/img/std/Tree.png")
+        menuItemLinks.setIcon(Ico.i16("/img/std/Tree.png")
         );
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText(bundle.getString("MenuEditLink")); // NOI18N
-        editMenu.add(copyMenuItem);
+        menuItemLinks.setMnemonic('y');
+        menuItemLinks.setText(bundle.getString("MenuEditLink")); // NOI18N
+        menuItemLinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemLinksActionPerformed(evt);
+            }
+        });
+        editMenu.add(menuItemLinks);
 
         pasteMenuItem.setIcon(Ico.i16("/img/std/Refresh.png")
         );
@@ -150,7 +173,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -158,7 +181,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE))
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE))
         );
 
         pack();
@@ -190,6 +213,28 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         // TODO add your handling code here:
         menuItemConfigurationsActionPerformed(evt);
     }//GEN-LAST:event_tbBtnConfigurationsActionPerformed
+
+    private void tbBtnLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbBtnLinksActionPerformed
+        // TODO add your handling code here:
+        menuItemLinksActionPerformed(evt);
+    }//GEN-LAST:event_tbBtnLinksActionPerformed
+
+    private void menuItemLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemLinksActionPerformed
+        if (LinkFrame.openFrameCount == 0) {
+            linkFrame = new LinkFrame();
+            desktopPane.add(linkFrame);
+        }else{
+            revalidate();
+                repaint();
+        }
+        linkFrame.setVisible(true);
+        try {
+            linkFrame.setMaximum(true);
+            linkFrame.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_menuItemLinksActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,7 +289,6 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
@@ -253,8 +297,10 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuItemConfigurations;
+    private javax.swing.JMenuItem menuItemLinks;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JButton tbBtnConfigurations;
+    private javax.swing.JButton tbBtnLinks;
     // End of variables declaration//GEN-END:variables
 
     @Override
