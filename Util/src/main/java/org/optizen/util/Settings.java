@@ -7,6 +7,7 @@ package org.optizen.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.ini4j.Wini;
@@ -115,12 +116,10 @@ public class Settings {
         try {
             Wini ini = new Wini(new File(iniFilename));
             ini.put(Settings.CONFIG, Settings.COMPANY, "11");
-            
+
             ini.put(Settings.CONFIG, Settings.URL_OPTI, "jdbc:sqlserver:");
             ini.put(Settings.CONFIG, Settings.URL_ZEN, "jdbc:sqlserver:");
-            
-            
-            
+
             ini.store();
         } catch (IOException ex) {
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
@@ -222,6 +221,33 @@ public class Settings {
 //        } catch (IOException ex) {
 //            Util.out(methodName + "...Erreur suivante est survenue : " + ex.getMessage());
 //        }
+    }
+
+    /**
+     * Zenon table Data allow to read all the data name saved in configuration
+     * 
+     * @return a list array of the zenon data table contains in configuration
+     */
+    public static ArrayList<String> zenTableData() {
+        String methodName = Settings.class.getName() + " : zenTableData() >> ";
+        ArrayList<String> list = new ArrayList<>();
+        try {
+            Util.out(methodName + "Tentative de lecture de la section zenTableData ...");
+            Wini ini = new Wini(new File(iniFilename));
+
+            // Clean previous table
+            Integer counter = Integer.valueOf(Settings.read(Settings.LINK_ZEN, Settings.COUNTER).toString());
+            for (int count = 0; count < counter; count++) {
+                String data = Settings.read(Settings.LINK_ZEN + "\\" + count, "data").toString();
+                list.add(data);
+            }
+            
+            Util.out(methodName + "...Lecture réussie");
+            return list;
+        } catch (IOException ex) {
+            Util.out(methodName + "...Erreur suivante est survenue : " + ex.getMessage());
+            return null;
+        }
     }
 
 }
