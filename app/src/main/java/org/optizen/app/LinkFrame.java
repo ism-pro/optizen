@@ -5,12 +5,22 @@
  */
 package org.optizen.app;
 
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.WindowConstants;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
+import javax.swing.table.DefaultTableModel;
+import org.optizen.model.DatabaseModel;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
 
@@ -31,14 +41,19 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
      */
     public LinkFrame() {
         initComponents();
-        
+
         // Initialisation des tables disponibles
         DefaultComboBoxModel cbModelDataZen = new javax.swing.DefaultComboBoxModel<>(Settings.zenTableData().toArray());
         cbFilterTableZen.setModel(cbModelDataZen);
-        
+
         // Chargement des données de la table zenon
-        
-        
+        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(Settings.read(Settings.CONFIG, Settings.URL_ZEN).toString()));
+        try {
+            DatabaseMetaData md = conn.getMetaData();
+            md.
+        } catch (SQLException ex) {
+            Logger.getLogger(LinkFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
         // Register Internal frame
@@ -464,6 +479,44 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     private javax.swing.JTextField tfSetZen;
     private javax.swing.JPanel zenPane;
     // End of variables declaration//GEN-END:variables
+
+    private ArrayList<ArrayList<String>> loadCounterTableZenon() {
+        String query = "SELECT DISTINCT dbo.GEBAR_BENI_VARIABLES.\"VARIABLE\", dbo.GEBAR_BENI_VARIABLES.\"NAME\", dbo.GEBAR_BENI_VARIABLES.GUID\n"
+                + "FROM dbo.GEBAR_BENI_VARIABLES, dbo.GEBAR_BENI_05\n"
+                + "WHERE dbo.GEBAR_BENI_VARIABLES.\"VARIABLE\" = dbo.GEBAR_BENI_05.\"VARIABLE\";";
+
+        ArrayList<ArrayList<String>> result = new ArrayList<>();
+
+        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(Settings.read(Settings.CONFIG, Settings.URL_ZEN).toString()));
+
+        return null;
+    }
+
+    public static DefaultTableModel buildTableModel(ResultSet rs)
+            throws SQLException {
+
+        ResultSetMetaData metaData = rs.getMetaData();
+
+        // names of columns
+        Vector<String> columnNames = new Vector<String>();
+        int columnCount = metaData.getColumnCount();
+        for (int column = 1; column <= columnCount; column++) {
+            columnNames.add(metaData.getColumnName(column));
+        }
+
+        // data of the table
+        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+        while (rs.next()) {
+            Vector<Object> vector = new Vector<Object>();
+            for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+                vector.add(rs.getObject(columnIndex));
+            }
+            data.add(vector);
+        }
+
+        return new DefaultTableModel(data, columnNames);
+
+    }
 
     @Override
     public void internalFrameOpened(InternalFrameEvent e) {
