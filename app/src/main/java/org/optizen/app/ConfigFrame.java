@@ -59,27 +59,6 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         schemaOpti.setText(urlOpti);
         schemaZen.setText(urlZen);
 
-        // Init the content
-//        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(schemaZen.getText()));
-//        if (conn != null) {
-//            try {
-//                ArrayList<String> l = new ArrayList<String>();
-//                DatabaseMetaData md = conn.getMetaData();
-//                ResultSet rs = md.getTables(null, null, null, new String[]{"TABLE"});
-//                while (rs.next()) {
-//                    String t = rs.getString(3);
-//                    System.out.println(t);
-//                    l.add(t);
-//                }
-//                DefaultComboBoxModel cbModelParam = new javax.swing.DefaultComboBoxModel<>(l.toArray());
-//                DefaultComboBoxModel cbModelData = new javax.swing.DefaultComboBoxModel<>(l.toArray());
-//                cbTableParam.setModel(cbModelParam);
-//                cbTableData.setModel(cbModelData);
-//
-//            } catch (SQLException ex) {
-//                Logger.getLogger(ConfigFrame.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
         // Init table model
         Integer counter = Integer.valueOf(Settings.read(Settings.LINK_ZEN, Settings.COUNTER).toString());
         TableParamDataModel tm = new TableParamDataModel();

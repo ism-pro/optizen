@@ -33,6 +33,9 @@ public class Settings {
     public static final String URL_ZEN = "urlzenon";
     public static final String LINK_ZEN = "LINKZEN";
     public static final String COUNTER = "COUNTER";
+    
+    public static final String LINK_LINK = "LINK";
+
 
     /**
      * Cette méthod permet de créer un fichier de préférence ini
@@ -238,8 +241,9 @@ public class Settings {
             // Clean previous table
             Integer counter = Integer.valueOf(Settings.read(Settings.LINK_ZEN, Settings.COUNTER).toString());
             for (int count = 0; count < counter; count++) {
+                String param = Settings.read(Settings.LINK_ZEN + "\\" + count, "param").toString();
                 String data = Settings.read(Settings.LINK_ZEN + "\\" + count, "data").toString();
-                list.add(data);
+                list.add(param + " ==> " + data);
             }
             
             Util.out(methodName + "...Lecture réussie");

@@ -5,24 +5,34 @@
  */
 package org.optizen.app;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+import com.sun.glass.events.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.WindowConstants;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.ini4j.Wini;
 import org.optizen.model.DatabaseModel;
+import org.optizen.model.ResultSetTableModel;
+import org.optizen.util.DateUtil;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
+import org.optizen.xlsx.ExcelFilter;
+import org.optizen.xlsx.ExcelReader;
+import org.optizen.xlsx.ExcelWriter;
 
 /**
  *
@@ -36,6 +46,9 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     static Integer openFrameCount = 0;
     static final int xOffset = 30, yOffset = 30;
 
+    private ArrayList<Object> selectedRowZenon = null;
+    private ArrayList<Object> selectedRowOpti = null;
+
     /**
      * Creates new form LinkFrame
      */
@@ -46,16 +59,17 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         DefaultComboBoxModel cbModelDataZen = new javax.swing.DefaultComboBoxModel<>(Settings.zenTableData().toArray());
         cbFilterTableZen.setModel(cbModelDataZen);
 
-        // Chargement des données de la table zenon
-        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(Settings.read(Settings.CONFIG, Settings.URL_ZEN).toString()));
-        try {
-            DatabaseMetaData md = conn.getMetaData();
-            md.
-        } catch (SQLException ex) {
-            Logger.getLogger(LinkFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        // Update Model Zen
+        String param = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[0];
+        String data = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[1];
+        initTableZenon(param, data);
+
+        // Update Model Opti
+        initTableOptimaint();
+
+        // Init table link
+        clearAndLoadSavedLink();
+
         // Register Internal frame
         this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         openFrameCount++; // increment configFrame counter
@@ -72,7 +86,10 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        tableLinkPopupMenu = new javax.swing.JPopupMenu();
+        menuItemPopupDelete = new javax.swing.JMenuItem();
+        excelFileChooserExporter = new javax.swing.JFileChooser();
+        excelFileChooserImport = new javax.swing.JFileChooser();
         mainSplitPane = new javax.swing.JSplitPane();
         counterPane = new javax.swing.JPanel();
         subSplitPaneCounter = new javax.swing.JSplitPane();
@@ -105,15 +122,33 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         jScrollPane3 = new javax.swing.JScrollPane();
         tableLink = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnExport = new javax.swing.JButton();
+        btnImport = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnLinkSet = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton6 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+
+        menuItemPopupDelete.setIcon(Ico.i16("/img/std/Delete.png")
+        );
+        menuItemPopupDelete.setText("Supprimer la sélection");
+        menuItemPopupDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPopupDeleteActionPerformed(evt);
+            }
+        });
+        tableLinkPopupMenu.add(menuItemPopupDelete);
+
+        excelFileChooserExporter.setApproveButtonText("OK");
+        excelFileChooserExporter.setDialogTitle("Définir le nom et chemin d'enregistrement ...");
+        excelFileChooserExporter.setFileSelectionMode(javax.swing.JFileChooser.DIRECTORIES_ONLY);
+
+        excelFileChooserImport.setApproveButtonText("OK");
+        excelFileChooserImport.setDialogTitle("Choix du document à importer...");
+        excelFileChooserImport.setFileFilter(new ExcelFilter());
 
         setIconifiable(true);
         setMaximizable(true);
@@ -134,7 +169,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
 
         counterPane.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Compteurs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(102, 102, 255))); // NOI18N
 
-        subSplitPaneCounter.setDividerLocation(350);
+        subSplitPaneCounter.setDividerLocation(400);
         subSplitPaneCounter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         zenPane.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ZENON", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 102, 51))); // NOI18N
@@ -142,7 +177,25 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
 
         jLabel1.setText("VARIABLES");
 
-        jLabel2.setText("VARIABLES");
+        jLabel2.setText("NAME");
+
+        tfFilterVariable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfFilterVariableKeyPressed(evt);
+            }
+        });
+
+        tfFilterNames.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfFilterNamesKeyPressed(evt);
+            }
+        });
+
+        cbFilterTableZen.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbFilterTableZenItemStateChanged(evt);
+            }
+        });
 
         tableZen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -160,6 +213,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 return canEdit [columnIndex];
             }
         });
+        tableZen.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tableZen);
         if (tableZen.getColumnModel().getColumnCount() > 0) {
             tableZen.getColumnModel().getColumn(0).setPreferredWidth(20);
@@ -183,7 +237,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 .addGroup(zenPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(zenPaneLayout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addContainerGap(197, Short.MAX_VALUE))
+                        .addContainerGap(273, Short.MAX_VALUE))
                     .addComponent(tfFilterNames)))
             .addComponent(cbFilterTableZen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -216,15 +270,45 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
 
         optiPane.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "OPTIMAINT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 51, 51))); // NOI18N
 
+        tfFilterEquCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfFilterEquCodeKeyPressed(evt);
+            }
+        });
+
+        tfFilterEqui.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfFilterEquiKeyPressed(evt);
+            }
+        });
+
         jLabel3.setText("Code EQU.");
 
         jLabel4.setText("EQUIPEMENT");
 
         jLabel5.setText("Code Organe");
 
+        tfFilterOrgCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfFilterOrgCodeKeyPressed(evt);
+            }
+        });
+
         jLabel6.setText("ORGANE");
 
+        tfFilterOrg.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfFilterOrgKeyPressed(evt);
+            }
+        });
+
         jLabel7.setText("UNITE");
+
+        tfFilterUnite.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfFilterUniteKeyPressed(evt);
+            }
+        });
 
         tableOpti.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -234,6 +318,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 "N°", "CPT_EQUIPEMENT", "EQU_DESIGNATION", "CPT_ORGANE", "ORG_DESIGNATION", "CPT_UNITE", "CPT_COMMENTAIRE", "CPT_SOCIETE"
             }
         ));
+        tableOpti.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(tableOpti);
         if (tableOpti.getColumnModel().getColumnCount() > 0) {
             tableOpti.getColumnModel().getColumn(0).setPreferredWidth(20);
@@ -271,7 +356,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 .addGroup(optiPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfFilterUnite, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
             .addGroup(optiPaneLayout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -332,11 +417,20 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 "N°", "TABLE", "VARIABLE", "NOM", "CODE EQU.", "EQUIPEMENT", "CODE ORG.", "ORGANE", "UNITE", "COMMENTAIRES", "DATE MODIF."
             }
         ));
+        tableLink.setComponentPopupMenu(tableLinkPopupMenu);
         jScrollPane3.setViewportView(tableLink);
         if (tableLink.getColumnModel().getColumnCount() > 0) {
-            tableLink.getColumnModel().getColumn(0).setPreferredWidth(20);
-            tableLink.getColumnModel().getColumn(1).setPreferredWidth(20);
-            tableLink.getColumnModel().getColumn(3).setPreferredWidth(20);
+            tableLink.getColumnModel().getColumn(0).setPreferredWidth(60);
+            tableLink.getColumnModel().getColumn(0).setMaxWidth(60);
+            tableLink.getColumnModel().getColumn(1).setPreferredWidth(80);
+            tableLink.getColumnModel().getColumn(1).setMaxWidth(120);
+            tableLink.getColumnModel().getColumn(2).setPreferredWidth(65);
+            tableLink.getColumnModel().getColumn(2).setMaxWidth(65);
+            tableLink.getColumnModel().getColumn(3).setPreferredWidth(200);
+            tableLink.getColumnModel().getColumn(4).setPreferredWidth(80);
+            tableLink.getColumnModel().getColumn(4).setMaxWidth(90);
+            tableLink.getColumnModel().getColumn(5).setPreferredWidth(200);
+            tableLink.getColumnModel().getColumn(10).setMaxWidth(100);
         }
 
         javax.swing.GroupLayout LinkPaneLayout = new javax.swing.GroupLayout(LinkPane);
@@ -356,62 +450,92 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         jPanel4.setPreferredSize(new java.awt.Dimension(949, 46));
         jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 5, 2));
 
-        jButton1.setIcon(Ico.i32("/img/std/ExtXLSX.png"));
-        jButton1.setText("EXPORTER");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setMaximumSize(null);
-        jButton1.setMinimumSize(null);
-        jButton1.setPreferredSize(null);
-        jPanel4.add(jButton1);
+        btnExport.setIcon(Ico.i32("/img/std/ExtXLSX.png"));
+        btnExport.setText("EXPORTER");
+        btnExport.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnExport.setMaximumSize(null);
+        btnExport.setMinimumSize(null);
+        btnExport.setPreferredSize(null);
+        btnExport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnExport);
 
-        jButton2.setIcon(Ico.i32("/img/std/ExtXLSX.png"));
-        jButton2.setText("IMPORTER");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton2.setMaximumSize(null);
-        jButton2.setMinimumSize(null);
-        jButton2.setPreferredSize(null);
-        jPanel4.add(jButton2);
+        btnImport.setIcon(Ico.i32("/img/std/ExtXLSX.png"));
+        btnImport.setText("IMPORTER");
+        btnImport.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnImport.setMaximumSize(null);
+        btnImport.setMinimumSize(null);
+        btnImport.setPreferredSize(null);
+        btnImport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImportActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnImport);
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setPreferredSize(new java.awt.Dimension(3, 36));
         jPanel4.add(jSeparator3);
 
-        jButton4.setIcon(Ico.i32("/img/std/Connect.png")
+        btnLinkSet.setIcon(Ico.i32("/img/std/Connect.png")
         );
-        jButton4.setText("LIER");
-        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton4.setMaximumSize(null);
-        jButton4.setMinimumSize(null);
-        jButton4.setPreferredSize(null);
-        jPanel4.add(jButton4);
+        btnLinkSet.setText("LIER");
+        btnLinkSet.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnLinkSet.setMaximumSize(null);
+        btnLinkSet.setMinimumSize(null);
+        btnLinkSet.setPreferredSize(null);
+        btnLinkSet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLinkSetActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnLinkSet);
 
-        jButton3.setIcon(Ico.i32("/img/std/Refresh.png"));
-        jButton3.setText("RAFRAICHIR");
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton3.setMaximumSize(new java.awt.Dimension(3200, 3200));
-        jButton3.setMinimumSize(new java.awt.Dimension(0, 36));
-        jButton3.setPreferredSize(null);
-        jPanel4.add(jButton3);
+        btnRefresh.setIcon(Ico.i32("/img/std/Refresh.png"));
+        btnRefresh.setText("RAFRAICHIR");
+        btnRefresh.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnRefresh.setMaximumSize(new java.awt.Dimension(3200, 3200));
+        btnRefresh.setMinimumSize(new java.awt.Dimension(0, 36));
+        btnRefresh.setPreferredSize(null);
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnRefresh);
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator2.setPreferredSize(new java.awt.Dimension(3, 36));
         jPanel4.add(jSeparator2);
 
-        jButton6.setIcon(Ico.i32("/img/std/Save.png"));
-        jButton6.setText("SAUVER");
-        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton6.setMaximumSize(new java.awt.Dimension(3200, 3200));
-        jButton6.setMinimumSize(new java.awt.Dimension(0, 36));
-        jButton6.setPreferredSize(null);
-        jPanel4.add(jButton6);
+        btnSave.setIcon(Ico.i32("/img/std/Save.png"));
+        btnSave.setText("SAUVER");
+        btnSave.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnSave.setMaximumSize(new java.awt.Dimension(3200, 3200));
+        btnSave.setMinimumSize(new java.awt.Dimension(0, 36));
+        btnSave.setPreferredSize(null);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnSave);
 
-        jButton5.setIcon(Ico.i32("/img/std/Cancel.png"));
-        jButton5.setText("ANNULER");
-        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton5.setMaximumSize(null);
-        jButton5.setMinimumSize(null);
-        jButton5.setPreferredSize(null);
-        jPanel4.add(jButton5);
+        btnCancel.setIcon(Ico.i32("/img/std/Cancel.png"));
+        btnCancel.setText("ANNULER");
+        btnCancel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnCancel.setMaximumSize(null);
+        btnCancel.setMinimumSize(null);
+        btnCancel.setPreferredSize(null);
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnCancel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -434,18 +558,311 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbFilterTableZenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbFilterTableZenItemStateChanged
+        String param = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[0];
+        String data = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[1];
+        updateTableZenon(param, data);
+    }//GEN-LAST:event_cbFilterTableZenItemStateChanged
+
+    private void tfFilterVariableKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfFilterVariableKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String param = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[0];
+            String data = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[1];
+            updateTableZenon(param, data);
+        }
+    }//GEN-LAST:event_tfFilterVariableKeyPressed
+
+    private void tfFilterNamesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfFilterNamesKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String param = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[0];
+            String data = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[1];
+            updateTableZenon(param, data);
+        }
+    }//GEN-LAST:event_tfFilterNamesKeyPressed
+
+    private void tfFilterEquCodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfFilterEquCodeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            updateTableOptimaint();
+        }
+    }//GEN-LAST:event_tfFilterEquCodeKeyPressed
+
+    private void tfFilterEquiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfFilterEquiKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            updateTableOptimaint();
+        }
+    }//GEN-LAST:event_tfFilterEquiKeyPressed
+
+    private void tfFilterOrgCodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfFilterOrgCodeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            updateTableOptimaint();
+        }
+    }//GEN-LAST:event_tfFilterOrgCodeKeyPressed
+
+    private void tfFilterOrgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfFilterOrgKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            updateTableOptimaint();
+        }
+    }//GEN-LAST:event_tfFilterOrgKeyPressed
+
+    private void tfFilterUniteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfFilterUniteKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            updateTableOptimaint();
+        }
+    }//GEN-LAST:event_tfFilterUniteKeyPressed
+
+    private void btnLinkSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLinkSetActionPerformed
+        // Vérifie que les sets ont été définis sinon quitte sur un warning
+        if (tfSetZen.getText().isEmpty() || tfSetOpti.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Veuillez sélectionner les deux set \nSet Zenon : " + tfSetZen.getText() + "\nSet Optimaint : " + tfSetOpti.getText(),
+                    "Correspondance : Erreur de set", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Convertie en ligne de table
+        int row = tableLink.getRowCount() + 1;
+        String tableVar = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[0].trim();
+        String tableName = cbFilterTableZen.getSelectedItem().toString().split(" ==> ")[1].trim();
+        String variable = tfSetZen.getText().split(" \\| ")[0].trim();
+        String varName = tfSetZen.getText().split(" \\| ")[1];
+
+        String so[] = tfSetOpti.getText().split(" \\| ");
+        String codeEqu = so[0];
+        String codeEquipement = so[1];
+        String codeOrg = so[2];
+        String codeOrgane = so[3];
+        String unite = so[4];
+        String commentaire = so[5];
+        String company = so[6];
+
+        Object rowObject[] = new Object[]{row, tableName, variable, varName, codeEqu, codeEquipement, codeOrg, codeOrgane, unite, commentaire, company};
+
+        // Vérifie que ce n'est pas un doublons 
+        for (int lgn = 0; lgn < tableLink.getRowCount(); lgn++) {
+            int d = 0;
+            if (tableLink.getValueAt(lgn, 1).toString().trim().matches(tableName.trim())) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 2).toString().trim().matches(variable.trim())) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 4).toString().trim().matches(codeEqu.trim())) {
+                d++;
+            }
+            String a = tableLink.getValueAt(lgn, 6).toString().trim();
+            String b = codeOrg.trim();
+            if (a.length() == b.length()) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 8).toString().trim().matches(unite.trim())) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 9).toString().trim().matches(commentaire.trim())) {
+                d++;
+            }
+            if (d == 6) {
+                JOptionPane.showMessageDialog(this, "Ce lien existe déjà à la ligne " + (lgn + 1) + "!\nIl ne peut être créé",
+                        "Correspondance : Erreur de doublons", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+
+        // Ajoute la ligne
+        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+        tm.addRow(rowObject);
+
+
+    }//GEN-LAST:event_btnLinkSetActionPerformed
+
+    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
+        // Choix d'un nom de fichier d'enregistrement
+        int result = excelFileChooserExporter.showDialog(this, "VALIDER");
+        if (result != JFileChooser.APPROVE_OPTION) {
+            Util.out("Aucun fichier n'a été définit ! Quit");
+            return;
+        }
+
+        // Vérifie que le fichier n'existe pas
+        File dir = excelFileChooserExporter.getSelectedFile();
+        String fileName = "/" + "OptiZenLink_" + DateUtil.now().toString() + ".xlsx";
+        fileName = fileName.replace(" ", "_").replace(":", "_");
+        fileName = dir.getAbsolutePath() + fileName;
+        Util.out("FileName :" + fileName);
+        File excelFile = new File(fileName);
+
+        if (excelFile.exists()) {
+            result = JOptionPane.showConfirmDialog(this,
+                    "Le fichier définit existe déjà !\nVoulez-vous l'écraser ?",
+                    "Exporter les correspondances : ecrasement fichier...",
+                    JOptionPane.OK_CANCEL_OPTION);
+            if (result == JOptionPane.OK_CANCEL_OPTION) {
+                return;
+            }
+        }
+
+        // Create a writer
+        ExcelWriter ew = new ExcelWriter();
+        ew.switchToSheet("Export");
+
+        // Write header skip col number
+        TableColumnModel tcm = tableLink.getColumnModel();
+        ArrayList<String> rowString = new ArrayList<>();
+        for (int col = 1; col < tcm.getColumnCount(); col++) {
+            rowString.add(tcm.getColumn(col).getHeaderValue().toString());
+        }
+        ew.writeRow(rowString);
+        for (int col = 1; col < tcm.getColumnCount(); col++) {
+            ew.setCellColour(1, col + 1, IndexedColors.LIGHT_BLUE);
+        }
+
+        // Write content
+        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+
+        for (int row = 0; row < tm.getRowCount(); row++) {
+            rowString = new ArrayList<>();
+            for (int col = 1; col < tm.getColumnCount(); col++) {
+                rowString.add(tm.getValueAt(row, col).toString());
+            }
+            ew.writeRow(rowString);
+        }
+
+        // Close the file
+        ew.writeAndClose(excelFile);
+
+
+    }//GEN-LAST:event_btnExportActionPerformed
+
+    private void btnImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportActionPerformed
+        // Choix d'un nom de fichier d'enregistrement
+        int result = excelFileChooserImport.showDialog(this, "VALIDER");
+        if (result != JFileChooser.APPROVE_OPTION) {
+            Util.out("Aucun fichier n'a été définit ! Quit");
+            return;
+        }
+        
+        File f = excelFileChooserImport.getSelectedFile();
+        String fileName = f.getAbsolutePath();
+        Util.out("File to read : " + fileName);
+        try {
+            ExcelReader er = new ExcelReader(fileName);
+            er.switchToSheet("Export");
+            
+            int i = 1;
+            DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+            while(!er.read(i).isEmpty()){
+                ArrayList<Object> rowObject = er.read(i);
+                rowObject.add(0, tableLink.getRowCount()+1);
+                tm.addRow(rowObject.toArray());
+                i++;
+            }
+            
+            
+            er.close();
+        } catch (IOException ex) {
+            Logger.getLogger(LinkFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnImportActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // TODO add your handling code here:
+        int result = JOptionPane.showConfirmDialog(this, "Les données non sauvées vont être perdu si vous continuer, voulez-vous sauvegarder d'abord ?",
+                "Rafraîchir : confirmer les données perdu",
+                JOptionPane.OK_CANCEL_OPTION);
+        if (result == JOptionPane.OK_CANCEL_OPTION) {
+            return;
+        }
+        clearAndLoadSavedLink();
+        JOptionPane.showMessageDialog(this,
+                "Rafraîchissement terminé !",
+                "Rafraîchir : fin", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        int result = JOptionPane.showConfirmDialog(this, "Etes-vous sûr de vouloir sauvegarder ?",
+                "Sauver : confirmer la sauvegarde",
+                JOptionPane.OK_CANCEL_OPTION);
+        if (result == JOptionPane.OK_CANCEL_OPTION) {
+            return;
+        }
+
+        try {
+            Wini ini = new Wini(new File(Settings.iniFilename));
+            // Clean previous table 
+            Object obj = Settings.read(Settings.LINK_LINK, Settings.COUNTER);
+            Integer counter = Integer.valueOf(obj == null ? "0" : obj.toString());
+            for (int count = 0; count < counter; count++) {
+                ini.remove(Settings.LINK_LINK + "\\" + count);
+            }
+
+            JTable tm = tableLink;
+            ini.put(Settings.LINK_LINK, Settings.COUNTER, tm.getRowCount());
+            for (int row = 0; row < tm.getRowCount(); row++) {
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\num");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\ztable");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\variable");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\name");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\codeEqu");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\equipement");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\codeOrg");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\organe");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\unite");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\commentaire");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\autre");
+
+                Wini.Section root = ini.get(Settings.LINK_LINK);
+                Wini.Section sec = root.lookup("" + row);
+                sec.add("num", tm.getValueAt(row, 0).toString());
+                sec.add("ztable", tm.getValueAt(row, 1).toString());
+                sec.add("variable", tm.getValueAt(row, 2).toString());
+                sec.add("name", tm.getValueAt(row, 3).toString());
+                sec.add("codeEqu", tm.getValueAt(row, 4).toString());
+                sec.add("equipement", tm.getValueAt(row, 5).toString());
+                sec.add("codeOrg", tm.getValueAt(row, 6).toString());
+                sec.add("organe", tm.getValueAt(row, 7).toString());
+                sec.add("unite", tm.getValueAt(row, 8).toString());
+                sec.add("commentaire", tm.getValueAt(row, 9).toString());
+                sec.add("autre", tm.getValueAt(row, 10).toString());
+            }
+            ini.store();
+            JOptionPane.showMessageDialog(this, "Sauvegarde terminée avec succès", "Sauvegarde", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException ex) {
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void menuItemPopupDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPopupDeleteActionPerformed
+        // TODO add your handling code here:
+        int[] rows = tableLink.getSelectedRows();
+        // Remove all the specify row
+        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+        for (int row = rows.length - 1; row >= 0; row--) {
+            tm.removeRow(rows[row]);
+        }
+
+        for (int row = 0; row < tableLink.getRowCount(); row++) {
+            tm.setValueAt(row + 1, row, 0);
+        }
+    }//GEN-LAST:event_menuItemPopupDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LinkPane;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnExport;
+    private javax.swing.JButton btnImport;
+    private javax.swing.JButton btnLinkSet;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cbFilterTableZen;
     private javax.swing.JPanel counterPane;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JFileChooser excelFileChooserExporter;
+    private javax.swing.JFileChooser excelFileChooserImport;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -463,9 +880,11 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSplitPane mainSplitPane;
+    private javax.swing.JMenuItem menuItemPopupDelete;
     private javax.swing.JPanel optiPane;
     private javax.swing.JSplitPane subSplitPaneCounter;
     private javax.swing.JTable tableLink;
+    private javax.swing.JPopupMenu tableLinkPopupMenu;
     private javax.swing.JTable tableOpti;
     private javax.swing.JTable tableZen;
     private javax.swing.JTextField tfFilterEquCode;
@@ -480,41 +899,111 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     private javax.swing.JPanel zenPane;
     // End of variables declaration//GEN-END:variables
 
-    private ArrayList<ArrayList<String>> loadCounterTableZenon() {
-        String query = "SELECT DISTINCT dbo.GEBAR_BENI_VARIABLES.\"VARIABLE\", dbo.GEBAR_BENI_VARIABLES.\"NAME\", dbo.GEBAR_BENI_VARIABLES.GUID\n"
-                + "FROM dbo.GEBAR_BENI_VARIABLES, dbo.GEBAR_BENI_05\n"
-                + "WHERE dbo.GEBAR_BENI_VARIABLES.\"VARIABLE\" = dbo.GEBAR_BENI_05.\"VARIABLE\";";
+    /**
+     * Init table zenon allow at the first time to load data to the table zenon
+     *
+     * @param variable is the name of the variable table in zenon
+     * @param data is the name of the data table in zenon
+     */
+    public void initTableZenon(String variable, String data) {
+        String query = "SELECT * FROM " + variable + " ORDER BY " + variable + ".\"NAME\"";
 
-        ArrayList<ArrayList<String>> result = new ArrayList<>();
-
-        Connection conn = DatabaseFrame.loadConnection(DatabaseModel.parse(Settings.read(Settings.CONFIG, Settings.URL_ZEN).toString()));
-
-        return null;
+        DatabaseModel dbm = DatabaseModel.parse(Settings.read(Settings.CONFIG, Settings.URL_ZEN).toString());
+        try {
+            ResultSetTableModel rstModel = new ResultSetTableModel(dbm, query);
+            tableZen.setModel(rstModel);
+            tableZen.getSelectionModel().addListSelectionListener(new RowZenListener());
+            TableColumnModel tcm = tableZen.getColumnModel();
+            tcm.getColumn(0).setMaxWidth(60);
+            tcm.getColumn(2).setMaxWidth(50);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(LinkFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public static DefaultTableModel buildTableModel(ResultSet rs)
-            throws SQLException {
+    /**
+     * Update Table Zenon is used during request over zenon table to update
+     * value
+     *
+     * @param variable is the name of the variable table in zenon
+     * @param data is the name of the data table in zenon
+     */
+    public void updateTableZenon(String variable, String data) {
+        String query = "SELECT * FROM " + variable;
+        int size = query.length();
+        query += !tfFilterVariable.getText().isEmpty() ? " WHERE " + variable + ".VARIABLE like '" + tfFilterVariable.getText() + "'" : "";
+        query += size == query.length() && !tfFilterNames.getText().isEmpty() ? " WHERE " : (!tfFilterNames.getText().isEmpty() ? " AND " : "");
+        //query += !tfFilterNames.getText().isEmpty() && size!= query.length() ? " AND " : "";
+        query += !tfFilterNames.getText().isEmpty() ? variable + ".NAME like '" + tfFilterNames.getText() + "'" : "";
+        query += " ORDER BY " + variable + ".\"NAME\"";
+        Util.out("Requested Query : " + query);
 
-        ResultSetMetaData metaData = rs.getMetaData();
+        ResultSetTableModel rstModel = (ResultSetTableModel) tableZen.getModel();
+        rstModel.setQuery(query);
+    }
 
-        // names of columns
-        Vector<String> columnNames = new Vector<String>();
-        int columnCount = metaData.getColumnCount();
-        for (int column = 1; column <= columnCount; column++) {
-            columnNames.add(metaData.getColumnName(column));
+    public void initTableOptimaint() {
+        String company = Settings.read(Settings.CONFIG, Settings.COMPANY).toString();
+        String query = "SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE "
+                + "FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE "
+                + "WHERE CPT_SOCIETE = '" + company + "'";
+
+        DatabaseModel dbm = DatabaseModel.parse(Settings.read(Settings.CONFIG, Settings.URL_OPTI).toString());
+        try {
+            ResultSetTableModel rstModel = new ResultSetTableModel(dbm, query);
+            tableOpti.setModel(rstModel);
+            tableOpti.getSelectionModel().addListSelectionListener(new RowOptiListener());
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(LinkFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updateTableOptimaint() {
+        String company = Settings.read(Settings.CONFIG, Settings.COMPANY).toString();
+        String query = "SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE "
+                + "FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE "
+                + "WHERE CPT_SOCIETE = '" + company + "'";
+
+        query += !tfFilterEquCode.getText().isEmpty() ? " AND CPT_EQUIPEMENT like '" + tfFilterEquCode.getText() + "'" : "";
+        query += !tfFilterEqui.getText().isEmpty() ? " AND EQU_DESIGNATION like '" + tfFilterEqui.getText() + "'" : "";
+        query += !tfFilterOrgCode.getText().isEmpty() ? " AND CPT_ORGANE like '" + tfFilterOrgCode.getText() + "'" : "";
+        query += !tfFilterOrg.getText().isEmpty() ? " AND ORG_DESIGNATION like '" + tfFilterOrg.getText() + "'" : "";
+        query += !tfFilterUnite.getText().isEmpty() ? " AND CPT_UNITE like '" + tfFilterUnite.getText() + "'" : "";
+
+        ResultSetTableModel rstModel = (ResultSetTableModel) tableOpti.getModel();
+        rstModel.setQuery(query);
+
+    }
+
+    public void clearAndLoadSavedLink() {
+        // Remove all the specify row
+        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+        for (int row = tm.getRowCount() - 1; row >= 0; row--) {
+            tm.removeRow(row);
         }
 
-        // data of the table
-        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-        while (rs.next()) {
-            Vector<Object> vector = new Vector<Object>();
-            for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-                vector.add(rs.getObject(columnIndex));
-            }
-            data.add(vector);
-        }
+        // Load from file
+        Object obj = Settings.read(Settings.LINK_LINK, Settings.COUNTER);
+        Integer counter = Integer.valueOf(obj == null ? "0" : obj.toString());
 
-        return new DefaultTableModel(data, columnNames);
+        for (int count = 0; count < counter; count++) {
+            String col_0 = "" + (count + 1); //Settings.read(Settings.LINK_LINK + "\\" + count, "num").toString();
+            String col_1 = Settings.read(Settings.LINK_LINK + "\\" + count, "ztable").toString();
+            String col_2 = Settings.read(Settings.LINK_LINK + "\\" + count, "variable").toString();
+            String col_3 = Settings.read(Settings.LINK_LINK + "\\" + count, "name").toString();
+            String col_4 = Settings.read(Settings.LINK_LINK + "\\" + count, "codeEqu").toString();
+            String col_5 = Settings.read(Settings.LINK_LINK + "\\" + count, "equipement").toString();
+            String col_6 = Settings.read(Settings.LINK_LINK + "\\" + count, "codeOrg").toString();
+            String col_7 = Settings.read(Settings.LINK_LINK + "\\" + count, "organe").toString();
+            String col_8 = Settings.read(Settings.LINK_LINK + "\\" + count, "unite").toString();
+            String col_9 = Settings.read(Settings.LINK_LINK + "\\" + count, "commentaire").toString();
+            String col_10 = Settings.read(Settings.LINK_LINK + "\\" + count, "autre").toString();
+
+            Object rowObject[] = new Object[]{col_0, col_1, col_2, col_3, col_4, col_5, col_6, col_7, col_8, col_9, col_10};
+
+            tm.addRow(rowObject);
+        }
+        tableLink.setModel(tm);
 
     }
 
@@ -566,4 +1055,45 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 .getName()).getResourceBundleName() + " : internalFrameDeactivated() >> ";
         System.out.println(methodName + "internalFrameDeactivated !");
     }
+
+    /**
+     * Convenient class to identify when a row is selected
+     */
+    private class RowZenListener implements ListSelectionListener {
+
+        @Override
+        public void valueChanged(ListSelectionEvent event) {
+            if (event.getValueIsAdjusting()) {
+                return;
+            }
+//            Util.out("Previous index : " + event.getFirstIndex()
+//                    + " New index : " + event.getLastIndex());
+            ResultSetTableModel tm = (ResultSetTableModel) tableZen.getModel();
+            selectedRowZenon = tm.getSelectedRow(tableZen.getSelectedRow());
+            tfSetZen.setText(selectedRowZenon.get(0)
+                    + " | " + selectedRowZenon.get(1));
+        }
+    }
+
+    private class RowOptiListener implements ListSelectionListener {
+
+        @Override
+        public void valueChanged(ListSelectionEvent event) {
+            if (event.getValueIsAdjusting()) {
+                return;
+            }
+//            Util.out("Previous index : " + event.getFirstIndex()
+//                    + " New index : " + event.getLastIndex());
+            ResultSetTableModel tm = (ResultSetTableModel) tableOpti.getModel();
+            selectedRowOpti = tm.getSelectedRow(tableOpti.getSelectedRow());
+            tfSetOpti.setText(selectedRowOpti.get(0)
+                    + " | " + selectedRowOpti.get(1)
+                    + " | " + selectedRowOpti.get(2)
+                    + " | " + selectedRowOpti.get(3)
+                    + " | " + selectedRowOpti.get(4)
+                    + " | " + selectedRowOpti.get(5)
+                    + " | " + selectedRowOpti.get(6));
+        }
+    }
+
 }

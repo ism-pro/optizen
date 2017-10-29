@@ -35,7 +35,7 @@ public class Util {
     /**
      * Nom du fichier de sortie de console
      */
-    public static final String ISLogFilenamePath = "ISLog.txt";
+    public static final String ISLogFilenamePath = "OptiZenLog.txt";
 
     //
     //

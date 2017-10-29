@@ -13,6 +13,9 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
 
@@ -29,7 +32,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
      */
     private ConfigFrame configFrame = null;
     /**
-     * Link Frame contains all link between zenon and optimaint and allow to 
+     * Link Frame contains all link between zenon and optimaint and allow to
      * create and remove them
      */
     private LinkFrame linkFrame = null;
@@ -61,6 +64,12 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         menuItemConfigurations = new javax.swing.JMenuItem();
         menuItemLinks = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
+        themeMenu = new javax.swing.JMenu();
+        menuItemThemeMetal = new javax.swing.JMenuItem();
+        menuItemThemeNimbus = new javax.swing.JMenuItem();
+        menuItemThemeCDEMotif = new javax.swing.JMenuItem();
+        menuItemThemeMetal3 = new javax.swing.JMenuItem();
+        menuItemThemWindowsClassic = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -70,9 +79,9 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/img/ism.png")).getImage());
         setName("MainWindowFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(640, 480));
-        setSize(new java.awt.Dimension(640, 480));
+        setSize(new java.awt.Dimension(1024, 680));
 
+        desktopPane.setBackground(new java.awt.Color(153, 153, 153));
         desktopPane.setLayout(new java.awt.BorderLayout());
 
         jToolBar1.setFloatable(false);
@@ -153,6 +162,54 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
 
         menuBar.add(editMenu);
 
+        themeMenu.setText("Thèmes");
+
+        menuItemThemeMetal.setMnemonic('t');
+        menuItemThemeMetal.setText("Metal");
+        menuItemThemeMetal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemThemeMetalActionPerformed(evt);
+            }
+        });
+        themeMenu.add(menuItemThemeMetal);
+
+        menuItemThemeNimbus.setMnemonic('t');
+        menuItemThemeNimbus.setText("Nimbus");
+        menuItemThemeNimbus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemThemeNimbusActionPerformed(evt);
+            }
+        });
+        themeMenu.add(menuItemThemeNimbus);
+
+        menuItemThemeCDEMotif.setMnemonic('t');
+        menuItemThemeCDEMotif.setText("CDE/Motif");
+        menuItemThemeCDEMotif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemThemeCDEMotifActionPerformed(evt);
+            }
+        });
+        themeMenu.add(menuItemThemeCDEMotif);
+
+        menuItemThemeMetal3.setMnemonic('t');
+        menuItemThemeMetal3.setText("Windows");
+        menuItemThemeMetal3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemThemeMetal3ActionPerformed(evt);
+            }
+        });
+        themeMenu.add(menuItemThemeMetal3);
+
+        menuItemThemWindowsClassic.setMnemonic('t');
+        menuItemThemWindowsClassic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemThemWindowsClassicActionPerformed(evt);
+            }
+        });
+        themeMenu.add(menuItemThemWindowsClassic);
+
+        menuBar.add(themeMenu);
+
         helpMenu.setMnemonic('h');
         helpMenu.setText(bundle.getString("MenuHelp")); // NOI18N
 
@@ -173,15 +230,15 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE))
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE))
         );
 
         pack();
@@ -195,9 +252,9 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         if (ConfigFrame.openFrameCount == 0) {
             configFrame = new ConfigFrame();
             desktopPane.add(configFrame);
-        }else{
+        } else {
             revalidate();
-                repaint();
+            repaint();
         }
         configFrame.setVisible(true);
         try {
@@ -223,9 +280,9 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         if (LinkFrame.openFrameCount == 0) {
             linkFrame = new LinkFrame();
             desktopPane.add(linkFrame);
-        }else{
+        } else {
             revalidate();
-                repaint();
+            repaint();
         }
         linkFrame.setVisible(true);
         try {
@@ -235,6 +292,56 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_menuItemLinksActionPerformed
+
+    private void menuItemThemeMetalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemThemeMetalActionPerformed
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(this);
+            pack();
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Util.out(e.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_menuItemThemeMetalActionPerformed
+
+    private void menuItemThemeNimbusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemThemeNimbusActionPerformed
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(this);
+            pack();
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Util.out(e.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_menuItemThemeNimbusActionPerformed
+
+    private void menuItemThemeCDEMotifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemThemeCDEMotifActionPerformed
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(this);
+            pack();
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Util.out(e.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_menuItemThemeCDEMotifActionPerformed
+
+    private void menuItemThemeMetal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemThemeMetal3ActionPerformed
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(this);
+            pack();
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Util.out(e.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_menuItemThemeMetal3ActionPerformed
+
+    private void menuItemThemWindowsClassicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemThemWindowsClassicActionPerformed
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(this);
+            pack();
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Util.out(e.getLocalizedMessage());
+        }
+    }//GEN-LAST:event_menuItemThemWindowsClassicActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,18 +354,13 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                //Util.out("Look and fell " + info.getName() + " use class : " + info.getClassName());
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+                    //break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -271,14 +373,13 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
                 if (Settings.createIniFile()) {
                     Settings.writeDefaultClientSetup();
                 }
-                
+
                 MainWindow w = new MainWindow();
                 w.setVisible(true);
                 w.addWindowListener(w);
                 w.addWindowFocusListener(w);
                 w.addWindowStateListener(w);
-                
-                
+
                 MainWindow iscreen = new MainWindow();
                 // Affichage plein écrant
                 Util.out("OptiZen - End run...");
@@ -298,9 +399,15 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuItemConfigurations;
     private javax.swing.JMenuItem menuItemLinks;
+    private javax.swing.JMenuItem menuItemThemWindowsClassic;
+    private javax.swing.JMenuItem menuItemThemeCDEMotif;
+    private javax.swing.JMenuItem menuItemThemeMetal;
+    private javax.swing.JMenuItem menuItemThemeMetal3;
+    private javax.swing.JMenuItem menuItemThemeNimbus;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JButton tbBtnConfigurations;
     private javax.swing.JButton tbBtnLinks;
+    private javax.swing.JMenu themeMenu;
     // End of variables declaration//GEN-END:variables
 
     @Override
