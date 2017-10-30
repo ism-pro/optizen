@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
+import javax.swing.table.DefaultTableModel;
 import org.ini4j.Wini;
 import org.optizen.listeners.DatabaseFrameListener;
 import org.optizen.model.DatabaseModel;
@@ -86,6 +87,8 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tableLinkPopupMenu = new javax.swing.JPopupMenu();
+        menuItemPopupDelete = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -110,13 +113,23 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         btnCancelConfig = new javax.swing.JButton();
         btnSaveConfig = new javax.swing.JButton();
 
+        menuItemPopupDelete.setIcon(Ico.i16("/img/std/Delete.png")
+        );
+        menuItemPopupDelete.setText("Supprimer la sélection");
+        menuItemPopupDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPopupDeleteActionPerformed(evt);
+            }
+        });
+        tableLinkPopupMenu.add(menuItemPopupDelete);
+
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
         setTitle(bundle.getString("ConfigFrameTitle")); // NOI18N
         setToolTipText("Fenêtre des configurations");
-        setFrameIcon(Ico.i16("/img/hr/company.png"));
+        setFrameIcon(Ico.i16("/img/oz/config.png"));
         setPreferredSize(new java.awt.Dimension(800, 480));
         try {
             setSelected(true);
@@ -180,8 +193,8 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText(bundle.getString("ConfigFrameField_dbTableVariable")); // NOI18N
 
-        btnAddLink.setIcon(Ico.i32("/img/std/Down.png"));
-        btnAddLink.setToolTipText(bundle.getString("BtnField_Link")); // NOI18N
+        btnAddLink.setIcon(Ico.i32("/img/oz/db_update.png"));
+        btnAddLink.setToolTipText("Lier la table variable à celle des données");
         btnAddLink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddLinkActionPerformed(evt);
@@ -191,7 +204,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText(bundle.getString("ConfigFrameField_dbTableData")); // NOI18N
 
-        btnUpdateLink.setIcon(Ico.i32("/img/std/Refresh.png"));
+        btnUpdateLink.setIcon(Ico.i32("/img/oz/refresh.png"));
         btnUpdateLink.setToolTipText(bundle.getString("BtnField_Refresh")); // NOI18N
         btnUpdateLink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,8 +230,8 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         });
         jScrollPane2.setViewportView(tableLink);
 
-        btnDelLink.setIcon(Ico.i32("/img/std/Up.png"));
-        btnDelLink.setToolTipText(bundle.getString("BtnField_Link")); // NOI18N
+        btnDelLink.setIcon(Ico.i32("/img/oz/db_comit.png"));
+        btnDelLink.setToolTipText("Supprimer le lien sélectionner dans la table");
         btnDelLink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDelLinkActionPerformed(evt);
@@ -299,6 +312,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
 
         jTabbedPane1.addTab(bundle.getString("ConfigFrameField_database"), jPanel2); // NOI18N
 
+        btnCancelConfig.setIcon(Ico.i32("/img/oz/cancel.png"));
         btnCancelConfig.setText(bundle.getString("BtnField_Cancel")); // NOI18N
         btnCancelConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,6 +320,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
             }
         });
 
+        btnSaveConfig.setIcon(Ico.i32("/img/oz/save.png"));
         btnSaveConfig.setText(bundle.getString("BtnField_Save")); // NOI18N
         btnSaveConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -446,6 +461,20 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         setVisible(false);
     }//GEN-LAST:event_btnCancelConfigActionPerformed
 
+    private void menuItemPopupDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPopupDeleteActionPerformed
+        // TODO add your handling code here:
+        int[] rows = tableLink.getSelectedRows();
+        // Remove all the specify row
+        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+        for (int row = rows.length - 1; row >= 0; row--) {
+            tm.removeRow(rows[row]);
+        }
+
+        for (int row = 0; row < tableLink.getRowCount(); row++) {
+            tm.setValueAt(row + 1, row, 0);
+        }
+    }//GEN-LAST:event_menuItemPopupDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddLink;
@@ -467,9 +496,11 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuItem menuItemPopupDelete;
     private javax.swing.JTextField schemaOpti;
     private javax.swing.JTextField schemaZen;
     private javax.swing.JTable tableLink;
+    private javax.swing.JPopupMenu tableLinkPopupMenu;
     private javax.swing.JTextField tfCompany;
     // End of variables declaration//GEN-END:variables
 

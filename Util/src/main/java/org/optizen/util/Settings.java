@@ -101,13 +101,37 @@ public class Settings {
     public static Object read(String section, String param) {
         String methodName = Settings.class.getName() + " : read(section, param, value) >> ";
         try {
-            Util.out(methodName + "Tentative de lecture de la section (" + section + ") paramètre " + param + "...");
+            //Util.out(methodName + "Tentative de lecture de la section (" + section + ") paramètre " + param + "...");
             Wini ini = new Wini(new File(iniFilename));
             Object obj = ini.get(section, param);
-            Util.out(methodName + "...Lecture réussie");
+            //Util.out(methodName + "...Lecture réussie");
             return obj;
         } catch (IOException ex) {
-            Util.out(methodName + "...Erreur suivante est survenue : " + ex.getMessage());
+            Util.out(methodName + "...Erreur suivante est survenue pour ("+ section + ", " + param + ") : " + ex.getMessage());
+            return null;
+        }
+    }
+    
+    public static Object[] readLink(Integer row){
+        String methodName = Settings.class.getName() + " : read(section, param, value) >> ";
+        try {
+            Wini ini = new Wini(new File(iniFilename));
+            ArrayList<Object> obj = new ArrayList<>();
+            obj.add(row + 1);
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "ztable"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "variable"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "name"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "codeEqu"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "equipement"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "codeOrg"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "organe"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "unite"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "commentaire"));
+            obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "autre"));
+
+            return obj.toArray();
+        } catch (IOException ex) {
+            Util.out(methodName + "...Erreur suivante est survenue pour lecture du lien ligne " + row + " : " + ex.getMessage());
             return null;
         }
     }

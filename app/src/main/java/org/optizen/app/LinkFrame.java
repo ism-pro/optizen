@@ -150,18 +150,17 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         excelFileChooserImport.setDialogTitle("Choix du document à importer...");
         excelFileChooserImport.setFileFilter(new ExcelFilter());
 
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Correspondance des données");
         setToolTipText("Cette fenêtre vous permet d'établir des liaisons entre les données");
-        setFrameIcon(Ico.i16("/img/admin/smq_nc_actions.png"));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFrameIcon(Ico.i16("/img/oz/link.png"));
         setPreferredSize(new java.awt.Dimension(1024, 680));
-        try {
-            setSelected(true);
-        } catch (java.beans.PropertyVetoException e1) {
-            e1.printStackTrace();
-        }
+        setRequestFocusEnabled(false);
+        setVerifyInputWhenFocusTarget(false);
         setVisible(true);
 
         mainSplitPane.setDividerLocation(300);
@@ -423,13 +422,18 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
             tableLink.getColumnModel().getColumn(0).setPreferredWidth(60);
             tableLink.getColumnModel().getColumn(0).setMaxWidth(60);
             tableLink.getColumnModel().getColumn(1).setPreferredWidth(80);
-            tableLink.getColumnModel().getColumn(1).setMaxWidth(120);
             tableLink.getColumnModel().getColumn(2).setPreferredWidth(65);
             tableLink.getColumnModel().getColumn(2).setMaxWidth(65);
             tableLink.getColumnModel().getColumn(3).setPreferredWidth(200);
             tableLink.getColumnModel().getColumn(4).setPreferredWidth(80);
             tableLink.getColumnModel().getColumn(4).setMaxWidth(90);
             tableLink.getColumnModel().getColumn(5).setPreferredWidth(200);
+            tableLink.getColumnModel().getColumn(6).setPreferredWidth(80);
+            tableLink.getColumnModel().getColumn(6).setMaxWidth(90);
+            tableLink.getColumnModel().getColumn(7).setPreferredWidth(65);
+            tableLink.getColumnModel().getColumn(7).setMaxWidth(65);
+            tableLink.getColumnModel().getColumn(8).setPreferredWidth(65);
+            tableLink.getColumnModel().getColumn(8).setMaxWidth(65);
             tableLink.getColumnModel().getColumn(10).setMaxWidth(100);
         }
 
@@ -450,7 +454,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         jPanel4.setPreferredSize(new java.awt.Dimension(949, 46));
         jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 5, 2));
 
-        btnExport.setIcon(Ico.i32("/img/std/ExtXLSX.png"));
+        btnExport.setIcon(Ico.i32("/img/oz/xlsx_export.png"));
         btnExport.setText("EXPORTER");
         btnExport.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnExport.setMaximumSize(null);
@@ -463,7 +467,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         });
         jPanel4.add(btnExport);
 
-        btnImport.setIcon(Ico.i32("/img/std/ExtXLSX.png"));
+        btnImport.setIcon(Ico.i32("/img/oz/xlsx_import.png"));
         btnImport.setText("IMPORTER");
         btnImport.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnImport.setMaximumSize(null);
@@ -480,8 +484,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         jSeparator3.setPreferredSize(new java.awt.Dimension(3, 36));
         jPanel4.add(jSeparator3);
 
-        btnLinkSet.setIcon(Ico.i32("/img/std/Connect.png")
-        );
+        btnLinkSet.setIcon(Ico.i32("/img/oz/link.png"));
         btnLinkSet.setText("LIER");
         btnLinkSet.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnLinkSet.setMaximumSize(null);
@@ -494,7 +497,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         });
         jPanel4.add(btnLinkSet);
 
-        btnRefresh.setIcon(Ico.i32("/img/std/Refresh.png"));
+        btnRefresh.setIcon(Ico.i32("/img/oz/refresh.png"));
         btnRefresh.setText("RAFRAICHIR");
         btnRefresh.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnRefresh.setMaximumSize(new java.awt.Dimension(3200, 3200));
@@ -511,7 +514,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         jSeparator2.setPreferredSize(new java.awt.Dimension(3, 36));
         jPanel4.add(jSeparator2);
 
-        btnSave.setIcon(Ico.i32("/img/std/Save.png"));
+        btnSave.setIcon(Ico.i32("/img/oz/save.png"));
         btnSave.setText("SAUVER");
         btnSave.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnSave.setMaximumSize(new java.awt.Dimension(3200, 3200));
@@ -524,7 +527,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         });
         jPanel4.add(btnSave);
 
-        btnCancel.setIcon(Ico.i32("/img/std/Cancel.png"));
+        btnCancel.setIcon(Ico.i32("/img/oz/cancel.png"));
         btnCancel.setText("ANNULER");
         btnCancel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnCancel.setMaximumSize(null);
@@ -738,24 +741,25 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
             Util.out("Aucun fichier n'a été définit ! Quit");
             return;
         }
-        
+
         File f = excelFileChooserImport.getSelectedFile();
         String fileName = f.getAbsolutePath();
         Util.out("File to read : " + fileName);
         try {
             ExcelReader er = new ExcelReader(fileName);
             er.switchToSheet("Export");
-            
+
             int i = 1;
             DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
-            while(!er.read(i).isEmpty()){
+            while (!er.read(i).isEmpty()) {
                 ArrayList<Object> rowObject = er.read(i);
-                rowObject.add(0, tableLink.getRowCount()+1);
-                tm.addRow(rowObject.toArray());
+                rowObject.add(0, tableLink.getRowCount() + 1);
+                if (!isRowExist(rowObject)) {
+                    tm.addRow(rowObject.toArray());
+                }
                 i++;
             }
-            
-            
+
             er.close();
         } catch (IOException ex) {
             Logger.getLogger(LinkFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -975,6 +979,9 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
 
     }
 
+    /**
+     * Allow to clear table link and then reload it from ini file.
+     */
     public void clearAndLoadSavedLink() {
         // Remove all the specify row
         DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
@@ -987,21 +994,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         Integer counter = Integer.valueOf(obj == null ? "0" : obj.toString());
 
         for (int count = 0; count < counter; count++) {
-            String col_0 = "" + (count + 1); //Settings.read(Settings.LINK_LINK + "\\" + count, "num").toString();
-            String col_1 = Settings.read(Settings.LINK_LINK + "\\" + count, "ztable").toString();
-            String col_2 = Settings.read(Settings.LINK_LINK + "\\" + count, "variable").toString();
-            String col_3 = Settings.read(Settings.LINK_LINK + "\\" + count, "name").toString();
-            String col_4 = Settings.read(Settings.LINK_LINK + "\\" + count, "codeEqu").toString();
-            String col_5 = Settings.read(Settings.LINK_LINK + "\\" + count, "equipement").toString();
-            String col_6 = Settings.read(Settings.LINK_LINK + "\\" + count, "codeOrg").toString();
-            String col_7 = Settings.read(Settings.LINK_LINK + "\\" + count, "organe").toString();
-            String col_8 = Settings.read(Settings.LINK_LINK + "\\" + count, "unite").toString();
-            String col_9 = Settings.read(Settings.LINK_LINK + "\\" + count, "commentaire").toString();
-            String col_10 = Settings.read(Settings.LINK_LINK + "\\" + count, "autre").toString();
-
-            Object rowObject[] = new Object[]{col_0, col_1, col_2, col_3, col_4, col_5, col_6, col_7, col_8, col_9, col_10};
-
-            tm.addRow(rowObject);
+            tm.addRow(Settings.readLink(count));
         }
         tableLink.setModel(tm);
 
@@ -1016,9 +1009,9 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
 
     @Override
     public void internalFrameClosing(InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
-                .getName()).getResourceBundleName() + " : internalFrameClosing() >> ";
-        System.out.println(methodName + "internalFrameClosing !");
+        String methodName = getClass().getSimpleName() + " : internalFrameClosing() >> ";
+        Util.out(methodName + "internal Frame Is Closing !");
+        
     }
 
     @Override
@@ -1054,6 +1047,53 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
                 .getName()).getResourceBundleName() + " : internalFrameDeactivated() >> ";
         System.out.println(methodName + "internalFrameDeactivated !");
+    }
+
+    /**
+     * Is row Exist allow to see if a defined row already define in the table
+     * list The line number is not compared.
+     *
+     * @param rowObject
+     * @return
+     */
+    public Boolean isRowExist(ArrayList<Object> rowObject) {
+
+        String ztable = rowObject.get(1).toString().trim();
+        String variable = rowObject.get(2).toString().trim();
+        String codeEqu = rowObject.get(4).toString().trim();
+        String codeOrg = rowObject.get(6).toString().trim();
+        String unite = rowObject.get(8).toString().trim();
+        String commentaire = rowObject.get(9).toString().trim();
+
+        // Vérifie que ce n'est pas un doublons 
+        for (int lgn = 0; lgn < tableLink.getRowCount(); lgn++) {
+            int d = 0;
+
+            if (tableLink.getValueAt(lgn, 1).toString().trim().matches(ztable)) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 2).toString().trim().matches(variable)) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 4).toString().trim().matches(codeEqu)) {
+                d++;
+            }
+            String a = tableLink.getValueAt(lgn, 6).toString().trim();
+            String b = codeOrg;
+            if (a.length() == b.length()) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 8).toString().trim().matches(unite)) {
+                d++;
+            }
+            if (tableLink.getValueAt(lgn, 9).toString().trim().matches(commentaire)) {
+                d++;
+            }
+            if (d == 6) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

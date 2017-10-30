@@ -41,7 +41,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuItemConfigurations">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Ico.i16(&quot;/img/hr/company.png&quot;)" type="code"/>
+                  <Connection code="Ico.i16(&quot;/img/oz/config.png&quot;)" type="code"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="116"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
@@ -55,7 +55,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuItemLinks">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Ico.i16(&quot;/img/std/Tree.png&quot;)&#xd;&#xa;" type="code"/>
+                  <Connection code="Ico.i16(&quot;/img/oz/link.png&quot;)&#xd;&#xa;" type="code"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="121"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
@@ -66,10 +66,10 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemLinksActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="pasteMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemTransfert">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Ico.i16(&quot;/img/std/Refresh.png&quot;)&#xd;&#xa;" type="code"/>
+                  <Connection code="Ico.i16(&quot;/img/oz/transfer.png&quot;)" type="code"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="112"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
@@ -123,6 +123,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuItemThemWindowsClassic">
               <Properties>
                 <Property name="mnemonic" type="int" value="116"/>
+                <Property name="text" type="java.lang.String" value="Windows Classic"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemThemWindowsClassicActionPerformed"/>
@@ -169,7 +170,7 @@
       <Connection code="JFrame.MAXIMIZED_BOTH" type="code"/>
     </Property>
     <Property name="iconImage" type="java.awt.Image" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-      <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/img/ism.png&quot;)).getImage()" type="code"/>
+      <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/img/optizen.png&quot;)).getImage()" type="code"/>
     </Property>
     <Property name="name" type="java.lang.String" value="MainWindowFrame" noResource="true"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -231,7 +232,7 @@
         <Component class="javax.swing.JButton" name="tbBtnConfigurations">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="Ico.i48(&quot;/img/hr/company.png&quot;)" type="code"/>
+              <Connection code="Ico.i48(&quot;/img/oz/config.png&quot;)" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Configurations"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -245,7 +246,7 @@
         <Component class="javax.swing.JButton" name="tbBtnLinks">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="Ico.i48(&quot;/img/admin/smq_nc_actions.png&quot;)" type="code"/>
+              <Connection code="Ico.i48(&quot;/img/oz/link.png&quot;)" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Correspondance"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -254,6 +255,20 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tbBtnLinksActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="tbBtnLinks1">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="Ico.i48(&quot;/img/oz/transfer.png&quot;)" type="code"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Transfert"/>
+            <Property name="focusable" type="boolean" value="false"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tbBtnLinks1ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

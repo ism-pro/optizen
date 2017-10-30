@@ -50,13 +50,15 @@ public class ExcelReader {
         XSSFRow rowAt = sheet.getRow(row);
         return rowAt.getCell(col).getStringCellValue();
     }
-    
-    public ArrayList<Object> read(int row){
+
+    public ArrayList<Object> read(int row) {
         XSSFSheet sheet = workBook.getSheetAt(0); //workBook.getSheet(currentSheet);
         XSSFRow rowAt = sheet.getRow(row);
         ArrayList<Object> rowObject = new ArrayList<>();
-        for(int i = 0; i  < rowAt.getLastCellNum(); i++){
-            rowObject.add(rowAt.getCell(i).getStringCellValue());
+        if (rowAt != null) {
+            for (int i = 0; i < rowAt.getLastCellNum(); i++) {
+                rowObject.add(rowAt.getCell(i).getStringCellValue());
+            }
         }
         return rowObject;
     }

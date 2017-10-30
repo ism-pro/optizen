@@ -10,12 +10,16 @@ import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowStateListener;
 import java.beans.PropertyVetoException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
 
@@ -25,7 +29,7 @@ import org.optizen.util.Util;
  */
 public class MainWindow extends javax.swing.JFrame implements WindowListener,
         WindowFocusListener,
-        WindowStateListener {
+        WindowStateListener, InternalFrameListener {
 
     /**
      * Configuration Frame contains all configuration for alication.
@@ -36,6 +40,12 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
      * create and remove them
      */
     private LinkFrame linkFrame = null;
+
+    private ArrayList<InternalFrameListener> internalFrameListeners = new ArrayList<>();
+
+    public void addListener(InternalFrameListener listener) {
+        internalFrameListeners.add(listener);
+    }
 
     /**
      * Creates new form MainWindow
@@ -57,13 +67,14 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         jToolBar1 = new javax.swing.JToolBar();
         tbBtnConfigurations = new javax.swing.JButton();
         tbBtnLinks = new javax.swing.JButton();
+        tbBtnLinks1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         menuItemConfigurations = new javax.swing.JMenuItem();
         menuItemLinks = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
+        menuItemTransfert = new javax.swing.JMenuItem();
         themeMenu = new javax.swing.JMenu();
         menuItemThemeMetal = new javax.swing.JMenuItem();
         menuItemThemeNimbus = new javax.swing.JMenuItem();
@@ -77,7 +88,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OptiZen");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/img/ism.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/img/optizen.png")).getImage());
         setName("MainWindowFrame"); // NOI18N
         setSize(new java.awt.Dimension(1024, 680));
 
@@ -87,7 +98,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
-        tbBtnConfigurations.setIcon(Ico.i48("/img/hr/company.png"));
+        tbBtnConfigurations.setIcon(Ico.i48("/img/oz/config.png"));
         tbBtnConfigurations.setText("Configurations");
         tbBtnConfigurations.setFocusable(false);
         tbBtnConfigurations.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -99,7 +110,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         });
         jToolBar1.add(tbBtnConfigurations);
 
-        tbBtnLinks.setIcon(Ico.i48("/img/admin/smq_nc_actions.png"));
+        tbBtnLinks.setIcon(Ico.i48("/img/oz/link.png"));
         tbBtnLinks.setText("Correspondance");
         tbBtnLinks.setFocusable(false);
         tbBtnLinks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -110,6 +121,18 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
             }
         });
         jToolBar1.add(tbBtnLinks);
+
+        tbBtnLinks1.setIcon(Ico.i48("/img/oz/transfer.png"));
+        tbBtnLinks1.setText("Transfert");
+        tbBtnLinks1.setFocusable(false);
+        tbBtnLinks1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbBtnLinks1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        tbBtnLinks1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbBtnLinks1ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(tbBtnLinks1);
 
         fileMenu.setMnemonic('f');
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
@@ -133,7 +156,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         editMenu.setMnemonic('e');
         editMenu.setText(bundle.getString("MenuEdit")); // NOI18N
 
-        menuItemConfigurations.setIcon(Ico.i16("/img/hr/company.png"));
+        menuItemConfigurations.setIcon(Ico.i16("/img/oz/config.png"));
         menuItemConfigurations.setMnemonic('t');
         menuItemConfigurations.setText(bundle.getString("MenuEditSetup")); // NOI18N
         menuItemConfigurations.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +166,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         });
         editMenu.add(menuItemConfigurations);
 
-        menuItemLinks.setIcon(Ico.i16("/img/std/Tree.png")
+        menuItemLinks.setIcon(Ico.i16("/img/oz/link.png")
         );
         menuItemLinks.setMnemonic('y');
         menuItemLinks.setText(bundle.getString("MenuEditLink")); // NOI18N
@@ -154,11 +177,10 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         });
         editMenu.add(menuItemLinks);
 
-        pasteMenuItem.setIcon(Ico.i16("/img/std/Refresh.png")
-        );
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText(bundle.getString("MenuEditTransfert")); // NOI18N
-        editMenu.add(pasteMenuItem);
+        menuItemTransfert.setIcon(Ico.i16("/img/oz/transfer.png"));
+        menuItemTransfert.setMnemonic('p');
+        menuItemTransfert.setText(bundle.getString("MenuEditTransfert")); // NOI18N
+        editMenu.add(menuItemTransfert);
 
         menuBar.add(editMenu);
 
@@ -201,6 +223,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         themeMenu.add(menuItemThemeMetal3);
 
         menuItemThemWindowsClassic.setMnemonic('t');
+        menuItemThemWindowsClassic.setText("Windows Classic");
         menuItemThemWindowsClassic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemThemWindowsClassicActionPerformed(evt);
@@ -258,7 +281,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         }
         configFrame.setVisible(true);
         try {
-            configFrame.setMaximum(true);
+            //configFrame.setMaximum(true);
             configFrame.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
@@ -280,13 +303,14 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         if (LinkFrame.openFrameCount == 0) {
             linkFrame = new LinkFrame();
             desktopPane.add(linkFrame);
+            internalFrameListeners.add(linkFrame);
         } else {
             revalidate();
             repaint();
         }
         linkFrame.setVisible(true);
         try {
-            linkFrame.setMaximum(true);
+            //linkFrame.setMaximum(true);
             linkFrame.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
@@ -343,6 +367,10 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         }
     }//GEN-LAST:event_menuItemThemWindowsClassicActionPerformed
 
+    private void tbBtnLinks1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbBtnLinks1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbBtnLinks1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -355,7 +383,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 //Util.out("Look and fell " + info.getName() + " use class : " + info.getClassName());
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     //break;
                 }
@@ -379,8 +407,6 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
                 w.addWindowListener(w);
                 w.addWindowFocusListener(w);
                 w.addWindowStateListener(w);
-
-                MainWindow iscreen = new MainWindow();
                 // Affichage plein écrant
                 Util.out("OptiZen - End run...");
             }
@@ -404,9 +430,10 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     private javax.swing.JMenuItem menuItemThemeMetal;
     private javax.swing.JMenuItem menuItemThemeMetal3;
     private javax.swing.JMenuItem menuItemThemeNimbus;
-    private javax.swing.JMenuItem pasteMenuItem;
+    private javax.swing.JMenuItem menuItemTransfert;
     private javax.swing.JButton tbBtnConfigurations;
     private javax.swing.JButton tbBtnLinks;
+    private javax.swing.JButton tbBtnLinks1;
     private javax.swing.JMenu themeMenu;
     // End of variables declaration//GEN-END:variables
 
@@ -468,6 +495,50 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     public void windowStateChanged(WindowEvent e) {
         String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowStateChanged() >> ";
         System.out.println(methodName + "windowStateChanged !");
+    }
+
+    @Override
+    public void internalFrameOpened(InternalFrameEvent e) {
+        System.out.println("internalFrameOpened");
+    }
+
+    @Override
+    public void internalFrameClosing(InternalFrameEvent e) {
+        System.out.println("internalFrameClosing");
+        JInternalFrame iframe = e.getInternalFrame();
+        if (iframe instanceof LinkFrame) {
+            LinkFrame.openFrameCount--;
+            linkFrame = null;
+        } else if (iframe instanceof ConfigFrame) {
+            ConfigFrame.openFrameCount--;
+            configFrame = null;
+        }
+
+    }
+
+    @Override
+    public void internalFrameClosed(InternalFrameEvent e) {
+        System.out.println("internalFrameClosed");
+    }
+
+    @Override
+    public void internalFrameIconified(InternalFrameEvent e) {
+        System.out.println("internalFrameIconified");
+    }
+
+    @Override
+    public void internalFrameDeiconified(InternalFrameEvent e) {
+        System.out.println("internalFrameDeiconified");
+    }
+
+    @Override
+    public void internalFrameActivated(InternalFrameEvent e) {
+        System.out.println("internalFrameActivated");
+    }
+
+    @Override
+    public void internalFrameDeactivated(InternalFrameEvent e) {
+        System.out.println("internalFrameDeactivated");
     }
 
 }

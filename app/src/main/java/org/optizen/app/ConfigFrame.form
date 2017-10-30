@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPopupMenu" name="tableLinkPopupMenu">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <MenuItem class="javax.swing.JMenuItem" name="menuItemPopupDelete">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="Ico.i16(&quot;/img/std/Delete.png&quot;)&#xd;&#xa;" type="code"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Supprimer la s&#xe9;lection"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemPopupDeleteActionPerformed"/>
+          </Events>
+        </MenuItem>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="maximizable" type="boolean" value="true"/>
@@ -10,7 +31,7 @@
     </Property>
     <Property name="toolTipText" type="java.lang.String" value="Fen&#xea;tre des configurations"/>
     <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-      <Connection code="Ico.i16(&quot;/img/hr/company.png&quot;)" type="code"/>
+      <Connection code="Ico.i16(&quot;/img/oz/config.png&quot;)" type="code"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[800, 480]"/>
@@ -294,11 +315,9 @@
             <Component class="javax.swing.JButton" name="btnAddLink">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Ico.i32(&quot;/img/std/Down.png&quot;)" type="code"/>
+                  <Connection code="Ico.i32(&quot;/img/oz/db_update.png&quot;)" type="code"/>
                 </Property>
-                <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="bundles/Fr_fr.properties" key="BtnField_Link" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
-                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Lier la table variable &#xe0; celle des donn&#xe9;es"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddLinkActionPerformed"/>
@@ -325,7 +344,7 @@
             <Component class="javax.swing.JButton" name="btnUpdateLink">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Ico.i32(&quot;/img/std/Refresh.png&quot;)" type="code"/>
+                  <Connection code="Ico.i32(&quot;/img/oz/refresh.png&quot;)" type="code"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                   <ResourceString bundle="bundles/Fr_fr.properties" key="BtnField_Refresh" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
@@ -380,11 +399,9 @@
             <Component class="javax.swing.JButton" name="btnDelLink">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Ico.i32(&quot;/img/std/Up.png&quot;)" type="code"/>
+                  <Connection code="Ico.i32(&quot;/img/oz/db_comit.png&quot;)" type="code"/>
                 </Property>
-                <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="bundles/Fr_fr.properties" key="BtnField_Link" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
-                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Supprimer le lien s&#xe9;lectionner dans la table"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDelLinkActionPerformed"/>
@@ -396,6 +413,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnCancelConfig">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Ico.i32(&quot;/img/oz/cancel.png&quot;)" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
           <ResourceString bundle="bundles/Fr_fr.properties" key="BtnField_Cancel" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
@@ -406,6 +426,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSaveConfig">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Ico.i32(&quot;/img/oz/save.png&quot;)" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
           <ResourceString bundle="bundles/Fr_fr.properties" key="BtnField_Save" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>

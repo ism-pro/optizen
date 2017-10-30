@@ -14,7 +14,7 @@ import org.optizen.util.Util;
  *
  * @author r.hendrick
  */
-public class InternalFrameEvent implements InternalFrameListener {
+public interface InternalFrameEvent {
 
     // /////////////////////////////////////////////////////////////////////////
     //
@@ -23,47 +23,19 @@ public class InternalFrameEvent implements InternalFrameListener {
     // 
     //
     // /////////////////////////////////////////////////////////////////////////
-    @Override
-    public void internalFrameOpened(javax.swing.event.InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameOpened() >> ";
-        System.out.println(methodName + "internalFrameOpened !");
-    }
+    void internalFrameOpened(javax.swing.event.InternalFrameEvent e);
 
-    @Override
-    public void internalFrameClosing(javax.swing.event.InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameClosing() >> ";
-        System.out.println(methodName + "internalFrameClosing !");
-    }
+    void internalFrameClosing(javax.swing.event.InternalFrameEvent e);
 
-    @Override
-    public void internalFrameClosed(javax.swing.event.InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameClosed() >> ";
-        System.out.println(methodName + "internalFrameClosed !");
-    }
+    void internalFrameClosed(javax.swing.event.InternalFrameEvent e);
 
-    @Override
-    public void internalFrameIconified(javax.swing.event.InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameIconified() >> ";
-        System.out.println(methodName + "internalFrameIconified !");
-    }
+    void internalFrameIconified(javax.swing.event.InternalFrameEvent e);
 
-    @Override
-    public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameDeiconified() >> ";
-        System.out.println(methodName + "internalFrameDeiconified !");
-    }
+    void internalFrameDeiconified(javax.swing.event.InternalFrameEvent e);
 
-    @Override
-    public void internalFrameActivated(javax.swing.event.InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameActivated() >> ";
-        System.out.println(methodName + "internalFrameActivated !");
-    }
+    void internalFrameActivated(javax.swing.event.InternalFrameEvent e);
 
-    @Override
-    public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : internalFrameDeactivated() >> ";
-        System.out.println(methodName + "internalFrameDeactivated !");
-    }
+    void internalFrameDeactivated(javax.swing.event.InternalFrameEvent e);
 
     // /////////////////////////////////////////////////////////////////////////
     //
