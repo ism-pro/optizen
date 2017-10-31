@@ -6,10 +6,19 @@
 package org.optizen.app;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingWorker;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 import javax.swing.table.DefaultTableModel;
+import org.optizen.util.DateUtil;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
 import org.optizen.util.model.LinkModel;
@@ -55,8 +64,8 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         btnRefresh = new javax.swing.JButton();
         btnSendToDatabase = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        subProgress = new javax.swing.JProgressBar();
+        mainProgress = new javax.swing.JProgressBar();
         jSeparator1 = new javax.swing.JSeparator();
 
         setClosable(true);
@@ -118,7 +127,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1062, Short.MAX_VALUE)
+            .addGap(0, 1006, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,15 +177,15 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(subProgress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainProgress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(subProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 66, Short.MAX_VALUE))
         );
 
@@ -213,7 +222,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
             .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
@@ -253,28 +262,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     }//GEN-LAST:event_btnSendToDatabaseActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        // Remove all the specify row
-        DefaultTableModel tm = (DefaultTableModel) tableData.getModel();
-
-        // Load from file
-        Object obj = Settings.read(Settings.LINK_LINK, Settings.COUNTER);
-        Integer counter = Integer.valueOf(obj == null ? "0" : obj.toString());
-
-        // Loop over available link
-        Connection zenConn = DatabaseFrame.loadConnectionZenon();
-        Connection optConn = DatabaseFrame.loadConnectionOptimaint();
-
-        for (int count = 0; count < counter; count++) {
-            // Gett link from settings
-            LinkModel link = Settings.readLinkModel(count);
-
-            // Get last record from optimaint for this link
-            String queyr = "SELECT TOP 100 CMV_DATE_MVT , * \n"
-                    + "FROM Optimaint.dbo.COMPTEURS_MVTS\n"
-                    + "WHERE CMV_DATE_MVT > '2017-10-01' "; // tm.addRow();
-        }
-        //tableLink.setModel(tm);
-
+        new WorkOnSearching().execute();
 
     }//GEN-LAST:event_searchActionPerformed
 
@@ -292,13 +280,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JProgressBar mainProgress;
     private javax.swing.JButton moveToTr;
     private javax.swing.JButton search;
+    private javax.swing.JProgressBar subProgress;
     private javax.swing.JTable tableData;
     // End of variables declaration//GEN-END:variables
     @Override
@@ -350,4 +338,106 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         System.out.println(methodName + "internalFrameDeactivated !");
     }
 
+    public class WorkOnSearching extends SwingWorker<String, String> {
+
+        @Override
+        protected String doInBackground() throws Exception {
+            //This is what's called in the .execute method
+            try {
+                // Remove all the specify row
+                DefaultTableModel tm = (DefaultTableModel) tableData.getModel();
+
+                // Load from file
+                Object obj = Settings.read(Settings.LINK_LINK, Settings.COUNTER);
+                Integer counter = Integer.valueOf(obj == null ? "0" : obj.toString());
+                String company = Settings.read(Settings.CONFIG, Settings.COMPANY).toString();
+
+                // Loop over available link
+                Connection zenConn = DatabaseFrame.loadConnectionZenon();
+                Statement zenState = zenConn.createStatement(
+                        ResultSet.TYPE_SCROLL_INSENSITIVE,
+                        ResultSet.CONCUR_READ_ONLY);
+
+                Connection optConn = DatabaseFrame.loadConnectionOptimaint();
+                Statement optiState = optConn.createStatement(
+                        ResultSet.TYPE_SCROLL_INSENSITIVE,
+                        ResultSet.CONCUR_READ_ONLY);
+
+                mainProgress.setValue(0);
+                subProgress.setValue(0);
+                for (int count = 0; count < counter; count++) {
+                    // Gett link from settings
+                    LinkModel link = Settings.readLinkModel(count);
+
+                    // Get last record from optimaint for this link
+                    String qLastOptiRecord
+                            = "SELECT TOP 1  CMV_DATE_MVT "
+                            + "FROM Optimaint.dbo.COMPTEURS_MVTS "
+                            + "WHERE CMV_SOCIETE = '%s' AND CMV_EQUIPEMENT='%s' AND CMV_ORGANE='%s' AND CMV_UNITE='%s' "
+                            + "ORDER BY CMV_DATE_MVT DESC";
+                    qLastOptiRecord = String.format(qLastOptiRecord,
+                            company,
+                            link.getEquEquipement(),
+                            link.getOrgOrgane(),
+                            link.getUnite());
+                    //Util.out("QLastOptiRecord : " + qLastOptiRecord);
+
+                    String lastOptiDateTime = "2000-01-01";
+
+                    //L'objet ResultSet contient le résultat de la requête SQL
+                    ResultSet optiResult = optiState.executeQuery(qLastOptiRecord);
+                    if (optiResult.next()) { // Date déjà existante
+                        lastOptiDateTime = optiResult.getObject(1).toString();
+                    }
+
+                    // Recherche les données après la date enregistrée dans zenon
+                    //
+                    //link.getVariable();
+                    String queryDatas
+                            = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S , '1970-01-01' ) AS CPT_DATE_MVT "
+                            + "FROM %s "
+                            + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint) "
+                            + "ORDER BY TIMESTAMP_S DESC";
+                    queryDatas = String.format(queryDatas,
+                            link.getTable(),
+                            link.getVariable(),
+                            lastOptiDateTime);
+                    //Util.out("Query Datas : " + queryDatas);
+
+                    ResultSet zenResult = zenState.executeQuery(queryDatas);
+
+                    zenResult.last();
+                    int size = zenResult.getRow();
+                    zenResult.beforeFirst();
+                    subProgress.setValue(0);
+                    int subs = 0;
+                    while (zenResult.next()) {
+                        String value = zenResult.getObject(1).toString();
+                        String dateMvt = zenResult.getObject(2).toString();
+
+                        Object[] rowObject = new Object[]{
+                            tableData.getRowCount() + 1, company, link.getEquEquipement(), link.getUnite(),
+                            link.getOrgOrgane(), value, dateMvt, "MPRV", "", "", "", "", 0
+                        };
+                        tm.addRow(rowObject);
+                        subProgress.setValue((100 * (subs + 1)) / size);
+                        subs++;
+                    }
+                    mainProgress.setValue((100 *(count + 1)) / counter);
+                    Thread.sleep(5);
+                }
+                tableData.setModel(tm);
+            } catch (SQLException ex) {
+                Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void process(List<String> item) {
+            //This updates the UI
+            //textArea.append(item + "\n");
+        }
+    }
 }
