@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.ini4j.Wini;
+import org.optizen.util.model.LinkModel;
 
 /**
  * Settings class allow to create a init file to save current date of
@@ -130,6 +131,34 @@ public class Settings {
             obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "autre"));
 
             return obj.toArray();
+        } catch (IOException ex) {
+            Util.out(methodName + "...Erreur suivante est survenue pour lecture du lien ligne " + row + " : " + ex.getMessage());
+            return null;
+        }
+    }
+    
+    /**
+     * Allow to read a link defined by his number 
+     * @param row link number
+     * @return a linkmodel
+     */
+    public static LinkModel readLinkModel(Integer row){
+        String methodName = Settings.class.getName() + " : read(section, param, value) >> ";
+        try {
+            Wini ini = new Wini(new File(iniFilename));
+            LinkModel link = new LinkModel();
+            link.setRow(row +1);
+            link.setTable(ini.get(Settings.LINK_LINK + "\\" + row, "ztable"));
+            link.setVariable(ini.get(Settings.LINK_LINK + "\\" + row, "variable"));
+            link.setName(ini.get(Settings.LINK_LINK + "\\" + row, "name"));
+            link.setEquEquipement(ini.get(Settings.LINK_LINK + "\\" + row, "codeEqu"));
+            link.setEquDesignation(ini.get(Settings.LINK_LINK + "\\" + row, "equipement"));
+            link.setOrgOrgane(ini.get(Settings.LINK_LINK + "\\" + row, "codeOrg"));
+            link.setOrgDesignation(ini.get(Settings.LINK_LINK + "\\" + row, "organe"));
+            link.setUnite(ini.get(Settings.LINK_LINK + "\\" + row, "unite"));
+            link.setComment(ini.get(Settings.LINK_LINK + "\\" + row, "commentaire"));
+            link.setDatemod(ini.get(Settings.LINK_LINK + "\\" + row, "autre"));
+            return link;
         } catch (IOException ex) {
             Util.out(methodName + "...Erreur suivante est survenue pour lecture du lien ligne " + row + " : " + ex.getMessage());
             return null;

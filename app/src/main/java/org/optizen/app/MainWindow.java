@@ -41,6 +41,13 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
      */
     private LinkFrame linkFrame = null;
 
+    /**
+     * Transfer frame allow to view and transfer available data from zenon to
+     * optimaint
+     */
+    private TransferFrame transferFrame = null;
+    
+    
     private ArrayList<InternalFrameListener> internalFrameListeners = new ArrayList<>();
 
     public void addListener(InternalFrameListener listener) {
@@ -67,14 +74,15 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         jToolBar1 = new javax.swing.JToolBar();
         tbBtnConfigurations = new javax.swing.JButton();
         tbBtnLinks = new javax.swing.JButton();
-        tbBtnLinks1 = new javax.swing.JButton();
+        tbBtnTransfer = new javax.swing.JButton();
+        tbBtnExit = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         menuItemConfigurations = new javax.swing.JMenuItem();
         menuItemLinks = new javax.swing.JMenuItem();
-        menuItemTransfert = new javax.swing.JMenuItem();
+        menuItemTransfer = new javax.swing.JMenuItem();
         themeMenu = new javax.swing.JMenu();
         menuItemThemeMetal = new javax.swing.JMenuItem();
         menuItemThemeNimbus = new javax.swing.JMenuItem();
@@ -122,24 +130,36 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         });
         jToolBar1.add(tbBtnLinks);
 
-        tbBtnLinks1.setIcon(Ico.i48("/img/oz/transfer.png"));
-        tbBtnLinks1.setText("Transfert");
-        tbBtnLinks1.setFocusable(false);
-        tbBtnLinks1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tbBtnLinks1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        tbBtnLinks1.addActionListener(new java.awt.event.ActionListener() {
+        tbBtnTransfer.setIcon(Ico.i48("/img/oz/transfer.png"));
+        tbBtnTransfer.setText("Transférer");
+        tbBtnTransfer.setFocusable(false);
+        tbBtnTransfer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbBtnTransfer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        tbBtnTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbBtnLinks1ActionPerformed(evt);
+                tbBtnTransferActionPerformed(evt);
             }
         });
-        jToolBar1.add(tbBtnLinks1);
+        jToolBar1.add(tbBtnTransfer);
+
+        tbBtnExit.setIcon(Ico.i48("/img/oz/exit.png"));
+        tbBtnExit.setText("Quitter");
+        tbBtnExit.setFocusable(false);
+        tbBtnExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbBtnExit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        tbBtnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbBtnExitActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(tbBtnExit);
 
         fileMenu.setMnemonic('f');
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
         fileMenu.setText(bundle.getString("MenuFile")); // NOI18N
         fileMenu.setToolTipText("Gestion de l'application");
 
-        exitMenuItem.setIcon(Ico.i16("/img/ribbon/exit.png")
+        exitMenuItem.setIcon(Ico.i16("/img/oz/exit.png")
         );
         exitMenuItem.setMnemonic('x');
         exitMenuItem.setText(bundle.getString("MenuFileExit")); // NOI18N
@@ -158,7 +178,7 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
 
         menuItemConfigurations.setIcon(Ico.i16("/img/oz/config.png"));
         menuItemConfigurations.setMnemonic('t');
-        menuItemConfigurations.setText(bundle.getString("MenuEditSetup")); // NOI18N
+        menuItemConfigurations.setText("Configurations");
         menuItemConfigurations.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemConfigurationsActionPerformed(evt);
@@ -177,10 +197,15 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         });
         editMenu.add(menuItemLinks);
 
-        menuItemTransfert.setIcon(Ico.i16("/img/oz/transfer.png"));
-        menuItemTransfert.setMnemonic('p');
-        menuItemTransfert.setText(bundle.getString("MenuEditTransfert")); // NOI18N
-        editMenu.add(menuItemTransfert);
+        menuItemTransfer.setIcon(Ico.i16("/img/oz/transfer.png"));
+        menuItemTransfer.setMnemonic('p');
+        menuItemTransfer.setText(bundle.getString("MenuEditTransfert")); // NOI18N
+        menuItemTransfer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemTransferActionPerformed(evt);
+            }
+        });
+        editMenu.add(menuItemTransfer);
 
         menuBar.add(editMenu);
 
@@ -367,9 +392,31 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         }
     }//GEN-LAST:event_menuItemThemWindowsClassicActionPerformed
 
-    private void tbBtnLinks1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbBtnLinks1ActionPerformed
+    private void tbBtnTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbBtnTransferActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbBtnLinks1ActionPerformed
+        menuItemTransferActionPerformed(evt);
+    }//GEN-LAST:event_tbBtnTransferActionPerformed
+
+    private void menuItemTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemTransferActionPerformed
+        if (TransferFrame.openFrameCount == 0) {
+            transferFrame = new TransferFrame();
+            desktopPane.add(transferFrame);
+        } else {
+            revalidate();
+            repaint();
+        }
+        transferFrame.setVisible(true);
+        try {
+            //configFrame.setMaximum(true);
+            transferFrame.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_menuItemTransferActionPerformed
+
+    private void tbBtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbBtnExitActionPerformed
+         exitMenuItemActionPerformed(evt);
+    }//GEN-LAST:event_tbBtnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -430,10 +477,11 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     private javax.swing.JMenuItem menuItemThemeMetal;
     private javax.swing.JMenuItem menuItemThemeMetal3;
     private javax.swing.JMenuItem menuItemThemeNimbus;
-    private javax.swing.JMenuItem menuItemTransfert;
+    private javax.swing.JMenuItem menuItemTransfer;
     private javax.swing.JButton tbBtnConfigurations;
+    private javax.swing.JButton tbBtnExit;
     private javax.swing.JButton tbBtnLinks;
-    private javax.swing.JButton tbBtnLinks1;
+    private javax.swing.JButton tbBtnTransfer;
     private javax.swing.JMenu themeMenu;
     // End of variables declaration//GEN-END:variables
 

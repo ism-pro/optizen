@@ -1011,7 +1011,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     public void internalFrameClosing(InternalFrameEvent e) {
         String methodName = getClass().getSimpleName() + " : internalFrameClosing() >> ";
         Util.out(methodName + "internal Frame Is Closing !");
-        
+
     }
 
     @Override
