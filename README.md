@@ -24,5 +24,10 @@ cd "D:\APPLICATIONS\JAVA\LIB\Microsoft\Microsoft JDBC Driver 6.0 for SQL Server\
 Cela doit se dérouler sans erreur.
 NB : Vous pouvez être ammené à modifier le fichier POM en fonction de votre version SQL Server déclaré ici 4.2.
 
+
+#### Apache Commons Collection 4
+Il faut vous assurez de disposer de la bonne version de commons collection 4 identique au POM (4.2) autrement une erreur du type ListMap peut être bloquante à la compilation. Supprimer la du repertoire locale .m2 de maven et télécharger les dépendences de nouveau.
+
+
 #### Compilation du Module
 Il est impératif de complier le module complet afin de vous assurez que tous les sous modules sont disponible.
