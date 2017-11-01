@@ -27,9 +27,7 @@ import org.optizen.util.Util;
  *
  * @author r.hendrick
  */
-public class MainWindow extends javax.swing.JFrame implements WindowListener,
-        WindowFocusListener,
-        WindowStateListener, InternalFrameListener {
+public class MainWindow extends javax.swing.JFrame implements InternalFrameListener {
 
     /**
      * Configuration Frame contains all configuration for alication.
@@ -441,22 +439,17 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Util.out("OptiZen - Start...");
-                Settings.iniFilename = "OptiZen.ini";
-                if (Settings.createIniFile()) {
-                    Settings.writeDefaultClientSetup();
-                }
-
-                MainWindow w = new MainWindow();
-                w.setVisible(true);
-                w.addWindowListener(w);
-                w.addWindowFocusListener(w);
-                w.addWindowStateListener(w);
-                // Affichage plein écrant
-                Util.out("OptiZen - End run...");
+        java.awt.EventQueue.invokeLater(() -> {
+            Util.out("OptiZen - Start...");
+            Settings.iniFilename = "OptiZen.ini";
+            if (Settings.createIniFile()) {
+                Settings.writeDefaultClientSetup();
             }
+            
+            MainWindow w = new MainWindow();
+            w.setVisible(true);
+            // Affichage plein écrant
+            Util.out("OptiZen - End run...");
         });
     }
 
@@ -485,70 +478,10 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     private javax.swing.JMenu themeMenu;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void windowOpened(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowOpened() >> ";
-        System.out.println(methodName + "windowOpened !");
-    }
+
 
     @Override
-    public void windowClosing(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowClosing() >> ";
-        System.out.println(methodName + "windowClosing !");
-    }
-
-    @Override
-    public void windowClosed(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowClosed() >> ";
-        System.out.println(methodName + "windowClosed !");
-    }
-
-    @Override
-    public void windowIconified(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowIconified() >> ";
-        System.out.println(methodName + "windowIconified !");
-    }
-
-    @Override
-    public void windowDeiconified(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowDeiconified() >> ";
-        System.out.println(methodName + "windowDeiconified !");
-    }
-
-    @Override
-    public void windowActivated(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowActivated() >> ";
-        System.out.println(methodName + "windowActivated !");
-    }
-
-    @Override
-    public void windowDeactivated(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowDeactivated() >> ";
-        System.out.println(methodName + "windowDeactivated !");
-    }
-
-    @Override
-    public void windowGainedFocus(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowGainedFocus() >> ";
-        System.out.println(methodName + "windowGainedFocus !");
-    }
-
-    @Override
-    public void windowLostFocus(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowLostFocus() >> ";
-        System.out.println(methodName + "windowLostFocus !");
-    }
-
-    @Override
-    public void windowStateChanged(WindowEvent e) {
-        String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class.getName()).getResourceBundleName() + " : windowStateChanged() >> ";
-        System.out.println(methodName + "windowStateChanged !");
-    }
-
-    @Override
-    public void internalFrameOpened(InternalFrameEvent e) {
-        System.out.println("internalFrameOpened");
-    }
+    public void internalFrameOpened(InternalFrameEvent e) {}
 
     @Override
     public void internalFrameClosing(InternalFrameEvent e) {
@@ -565,28 +498,18 @@ public class MainWindow extends javax.swing.JFrame implements WindowListener,
     }
 
     @Override
-    public void internalFrameClosed(InternalFrameEvent e) {
-        System.out.println("internalFrameClosed");
-    }
+    public void internalFrameClosed(InternalFrameEvent e) { }
 
     @Override
-    public void internalFrameIconified(InternalFrameEvent e) {
-        System.out.println("internalFrameIconified");
-    }
+    public void internalFrameIconified(InternalFrameEvent e) {}
 
     @Override
-    public void internalFrameDeiconified(InternalFrameEvent e) {
-        System.out.println("internalFrameDeiconified");
-    }
+    public void internalFrameDeiconified(InternalFrameEvent e) {}
 
     @Override
-    public void internalFrameActivated(InternalFrameEvent e) {
-        System.out.println("internalFrameActivated");
-    }
+    public void internalFrameActivated(InternalFrameEvent e) { }
 
     @Override
-    public void internalFrameDeactivated(InternalFrameEvent e) {
-        System.out.println("internalFrameDeactivated");
-    }
+    public void internalFrameDeactivated(InternalFrameEvent e) { }
 
 }
