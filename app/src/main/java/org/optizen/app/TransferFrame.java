@@ -343,6 +343,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         @Override
         protected String doInBackground() throws Exception {
             //This is what's called in the .execute method
+            LoadingFrame lf = new LoadingFrame(null, false);
+            lf.setVisible(true);
+
             try {
                 // Remove all the specify row
                 DefaultTableModel tm = (DefaultTableModel) tableData.getModel();
@@ -365,6 +368,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
                 mainProgress.setValue(0);
                 subProgress.setValue(0);
+                lf.onInit();
                 for (int count = 0; count < counter; count++) {
                     // Gett link from settings
                     LinkModel link = Settings.readLinkModel(count);
@@ -410,6 +414,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     int size = zenResult.getRow();
                     zenResult.beforeFirst();
                     subProgress.setValue(0);
+                    lf.sub(0);
                     int subs = 0;
                     while (zenResult.next()) {
                         String value = zenResult.getObject(1).toString();
@@ -420,17 +425,23 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             link.getOrgOrgane(), value, dateMvt, "MPRV", "", "", "", "", 0
                         };
                         tm.addRow(rowObject);
-                        subProgress.setValue((100 * (subs + 1)) / size);
+                        Integer subValue = (100 * (subs + 1)) / size;
+                        subProgress.setValue(subValue);
+                        lf.sub(subValue);
                         subs++;
                     }
-                    mainProgress.setValue((100 *(count + 1)) / counter);
+                    Integer mainValue = (100 * (count + 1)) / counter;
+                    mainProgress.setValue(mainValue);
+                    lf.main(mainValue);
                     Thread.sleep(5);
                 }
                 tableData.setModel(tm);
+                lf.setVisible(false);
             } catch (SQLException ex) {
                 Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+                lf.setVisible(false);
             }
-
+            lf.setVisible(false);
             return null;
         }
 
