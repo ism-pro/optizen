@@ -2,10 +2,10 @@
 // A TableModel that supplies ResultSet data to a JTable.
 package org.optizen.model;
 
-
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -37,13 +37,13 @@ public class ResultSetTableModel extends AbstractTableModel {
             throws SQLException, ClassNotFoundException {
         // load database driver class
         Class.forName(DatabaseModel.mapReadableToDriver(model.getDriver()));
-        
+
         // Make the url
         String url = url = "jdbc:" + model.getDriver() + "://"
-                    + model.getServer() 
-                    + (model.getPort()==null ? "" : (model.getPort().trim().isEmpty() ? "" : ":" + model.getPort()))
-                    + ";databaseName=" + model.getDatabaseName();
-        
+                + model.getServer()
+                + (model.getPort() == null ? "" : (model.getPort().trim().isEmpty() ? "" : ":" + model.getPort()))
+                + ";databaseName=" + model.getDatabaseName();
+
         // connect to database
         connection = DriverManager.getConnection(url, model.getUser(), model.getPassword());
 
@@ -59,12 +59,29 @@ public class ResultSetTableModel extends AbstractTableModel {
         setQuery(query);
     } // end constructor ResultSetTableModel
 
-    
+    public ResultSetTableModel(Connection connection, String query)
+            throws SQLException, ClassNotFoundException {
+        // connect to database
+        this.connection = connection;
+
+        // create Statement to query database
+        statement = connection.createStatement(
+                ResultSet.TYPE_SCROLL_INSENSITIVE,
+                ResultSet.CONCUR_READ_ONLY);
+
+        // update database connection status
+        connectedToDatabase = true;
+
+        // set query and execute it
+        setQuery(query);
+    } // end constructor ResultSetTableModel
+
     /**
      * get class that represents column type
+     *
      * @param column
      * @return
-     * @throws IllegalStateException 
+     * @throws IllegalStateException
      */
     @Override
     public Class getColumnClass(int column) throws IllegalStateException {
@@ -89,8 +106,9 @@ public class ResultSetTableModel extends AbstractTableModel {
 
     /**
      * get number of columns in ResultSet
+     *
      * @return
-     * @throws IllegalStateException 
+     * @throws IllegalStateException
      */
     @Override
     public int getColumnCount() throws IllegalStateException {
@@ -112,9 +130,10 @@ public class ResultSetTableModel extends AbstractTableModel {
 
     /**
      * get name of a particular column in ResultSet
+     *
      * @param column
      * @return
-     * @throws IllegalStateException 
+     * @throws IllegalStateException
      */
     @Override
     public String getColumnName(int column) throws IllegalStateException {
@@ -136,8 +155,9 @@ public class ResultSetTableModel extends AbstractTableModel {
 
     /**
      * return number of rows in ResultSet
+     *
      * @return
-     * @throws IllegalStateException 
+     * @throws IllegalStateException
      */
     @Override
     public int getRowCount() throws IllegalStateException {
@@ -151,10 +171,11 @@ public class ResultSetTableModel extends AbstractTableModel {
 
     /**
      * obtain value in particular row and column
+     *
      * @param row
      * @param column
      * @return
-     * @throws IllegalStateException 
+     * @throws IllegalStateException
      */
     @Override
     public Object getValueAt(int row, int column) throws IllegalStateException {
@@ -177,9 +198,9 @@ public class ResultSetTableModel extends AbstractTableModel {
 
     /**
      * set new database query string
+     *
      * @param query
-     * @throws SQLException
-     * @throws IllegalStateException 
+     * @throws IllegalStateException
      */
     public void setQuery(String query) {
         try {
@@ -187,17 +208,17 @@ public class ResultSetTableModel extends AbstractTableModel {
             if (!connectedToDatabase) {
                 throw new IllegalStateException("Not Connected to Database");
             }
-            
+
             // specify query and execute it
             resultSet = statement.executeQuery(query);
-            
+
             // obtain meta data for ResultSet
             metaData = resultSet.getMetaData();
-            
+
             // determine number of rows in ResultSet
             resultSet.last();                   // move to last row
             numberOfRows = resultSet.getRow();  // get row number
-            
+
             // notify JTable that model has changed
             fireTableStructureChanged();
         } // end method setQuery
@@ -206,8 +227,58 @@ public class ResultSetTableModel extends AbstractTableModel {
         }
     }
 
+    public void setQueryDeleteOnAllRow(String table) throws SQLException {
+        // ensure database connection is available
+        if (!connectedToDatabase) {
+            throw new IllegalStateException("Not Connected to Database");
+        }
+
+        // Delete all row from the specify table
+        String sql = "DELETE FROM " + table;
+        // Prepare the statement
+        PreparedStatement pStatement = connection.prepareStatement(sql);
+        pStatement.executeUpdate();
+
+        
+        // notify JTable that model has changed
+        fireTableStructureChanged();
+    }
+
     /**
-     * close Statement and Connection     
+     * Insert a row corresponding to definition of the table
+     *
+     * @param table database table in which to operate
+     * @param rowObject exact number of row like in table
+     * @throws java.sql.SQLException
+     */
+    public void setQueryInsert(String table, ArrayList<Object> rowObject) throws SQLException {
+
+        // ensure database connection is available
+        if (!connectedToDatabase) {
+            throw new IllegalStateException("Not Connected to Database");
+        }
+
+        // Create insert query
+        String sql = "INSERT INTO " + table + " values (";
+        for (int i = 0; i < rowObject.size(); i++) {
+            if (i != 0) {
+                sql += ",";
+            }
+            sql += "?";
+        }
+        sql += ")";
+
+        // Prepare the statement
+        PreparedStatement pStatement = connection.prepareStatement(sql);
+        for (int i = 0; i < rowObject.size(); i++) {
+            pStatement.setObject(i + 1, rowObject.get(i).toString());
+        }
+        pStatement.executeUpdate();
+
+    }
+
+    /**
+     * close Statement and Connection
      */
     public void disconnectFromDatabase() {
         if (!connectedToDatabase) {
@@ -227,8 +298,7 @@ public class ResultSetTableModel extends AbstractTableModel {
             connectedToDatabase = false;
         } // end finally                             
     } // end method disconnectFromDatabase   
-    
-    
+
     /**
      * Methode permettant de récupérer la liste des données d'une ligne
      *
@@ -248,36 +318,18 @@ public class ResultSetTableModel extends AbstractTableModel {
         }
         return values;
     }
-    
+
     public ArrayList<Object> getSelectedRow(Integer row) {
         if (row >= getRowCount()) {
             return null;
         }
 
-        ArrayList<Object> values= new ArrayList<>();
+        ArrayList<Object> values = new ArrayList<>();
 
         for (int col = 0; col < getColumnCount(); col++) {
             values.add(getValueAt(row, col));
         }
         return values;
     }
-    
-    
-    
-    
-}  // end class ResultSetTableModel
 
-/**
- * ************************************************************************
- * (C) Copyright 1992-2005 by Deitel & Associates, Inc. and * Pearson Education,
- * Inc. All Rights Reserved. * * DISCLAIMER: The authors and publisher of this
- * book have used their * best efforts in preparing the book. These efforts
- * include the * development, research, and testing of the theories and programs
- * * to determine their effectiveness. The authors and publisher make * no
- * warranty of any kind, expressed or implied, with regard to these * programs
- * or to the documentation contained in these books. The authors * and publisher
- * shall not be liable in any event for incidental or * consequential damages in
- * connection with, or arising out of, the * furnishing, performance, or use of
- * these programs. *
- ************************************************************************
- */
+}  // end class ResultSetTableModel

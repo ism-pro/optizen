@@ -6,23 +6,22 @@
 package org.optizen.app;
 
 import java.awt.Dialog;
-import java.awt.Frame;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JDialog;
-import javax.swing.ProgressMonitor;
+import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 import javax.swing.table.DefaultTableModel;
-import org.optizen.util.DateUtil;
+import org.optizen.model.ResultSetTableModel;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
 import org.optizen.util.model.LinkModel;
@@ -46,6 +45,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
      */
     public TransferFrame() {
         initComponents();
+        refreshTableTr();
     }
 
     /**
@@ -65,6 +65,8 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         search = new javax.swing.JButton();
         moveToTr = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableTr = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         btnCancel = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
@@ -126,15 +128,28 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
         jSplitPane1.setTopComponent(jPanel1);
 
+        tableTr.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tableTr);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1006, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 369, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
         );
 
         jSplitPane1.setRightComponent(jPanel2);
@@ -223,22 +238,11 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-//        // TODO add your handling code here:
-//        int result = JOptionPane.showConfirmDialog(this, "Les données non sauvées vont être perdu si vous continuer, voulez-vous sauvegarder d'abord ?",
-//            "Rafraîchir : confirmer les données perdu",
-//            JOptionPane.OK_CANCEL_OPTION);
-//        if (result == JOptionPane.OK_CANCEL_OPTION) {
-//            return;
-//        }
-//        clearAndLoadSavedLink();
-//        JOptionPane.showMessageDialog(this,
-//            "Rafraîchissement terminé !",
-//            "Rafraîchir : fin", JOptionPane.INFORMATION_MESSAGE);
+        refreshTableTr();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnSendToDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendToDatabaseActionPerformed
@@ -270,7 +274,42 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     }//GEN-LAST:event_searchActionPerformed
 
     private void moveToTrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveToTrActionPerformed
-        // TODO add your handling code here:
+
+        // Vérifie que des données sont disponible pour le transfere
+        if (tableData.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(this,
+                    "Aucune données à placer dans la table TR !\nExécuter une recherche ...",
+                    "Envoyer en table TR : pas de données à transférer",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Informe sur la suppression de donnée en table TR si des données sont existante
+        if (tableTr.getRowCount() > 0) {
+            int result = JOptionPane.showConfirmDialog(this,
+                    "Des données sont disponible dans la base TR ! En poursuivant, vous allez les perdres.\n"
+                    + "Voulez-vous continuer ?",
+                    "Rafraîchir : confirmer les données perdu",
+                    JOptionPane.OK_CANCEL_OPTION);
+            if (result == JOptionPane.OK_CANCEL_OPTION) {
+                refreshTableTr();
+                return;
+            }
+        }
+
+        search.setEnabled(false);
+        moveToTr.setEnabled(false);
+
+        WorkOnMoveToTr wonm = new WorkOnMoveToTr();
+        wonm.execute();
+
+        //This is what's called in the .execute method
+        loadingFrame = new LoadingFrame(null, "", Dialog.ModalityType.MODELESS);
+        loadingFrame.setLocationRelativeTo(this);
+        loadingFrame.setVisible(true);
+
+        search.setEnabled(true);
+        moveToTr.setEnabled(true);
     }//GEN-LAST:event_moveToTrActionPerformed
 
 
@@ -283,11 +322,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton moveToTr;
     private javax.swing.JButton search;
     private javax.swing.JTable tableData;
+    private javax.swing.JTable tableTr;
     // End of variables declaration//GEN-END:variables
     @Override
     public void internalFrameOpened(InternalFrameEvent e) {
@@ -338,6 +379,25 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         System.out.println(methodName + "internalFrameDeactivated !");
     }
 
+    /**
+     * Refresh the table tr to see current content
+     */
+    private void refreshTableTr() {
+        try {
+            ResultSetTableModel tm = new ResultSetTableModel(
+                    DatabaseFrame.loadConnectionOptimaint(),
+                    "SELECT * FROM TR_CPT_MVTS"
+            );
+            tableTr.setModel(tm);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * This class searching available data from zenon to be import to optimaint
+     * This is process in background.
+     */
     public class WorkOnSearching extends SwingWorker<String, String> {
 
         @Override
@@ -443,4 +503,63 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             //textArea.append(item + "\n");
         }
     }
+
+    public class WorkOnMoveToTr extends SwingWorker<String, String> {
+
+        @Override
+        protected String doInBackground() {
+
+            try {
+                // Suppression du contenu de la table
+                ResultSetTableModel tm = (ResultSetTableModel) tableTr.getModel();
+                tm.setQueryDeleteOnAllRow("TR_CPT_MVTS");
+
+                // Démarrage du transfer
+                DefaultTableModel tmd = (DefaultTableModel) tableData.getModel();
+                // Prepare the statement
+                Connection conn = DatabaseFrame.loadConnectionOptimaint();
+                Statement state = conn.createStatement();
+                loadingFrame.onInit();
+                loadingFrame.sub(100);
+                Integer rowCount = tableData.getRowCount();
+                for (int row = 0; row < rowCount; row++) {
+                    Vector v = (Vector) tmd.getDataVector().elementAt(row);
+                    ArrayList<Object> rowObject = new ArrayList<>();
+                    for (int i = 0; i < v.capacity(); i++) {
+                        rowObject.add(v.elementAt(i));
+                    }
+                    tm.setQueryInsert("", rowObject);
+
+                    // Create insert query
+                    String sql = "INSERT INTO TR_CPT_MVTS values (";
+                    for (int i = 0; i < rowObject.size(); i++) {
+                        if (i != 0) {
+                            sql += ",";
+                        }
+                        sql += rowObject.toString();
+                    }
+                    sql += ")";
+
+                    state.execute(sql);
+                    loadingFrame.main((100 * (row + 1)) / rowCount);
+                }
+                loadingFrame.onFinish();
+                loadingFrame.setVisible(false);
+                return null;
+            } catch (SQLException ex) {
+                Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+                loadingFrame.onFinish();
+                loadingFrame.setVisible(false);
+                return null;
+            }
+        }
+
+        @Override
+        protected void process(List<String> item
+        ) {
+            //This updates the UI
+            //textArea.append(item + "\n");
+        }
+    }
+
 }
