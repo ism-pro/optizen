@@ -7,6 +7,7 @@ package org.optizen.app;
 
 import java.awt.Dialog;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -424,6 +425,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                         ResultSet.CONCUR_READ_ONLY);
 
                 loadingFrame.onInit();
+                //counter = Math.min(counter , 5);
                 for (int count = 0; count < counter; count++) {
                     // Gett link from settings
                     LinkModel link = Settings.readLinkModel(count);
@@ -456,7 +458,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S , '1970-01-01' ) AS CPT_DATE_MVT "
                             + "FROM %s "
                             + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint) "
-                            + "ORDER BY TIMESTAMP_S DESC";
+                            + "ORDER BY TIMESTAMP_S ASC";
                     queryDatas = String.format(queryDatas,
                             link.getTable(),
                             link.getVariable(),
@@ -518,32 +520,33 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 DefaultTableModel tmd = (DefaultTableModel) tableData.getModel();
                 // Prepare the statement
                 Connection conn = DatabaseFrame.loadConnectionOptimaint();
-                Statement state = conn.createStatement();
+                
+                String sql = "INSERT INTO TR_CPT_MVTS "
+                        + "(TRCPT_SOCIETE, TRCPT_EQUIPEMENT, TRCPT_UNITE, TRCPT_ORGANE, TRCPT_VALEUR, TRCPT_DATE_MVT, TRCPT_INTERVENANT, TRCPT_SITUATION) "
+                        + "values (?,?,?,?,?,?,?,?)";
+                PreparedStatement ps = conn.prepareStatement(sql);
                 loadingFrame.onInit();
                 loadingFrame.sub(100);
                 Integer rowCount = tableData.getRowCount();
                 for (int row = 0; row < rowCount; row++) {
-                    Vector v = (Vector) tmd.getDataVector().elementAt(row);
-                    ArrayList<Object> rowObject = new ArrayList<>();
-                    for (int i = 0; i < v.capacity(); i++) {
-                        rowObject.add(v.elementAt(i));
-                    }
-                    tm.setQueryInsert("", rowObject);
-
-                    // Create insert query
-                    String sql = "INSERT INTO TR_CPT_MVTS values (";
-                    for (int i = 0; i < rowObject.size(); i++) {
-                        if (i != 0) {
-                            sql += ",";
-                        }
-                        sql += rowObject.toString();
-                    }
-                    sql += ")";
-
-                    state.execute(sql);
+                    Vector rowCpt = (Vector) tmd.getDataVector().elementAt(row);
+                    
+                    //ps.setInt(1, Integer.valueOf(rowCpt.get(0).toString()));
+                    ps.setString(1, rowCpt.get(1).toString());
+                    ps.setString(2, rowCpt.get(2).toString());
+                    ps.setString(3, rowCpt.get(3).toString()); // Unite
+                    ps.setString(4, rowCpt.get(4).toString()); // Orgnae
+                    ps.setFloat(5, Float.valueOf(rowCpt.get(5).toString()));  // valeur
+                    //ps.setDate(7, Date.valueOf(rowCpt.get(6).toString()));
+                    ps.setTimestamp(6, java.sql.Timestamp.valueOf(rowCpt.get(6).toString())); // date time
+                    ps.setString(7, rowCpt.get(7).toString()); // MPRV
+                    ps.setInt(8, Integer.valueOf(rowCpt.get(12).toString()));
+                    
+                    ps.executeUpdate();
                     loadingFrame.main((100 * (row + 1)) / rowCount);
                 }
                 loadingFrame.onFinish();
+                refreshTableTr();
                 loadingFrame.setVisible(false);
                 return null;
             } catch (SQLException ex) {
