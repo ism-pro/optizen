@@ -5,6 +5,8 @@
  */
 package org.optizen.app;
 
+import java.awt.Dialog;
+import java.awt.Frame;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -14,6 +16,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JDialog;
+import javax.swing.ProgressMonitor;
 import javax.swing.SwingWorker;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
@@ -34,6 +38,8 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
      */
     static Integer openFrameCount = 0;
     static final int xOffset = 30, yOffset = 30;
+
+    LoadingFrame loadingFrame;
 
     /**
      * Creates new form TransferFrame
@@ -63,9 +69,6 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         btnCancel = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnSendToDatabase = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        subProgress = new javax.swing.JProgressBar();
-        mainProgress = new javax.swing.JProgressBar();
         jSeparator1 = new javax.swing.JSeparator();
 
         setClosable(true);
@@ -173,22 +176,6 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(subProgress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(mainProgress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(subProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 66, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -197,9 +184,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5))
         );
@@ -210,11 +195,10 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addGap(75, 75, 75))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -223,7 +207,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +246,26 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     }//GEN-LAST:event_btnSendToDatabaseActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        new WorkOnSearching().execute();
+
+        // Remove existing rows
+        DefaultTableModel tm = (DefaultTableModel) tableData.getModel();
+        tm.getDataVector().removeAllElements();
+        tm.fireTableDataChanged();
+
+        search.setEnabled(false);
+        moveToTr.setEnabled(false);
+
+        WorkOnSearching wons = new WorkOnSearching();
+        wons.execute();
+
+        //This is what's called in the .execute method
+        loadingFrame = new LoadingFrame(null, "", Dialog.ModalityType.MODELESS);
+        loadingFrame.setLocationRelativeTo(this);
+        loadingFrame.setVisible(true);
+
+        search.setEnabled(true);
+        moveToTr.setEnabled(true);
+
 
     }//GEN-LAST:event_searchActionPerformed
 
@@ -279,14 +282,11 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JProgressBar mainProgress;
     private javax.swing.JButton moveToTr;
     private javax.swing.JButton search;
-    private javax.swing.JProgressBar subProgress;
     private javax.swing.JTable tableData;
     // End of variables declaration//GEN-END:variables
     @Override
@@ -342,9 +342,6 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
         @Override
         protected String doInBackground() throws Exception {
-            //This is what's called in the .execute method
-            LoadingFrame lf = new LoadingFrame(null, false);
-            lf.setVisible(true);
 
             try {
                 // Remove all the specify row
@@ -366,9 +363,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                         ResultSet.TYPE_SCROLL_INSENSITIVE,
                         ResultSet.CONCUR_READ_ONLY);
 
-                mainProgress.setValue(0);
-                subProgress.setValue(0);
-                lf.onInit();
+                loadingFrame.onInit();
                 for (int count = 0; count < counter; count++) {
                     // Gett link from settings
                     LinkModel link = Settings.readLinkModel(count);
@@ -413,8 +408,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     zenResult.last();
                     int size = zenResult.getRow();
                     zenResult.beforeFirst();
-                    subProgress.setValue(0);
-                    lf.sub(0);
+                    loadingFrame.sub(0);
                     int subs = 0;
                     while (zenResult.next()) {
                         String value = zenResult.getObject(1).toString();
@@ -426,22 +420,20 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                         };
                         tm.addRow(rowObject);
                         Integer subValue = (100 * (subs + 1)) / size;
-                        subProgress.setValue(subValue);
-                        lf.sub(subValue);
+                        loadingFrame.sub(subValue);
                         subs++;
                     }
                     Integer mainValue = (100 * (count + 1)) / counter;
-                    mainProgress.setValue(mainValue);
-                    lf.main(mainValue);
+                    loadingFrame.main(mainValue);
                     Thread.sleep(5);
                 }
                 tableData.setModel(tm);
-                lf.setVisible(false);
+                loadingFrame.setVisible(false);
             } catch (SQLException ex) {
                 Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
-                lf.setVisible(false);
+                loadingFrame.setVisible(false);
             }
-            lf.setVisible(false);
+            loadingFrame.setVisible(false);
             return null;
         }
 
