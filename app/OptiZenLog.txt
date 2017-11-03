@@ -17316,3 +17316,48 @@
 2017-11-03T16:12:50.338Z >> OptiZen - Start...
 2017-11-03T16:12:50.355Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
 2017-11-03T16:12:50.594Z >> OptiZen - End run...
+2017-11-03T17:29:52.333Z >> Extension : accdb
+2017-11-03T17:29:52.333Z >> Extension : accdb
+2017-11-03T17:29:52.333Z >> Extension : accdb
+2017-11-03T17:29:52.334Z >> Extension : accdb
+2017-11-03T17:29:52.334Z >> Extension : accdb
+2017-11-03T17:29:52.334Z >> Extension : accdb
+2017-11-03T17:29:52.335Z >> Extension : xlsx
+2017-11-03T17:29:52.335Z >> Extension : accdb
+2017-11-03T17:29:52.335Z >> Extension : laccdb
+2017-11-03T17:29:52.336Z >> Extension : accdb
+2017-11-03T17:29:52.336Z >> Extension : pdf
+2017-11-03T17:29:52.337Z >> Extension : msg
+2017-11-03T17:29:52.338Z >> Extension : log
+2017-11-03T17:29:52.338Z >> Extension : docx
+2017-11-03T17:29:52.442Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2017-11-03T17:29:52.450Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2017-11-03T17:59:47.086Z >> OptiZen - Start...
+2017-11-03T17:59:47.103Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2017-11-03T17:59:47.348Z >> OptiZen - End run...
+2017-11-03T18:50:47.443Z >> OptiZen - Start...
+2017-11-03T18:50:47.570Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2017-11-03T18:50:48.237Z >> OptiZen - End run...
+2017-11-03T19:07:29.675Z >> OptiZen - Start...
+2017-11-03T19:07:29.691Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2017-11-03T19:07:29.966Z >> OptiZen - End run...
+2017-11-03T19:07:42.759Z >> Extension : accdb
+2017-11-03T19:07:42.759Z >> Extension : accdb
+2017-11-03T19:07:42.760Z >> Extension : accdb
+2017-11-03T19:07:42.760Z >> Extension : accdb
+2017-11-03T19:07:42.761Z >> Extension : accdb
+2017-11-03T19:07:42.761Z >> Extension : accdb
+2017-11-03T19:07:42.762Z >> Extension : xlsx
+2017-11-03T19:07:42.762Z >> Extension : accdb
+2017-11-03T19:07:42.762Z >> Extension : laccdb
+2017-11-03T19:07:42.763Z >> Extension : accdb
+2017-11-03T19:07:42.763Z >> Extension : pdf
+2017-11-03T19:07:42.763Z >> Extension : msg
+2017-11-03T19:07:42.764Z >> Extension : log
+2017-11-03T19:07:42.764Z >> Extension : docx
+2017-11-03T19:07:42.797Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2017-11-03T19:07:42.829Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2017-11-03T19:07:46.233Z >> LinkFrame : internalFrameClosing() >> internal Frame Is Closing !
+2017-11-03T19:11:01.729Z >> OptiZen - Start...
+2017-11-03T19:11:01.749Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2017-11-03T19:11:01.990Z >> OptiZen - End run...
