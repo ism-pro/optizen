@@ -6,6 +6,11 @@
 package org.optizen.app;
 
 import java.awt.Dialog;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -38,7 +43,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
      */
     static Integer openFrameCount = 0;
     static final int xOffset = 30, yOffset = 30;
-
+    static String MoniteurExportFilename = "MoniteurExport_TR_CPT_MVTS.bat";
     LoadingFrame loadingFrame;
 
     /**
@@ -247,7 +252,80 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void btnSendToDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendToDatabaseActionPerformed
-        // TODO add your handling code here:
+
+        // Génération du fichier batch pour exécution
+        File f = new File(MoniteurExportFilename);
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+                FileOutputStream fop = new FileOutputStream(f);
+
+                String contents[] = {"'## Optimaint_Moniteur.exe [{ID configuration}][,{valeur}[,{société}]]\n",
+                    "'##\n",
+                    "'## Les arguments mentionnés entourés des caractères '[' et ']' sont facultatifs.\n",
+                    "'##\n",
+                    "'## • {ID configuration} représente l'identification de la configuration de fonctionnement d'OptiMaint, par défaut la valeur utilisée est 'OptiMaint', \n",
+                    "'## • {valeur} doit correspondre à la valeur 2,\n",
+                    "'## • {société} correspond à l'identification de la société pour laquelle doit être lancé le traitement. \n",
+                    "C:\n",
+                    "cd \"C:\\Program Files (x86)\\Apisoft\\OptiMaint\"\n",
+                    "OptiMaint_Moniteur.exe OptiMaint,2,11\n",
+                    "exit 0"};
+
+                // get the content in bytes
+                for (String content : contents) {
+                    byte[] contentInBytes = content.getBytes();
+                    fop.write(contentInBytes);
+                    fop.flush();
+                }
+                fop.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Util.out("Btn Send To Database : Impossible de créer un fichier de moniteur dû à l'erreur : " + ex.getLocalizedMessage());
+                return;
+            }
+        }
+
+        // Execution
+        Runtime rt = Runtime.getRuntime();
+        String[] commands = {MoniteurExportFilename};
+
+        try {
+            Process proc = rt.exec(commands);
+//            BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+//
+//        BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
+//
+//// read the output from the command
+//        System.out.println("Here is the standard output of the command:\n");
+//        String s = null;
+//        while ((s = stdInput.readLine()) != null) {
+//            System.out.println(s);
+//        }
+//
+//// read any errors from the attempted command
+//        System.out.println("Here is the standard error of the command (if any):\n");
+//        while ((s = stdError.readLine()) != null) {
+//            System.out.println(s);
+//        }
+            btnSendToDatabase.setEnabled(false);
+            btnRefresh.setEnabled(false);
+
+            WorkOnTransferToOpti wonm = new WorkOnTransferToOpti();
+            wonm.execute();
+
+            //This is what's called in the .execute method
+            loadingFrame = new LoadingFrame(null, "", Dialog.ModalityType.MODELESS);
+            loadingFrame.setLocationRelativeTo(this);
+            loadingFrame.setVisible(true);
+
+            btnSendToDatabase.setEnabled(true);
+            btnRefresh.setEnabled(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_btnSendToDatabaseActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
@@ -425,7 +503,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                         ResultSet.CONCUR_READ_ONLY);
 
                 loadingFrame.onInit();
-                //counter = Math.min(counter , 5);
+                //counter = Math.min(counter, 8);
                 for (int count = 0; count < counter; count++) {
                     // Gett link from settings
                     LinkModel link = Settings.readLinkModel(count);
@@ -520,7 +598,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 DefaultTableModel tmd = (DefaultTableModel) tableData.getModel();
                 // Prepare the statement
                 Connection conn = DatabaseFrame.loadConnectionOptimaint();
-                
+
                 String sql = "INSERT INTO TR_CPT_MVTS "
                         + "(TRCPT_SOCIETE, TRCPT_EQUIPEMENT, TRCPT_UNITE, TRCPT_ORGANE, TRCPT_VALEUR, TRCPT_DATE_MVT, TRCPT_INTERVENANT, TRCPT_SITUATION) "
                         + "values (?,?,?,?,?,?,?,?)";
@@ -530,7 +608,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 Integer rowCount = tableData.getRowCount();
                 for (int row = 0; row < rowCount; row++) {
                     Vector rowCpt = (Vector) tmd.getDataVector().elementAt(row);
-                    
+
                     //ps.setInt(1, Integer.valueOf(rowCpt.get(0).toString()));
                     ps.setString(1, rowCpt.get(1).toString());
                     ps.setString(2, rowCpt.get(2).toString());
@@ -541,7 +619,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     ps.setTimestamp(6, java.sql.Timestamp.valueOf(rowCpt.get(6).toString())); // date time
                     ps.setString(7, rowCpt.get(7).toString()); // MPRV
                     ps.setInt(8, Integer.valueOf(rowCpt.get(12).toString()));
-                    
+
                     ps.executeUpdate();
                     loadingFrame.main((100 * (row + 1)) / rowCount);
                 }
@@ -550,6 +628,49 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 loadingFrame.setVisible(false);
                 return null;
             } catch (SQLException ex) {
+                Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+                loadingFrame.onFinish();
+                loadingFrame.setVisible(false);
+                return null;
+            }
+        }
+
+        @Override
+        protected void process(List<String> item
+        ) {
+            //This updates the UI
+            //textArea.append(item + "\n");
+        }
+    }
+
+    public class WorkOnTransferToOpti extends SwingWorker<String, String> {
+
+        @Override
+        protected String doInBackground() {
+
+            try {
+                // Prepare the statement
+                Connection conn = DatabaseFrame.loadConnectionOptimaint();
+
+                String sql = "SELECT count(*) from TR_CPT_MVTS WHERE TRCPT_SITUATION=1";
+                ResultSetTableModel tm = new ResultSetTableModel(conn, sql);
+
+                loadingFrame.onInit();
+                loadingFrame.sub(100);
+                Integer rowCount = tableTr.getRowCount();
+                Integer traited = 0;
+                while (traited < rowCount) {
+                    tm.setQuery(sql);
+                    traited = Integer.valueOf(tm.getValueAt(0, 0).toString());
+                    Thread.sleep(1000);
+                    loadingFrame.main((100 * (traited)) / rowCount);
+                };
+
+                loadingFrame.onFinish();
+                refreshTableTr();
+                loadingFrame.setVisible(false);
+                return null;
+            } catch (SQLException | ClassNotFoundException | InterruptedException ex) {
                 Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
                 loadingFrame.onFinish();
                 loadingFrame.setVisible(false);
