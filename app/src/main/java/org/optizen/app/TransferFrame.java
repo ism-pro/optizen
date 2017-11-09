@@ -6,6 +6,7 @@
 package org.optizen.app;
 
 import java.awt.Dialog;
+import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,6 +20,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +31,7 @@ import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 import javax.swing.table.DefaultTableModel;
 import org.optizen.model.ResultSetTableModel;
+import org.optizen.util.DateUtil;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
 import org.optizen.util.model.LinkModel;
@@ -45,6 +49,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     static final int xOffset = 30, yOffset = 30;
     static String MoniteurExportFilename = "MoniteurExport_TR_CPT_MVTS.bat";
     LoadingFrame loadingFrame;
+
+    private FrequencyUp frequencyUp;
+    private Integer autoStep = 0;
 
     /**
      * Creates new form TransferFrame
@@ -97,7 +104,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         cbFSec = new javax.swing.JComboBox<>();
         rbModeMoment = new javax.swing.JRadioButton();
         rbModeFrequence = new javax.swing.JRadioButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        btnTogglerPlan = new javax.swing.JToggleButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setClosable(true);
@@ -275,7 +282,12 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         rbModeFrequence.setSelected(true);
         rbModeFrequence.setText("Fréquence");
 
-        jToggleButton1.setText("Planifier");
+        btnTogglerPlan.setText("Planifier");
+        btnTogglerPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTogglerPlanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -283,7 +295,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTogglerPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rbModeFrequence)
@@ -338,7 +350,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                         .addComponent(jLabel4)
                         .addComponent(cbMSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(rbModeMoment))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -352,7 +364,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             .addComponent(jLabel8)
                             .addComponent(cbFSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(rbModeFrequence, javax.swing.GroupLayout.Alignment.TRAILING)))
-            .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(btnTogglerPlan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -363,9 +377,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5))
         );
@@ -510,22 +524,26 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         search.setEnabled(true);
         moveToTr.setEnabled(true);
 
-
+        // Can go to next step
+        autoStep++;
     }//GEN-LAST:event_searchActionPerformed
 
     private void moveToTrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveToTrActionPerformed
 
         // Vérifie que des données sont disponible pour le transfere
         if (tableData.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(this,
-                    "Aucune données à placer dans la table TR !\nExécuter une recherche ...",
-                    "Envoyer en table TR : pas de données à transférer",
-                    JOptionPane.WARNING_MESSAGE);
+            if (!btnTogglerPlan.isSelected()) {
+                JOptionPane.showMessageDialog(this,
+                        "Aucune données à placer dans la table TR !\nExécuter une recherche ...",
+                        "Envoyer en table TR : pas de données à transférer",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+            autoStep = 0;
             return;
         }
 
         // Informe sur la suppression de donnée en table TR si des données sont existante
-        if (tableTr.getRowCount() > 0) {
+        if (tableTr.getRowCount() > 0 && !btnTogglerPlan.isSelected()) {
             int result = JOptionPane.showConfirmDialog(this,
                     "Des données sont disponible dans la base TR ! En poursuivant, vous allez les perdres.\n"
                     + "Voulez-vous continuer ?",
@@ -554,27 +572,83 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
     private void rbModeMomentItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rbModeMomentItemStateChanged
         // TODO add your handling code here:
-        
+
         Boolean mState = !cbMDay.isEnabled();
         cbMDay.setEnabled(mState);
         cbMHour.setEnabled(mState);
         cbMMin.setEnabled(mState);
         cbMSec.setEnabled(mState);
-        
+
         Boolean fState = !cbFDay.isEnabled();
         cbFDay.setEnabled(fState);
         cbFHour.setEnabled(fState);
         cbFMin.setEnabled(fState);
         cbFSec.setEnabled(fState);
 
-            
+
     }//GEN-LAST:event_rbModeMomentItemStateChanged
+
+    private void btnTogglerPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTogglerPlanActionPerformed
+        // TODO add your handling code here:
+        if (btnTogglerPlan.isSelected()) {
+            frequencyUp = new FrequencyUp(
+                    Integer.valueOf(cbFDay.getSelectedItem().toString()),
+                    Integer.valueOf(cbFHour.getSelectedItem().toString()),
+                    Integer.valueOf(cbFMin.getSelectedItem().toString()),
+                    Integer.valueOf(cbFSec.getSelectedItem().toString()));
+
+            if (rbModeMoment.isSelected()) {
+                Boolean mState = !cbMDay.isEnabled();
+                cbMDay.setEnabled(mState);
+                cbMHour.setEnabled(mState);
+                cbMMin.setEnabled(mState);
+                cbMSec.setEnabled(mState);
+                rbModeMoment.setEnabled(mState);
+            }
+
+            if (rbModeFrequence.isSelected()) {
+                Boolean fState = !cbFDay.isEnabled();
+                cbFDay.setEnabled(fState);
+                cbFHour.setEnabled(fState);
+                cbFMin.setEnabled(fState);
+                cbFSec.setEnabled(fState);
+                rbModeFrequence.setEnabled(fState);
+            }
+            rbModeMoment.setEnabled(false);
+            rbModeFrequence.setEnabled(false);
+        } else {
+            frequencyUp.kill();
+            frequencyUp = null;
+            if (rbModeMoment.isSelected()) {
+                Boolean mState = !cbMDay.isEnabled();
+                cbMDay.setEnabled(mState);
+                cbMHour.setEnabled(mState);
+                cbMMin.setEnabled(mState);
+                cbMSec.setEnabled(mState);
+                rbModeMoment.setEnabled(mState);
+            }
+
+            if (rbModeFrequence.isSelected()) {
+                Boolean fState = !cbFDay.isEnabled();
+                cbFDay.setEnabled(fState);
+                cbFHour.setEnabled(fState);
+                cbFMin.setEnabled(fState);
+                cbFSec.setEnabled(fState);
+                rbModeFrequence.setEnabled(fState);
+            }
+            rbModeMoment.setEnabled(true);
+            rbModeFrequence.setEnabled(true);
+        }
+
+
+    }//GEN-LAST:event_btnTogglerPlanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSendToDatabase;
+    private javax.swing.JToggleButton btnTogglerPlan;
     private javax.swing.JComboBox<String> cbFDay;
     private javax.swing.JComboBox<String> cbFHour;
     private javax.swing.JComboBox<String> cbFMin;
@@ -601,7 +675,6 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton moveToTr;
     private javax.swing.JRadioButton rbModeFrequence;
     private javax.swing.JRadioButton rbModeMoment;
@@ -884,6 +957,59 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             //This updates the UI
             //textArea.append(item + "\n");
         }
+    }
+
+    public class FrequencyUp {
+
+        Toolkit toolkit;
+        Timer timer;
+
+        /**
+         *
+         */
+        public FrequencyUp(int seconds) {
+            toolkit = Toolkit.getDefaultToolkit();
+            timer = new Timer();
+            timer.schedule(new FrequencyTask(), DateUtil.maintenant(), seconds * 1000);
+        }
+
+        public FrequencyUp(Integer day, Integer hour, Integer min, Integer sec) {
+            toolkit = Toolkit.getDefaultToolkit();
+            timer = new Timer();
+            Long lsec = (long) ((day * 84400) + (hour * 3600) + (min * 60) + (sec));
+            timer.scheduleAtFixedRate(new FrequencyTask(), 0, lsec * 1000);
+        }
+
+        private void kill() {
+            timer.cancel();
+        }
+
+        class FrequencyTask extends TimerTask {
+
+            Integer frequencyCounter = 0;
+            Boolean alreadyProcessing = false;
+
+            @Override
+            public void run() {
+                if (btnTogglerPlan.isSelected() && !alreadyProcessing) {
+                    if (autoStep == 0) {
+                        searchActionPerformed(null);
+                    }
+                    if (autoStep == 1) {
+                        moveToTrActionPerformed(null);
+                    }
+                    if (autoStep == 2) {
+                        btnSendToDatabaseActionPerformed(null);
+                    }
+                    toolkit.beep();
+                    frequencyCounter++;
+                    //timer.cancel(); //Not necessary because we call System.exit
+                } else {
+                    Util.out("Frequency Task already processing skip request step " + autoStep + " !");
+                }
+            }
+        }
+
     }
 
 }
