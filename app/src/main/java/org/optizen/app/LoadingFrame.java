@@ -50,7 +50,6 @@ public class LoadingFrame extends javax.swing.JDialog {
         setForeground(new java.awt.Color(255, 153, 102));
         setModal(true);
         setName(""); // NOI18N
-        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
