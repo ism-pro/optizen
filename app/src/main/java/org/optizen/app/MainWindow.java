@@ -94,7 +94,8 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OptiZen");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/img/optizen.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/img/optizen.png")).getImage()
+        );
         setName("MainWindowFrame"); // NOI18N
         setSize(new java.awt.Dimension(1024, 680));
 
