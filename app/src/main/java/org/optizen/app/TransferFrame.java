@@ -18,6 +18,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -316,6 +318,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         rbModeFrequence.setSelected(true);
         rbModeFrequence.setText("Fréquence");
 
+        btnTogglerPlan.setIcon(Ico.i32("/img/oz/planifier.png"));
         btnTogglerPlan.setText("Planifier");
         btnTogglerPlan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,7 +342,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnTogglerPlan)
+                .addComponent(btnTogglerPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -382,15 +385,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labLastGenerate, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labNextGenerate, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labNextGenerate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labLastGenerate, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77))
             .addComponent(jSeparator2)
         );
         jPanel5Layout.setVerticalGroup(
@@ -424,13 +425,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             .addComponent(cbFSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jSeparator3)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(labLastGenerate))
+                        .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(labNextGenerate)))))
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(labLastGenerate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labNextGenerate))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -439,7 +440,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
             .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -609,7 +610,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
         search.setEnabled(true);
         moveToTr.setEnabled(true);
-        
+
         autoStep++;
     }//GEN-LAST:event_moveToTrActionPerformed
 
@@ -1027,8 +1028,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             timer = new Timer();
             Long lsec = (long) ((day * 84400) + (hour * 3600) + (min * 60) + (sec));
             timer.scheduleAtFixedRate(new FrequencyTask(), 0, lsec * 1000);
-            java.util.Date mnt = DateUtil.maintenant();
-            labLastGenerate.setText(mnt.toString());
+
         }
 
         private void kill() {
@@ -1042,7 +1042,17 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
             @Override
             public void run() {
-                while (btnTogglerPlan.isSelected() && autoStep <=3 ) {
+                LocalDateTime mnt = LocalDateTime.from(LocalDateTime.now());
+                labLastGenerate.setText(mnt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
+                long days = Long.valueOf(cbFDay.getSelectedItem().toString());
+                long hours = Long.valueOf(cbFHour.getSelectedItem().toString());
+                long mins = Long.valueOf(cbFMin.getSelectedItem().toString());
+                long secs = Long.valueOf(cbFSec.getSelectedItem().toString());
+                LocalDateTime next = mnt.plusDays(days).plusHours(hours).plusMinutes(mins).plusSeconds(secs);
+                labNextGenerate.setText(next.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
+                if (btnTogglerPlan.isSelected() && autoStep <= 3) {
                     if (autoStep == 0) {
                         searchActionPerformed(null);
                     }
@@ -1052,17 +1062,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     if (autoStep == 2) {
                         btnSendToDatabaseActionPerformed(null);
                     }
-                    
+
                     //toolkit.beep();
                     frequencyCounter++;
                     //timer.cancel(); //Not necessary because we call System.exit
-                    //Util.out("Frequency counter : " + frequencyCounter);
-                } 
+                }
                 autoStep = 0;
                 frequencyCounter = 0;
-//                else {
-//                    Util.out("Frequency Task already processing skip request step " + autoStep + " !");
-//                }
             }
         }
 
