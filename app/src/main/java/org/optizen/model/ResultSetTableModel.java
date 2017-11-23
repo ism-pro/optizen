@@ -2,17 +2,23 @@
 // A TableModel that supplies ResultSet data to a JTable.
 package org.optizen.model;
 
+import java.awt.Component;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 
 // ResultSet rows and columns are counted from 1 and JTable 
 // rows and columns are counted from 0. When processing 
@@ -39,7 +45,7 @@ public class ResultSetTableModel extends AbstractTableModel {
         Class.forName(DatabaseModel.mapReadableToDriver(model.getDriver()));
 
         // Make the url
-        String url = url = "jdbc:" + model.getDriver() + "://"
+        String url = "jdbc:" + model.getDriver() + "://"
                 + model.getServer()
                 + (model.getPort() == null ? "" : (model.getPort().trim().isEmpty() ? "" : ":" + model.getPort()))
                 + ";databaseName=" + model.getDatabaseName();
@@ -57,6 +63,8 @@ public class ResultSetTableModel extends AbstractTableModel {
 
         // set query and execute it
         setQuery(query);
+
+        //
     } // end constructor ResultSetTableModel
 
     public ResultSetTableModel(Connection connection, String query)
@@ -239,7 +247,6 @@ public class ResultSetTableModel extends AbstractTableModel {
         PreparedStatement pStatement = connection.prepareStatement(sql);
         pStatement.executeUpdate();
 
-        
         // notify JTable that model has changed
         fireTableStructureChanged();
     }

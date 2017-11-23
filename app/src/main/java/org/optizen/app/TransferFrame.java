@@ -5,6 +5,7 @@
  */
 package org.optizen.app;
 
+import java.awt.Component;
 import java.awt.Dialog;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
@@ -18,6 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -28,10 +30,13 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.SwingWorker;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import org.optizen.model.ResultSetTableModel;
 import org.optizen.util.DateUtil;
 import org.optizen.util.Settings;
@@ -61,6 +66,25 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     public TransferFrame() {
         initComponents();
         refreshTableTr();
+
+        TableCellRenderer tableCellRenderer = new DefaultTableCellRenderer() {
+            SimpleDateFormat f = new SimpleDateFormat("dd/MM/yy hh:mm:ss");
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,int row, int column) {
+                if (value instanceof Date) {
+                    value = f.format(value);
+                }
+                return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            }
+        };
+        
+        tableData.getColumnModel().getColumn(6).setCellRenderer(tableCellRenderer);
+        tableData.getColumnModel().getColumn(9).setCellRenderer(tableCellRenderer);
+        tableData.getColumnModel().getColumn(10).setCellRenderer(tableCellRenderer);
+        
+        tableTr.getColumnModel().getColumn(6).setCellRenderer(tableCellRenderer);
+        tableTr.getColumnModel().getColumn(9).setCellRenderer(tableCellRenderer);
+        tableTr.getColumnModel().getColumn(10).setCellRenderer(tableCellRenderer);
     }
 
     /**
@@ -786,10 +810,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
      */
     private void refreshTableTr() {
         try {
-            ResultSetTableModel tm = new ResultSetTableModel(
-                    DatabaseFrame.loadConnectionOptimaint(),
-                    "SELECT * FROM TR_CPT_MVTS"
-            );
+            ResultSetTableModel tm = new ResultSetTableModel(DatabaseFrame.loadConnectionOptimaint(), "SELECT * FROM TR_CPT_MVTS");
             tableTr.setModel(tm);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -842,6 +863,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             link.getEquEquipement(),
                             link.getOrgOrgane(),
                             link.getUnite());
+                    
                     //Util.out("QLastOptiRecord : " + qLastOptiRecord);
 
                     String lastOptiDateTime = "2000-01-01";
@@ -864,7 +886,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             link.getTable(),
                             link.getVariable(),
                             lastOptiDateTime);
-                    //Util.out("Query Datas : " + queryDatas);
+                    Util.out("Query Datas : " + queryDatas);
 
                     ResultSet zenResult = zenState.executeQuery(queryDatas);
 
@@ -1002,8 +1024,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         }
 
         @Override
-        protected void process(List<String> item
-        ) {
+        protected void process(List<String> item) {
             //This updates the UI
             //textArea.append(item + "\n");
         }

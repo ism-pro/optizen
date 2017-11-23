@@ -366,6 +366,7 @@ public class DatabaseFrame extends javax.swing.JDialog {
                     + (model.getPort()==null ? "" : (model.getPort().trim().isEmpty() ? "" : ":" + model.getPort()))
                     + ";databaseName=" + model.getDatabaseName();
             Connection conn = DriverManager.getConnection(url, model.getUser(), model.getPassword());
+            Util.out("La connexion suivante est active :  " + url);
             return conn;
         } catch (ClassNotFoundException | SQLException ex) {
             queryLastError = DatabaseFrame.class.getName() + " >> isConnectable(DatabaseModel model) for url(" + url + ") : " + ex.getLocalizedMessage();

@@ -92,7 +92,8 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("OptiZen");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
+        setTitle(bundle.getString("AppVersion")); // NOI18N
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/img/optizen.png")).getImage()
         );
@@ -154,7 +155,6 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         jToolBar1.add(tbBtnExit);
 
         fileMenu.setMnemonic('f');
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/Fr_fr"); // NOI18N
         fileMenu.setText(bundle.getString("MenuFile")); // NOI18N
         fileMenu.setToolTipText("Gestion de l'application");
 
