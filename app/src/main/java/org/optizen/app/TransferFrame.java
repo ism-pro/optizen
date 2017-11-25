@@ -8,11 +8,9 @@ package org.optizen.app;
 import java.awt.Component;
 import java.awt.Dialog;
 import java.awt.Toolkit;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -22,7 +20,6 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -112,6 +109,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         btnRefresh = new javax.swing.JButton();
         btnSendToDatabase = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        sendToDatabaseError = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         cbMDay = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -257,6 +255,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             }
         });
 
+        sendToDatabaseError.setForeground(new java.awt.Color(255, 51, 0));
+        sendToDatabaseError.setText("-");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -266,7 +267,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sendToDatabaseError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jSeparator1)
@@ -278,11 +281,15 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 10, Short.MAX_VALUE))
+                    .addComponent(sendToDatabaseError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         cbMDay.setEditable(true);
@@ -318,12 +325,12 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
         cbFHour.setEditable(true);
         cbFHour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
-        cbFHour.setSelectedIndex(1);
 
         jLabel7.setText("Minute");
 
         cbFMin.setEditable(true);
         cbFMin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "52", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        cbFMin.setSelectedIndex(30);
 
         jLabel8.setText("secondes");
 
@@ -470,7 +477,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -753,6 +760,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     private javax.swing.JRadioButton rbModeFrequence;
     private javax.swing.JRadioButton rbModeMoment;
     private javax.swing.JButton search;
+    private javax.swing.JLabel sendToDatabaseError;
     private javax.swing.JTable tableData;
     private javax.swing.JTable tableTr;
     // End of variables declaration//GEN-END:variables
@@ -997,7 +1005,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 // Prepare the statement
                 Connection conn = DatabaseFrame.loadConnectionOptimaint();
 
-                String sql = "SELECT count(*) from TR_CPT_MVTS WHERE TRCPT_SITUATION=1";
+                String sql = "SELECT count(*) from TR_CPT_MVTS WHERE TRCPT_SITUATION=1 OR TRCPT_SITUATION=-1";
                 ResultSetTableModel tm = new ResultSetTableModel(conn, sql);
 
                 loadingFrame.onInit();
@@ -1010,6 +1018,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     Thread.sleep(1000);
                     loadingFrame.main((100 * (traited)) / rowCount);
                 };
+                tm.setQuery("SELECT count(*) from TR_CPT_MVTS WHERE TRCPT_SITUATION=-1");
+                Integer errorCounter = Integer.valueOf(tm.getValueAt(0, 0).toString());
+                if(errorCounter!=0){
+                    sendToDatabaseError.setText("Impossible d'importer " + errorCounter + " enrgistrement ! Veuillez vérifier vos informations");
+                }else{
+                    sendToDatabaseError.setText("-");
+                }
 
                 loadingFrame.onFinish();
                 refreshTableTr();
