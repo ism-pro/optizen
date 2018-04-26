@@ -255,7 +255,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             }
         });
 
-        sendToDatabaseError.setForeground(new java.awt.Color(255, 51, 0));
+        sendToDatabaseError.setForeground(new java.awt.Color(0, 102, 0));
         sendToDatabaseError.setText("-");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -822,6 +822,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             tableTr.setModel(tm);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+            Util.out("TransfertFrame : refreshTableTr >> " +  ex.getMessage());
         }
     }
 
@@ -886,9 +887,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     //
                     //link.getVariable();
                     String queryDatas
-                            = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S+3*3600 , '1970-01-01' ) AS CPT_DATE_MVT "
+                            = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S+" + ConfigFrame.sTZ()+ " , '1970-01-01' ) AS CPT_DATE_MVT "
                             + "FROM %s "
-                            + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(3*3600)) "
+                            + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(" + ConfigFrame.sTZ()+ ")) "
                             + "ORDER BY TIMESTAMP_S ASC";
                     queryDatas = String.format(queryDatas,
                             link.getTable(),
@@ -1021,9 +1022,11 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 tm.setQuery("SELECT count(*) from TR_CPT_MVTS WHERE TRCPT_SITUATION=-1");
                 Integer errorCounter = Integer.valueOf(tm.getValueAt(0, 0).toString());
                 if(errorCounter!=0){
-                    sendToDatabaseError.setText("Impossible d'importer " + errorCounter + " enrgistrement ! Veuillez vérifier vos informations");
+                    sendToDatabaseError.setText("Impossible d'importer " + errorCounter + "/" + rowCount + " enrgistrement(s) ! Veuillez vérifier vos informations");
+                    sendToDatabaseError.setForeground(new java.awt.Color(255, 51, 0));
                 }else{
-                    sendToDatabaseError.setText("-");
+                    sendToDatabaseError.setText("Traitement réussi !" + errorCounter + " erreur sur " + rowCount);
+                    sendToDatabaseError.setForeground(new java.awt.Color(0, 102, 0));
                 }
 
                 loadingFrame.onFinish();

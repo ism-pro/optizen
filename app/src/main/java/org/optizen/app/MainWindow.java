@@ -5,10 +5,6 @@
  */
 package org.optizen.app;
 
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowFocusListener;
-import java.awt.event.WindowListener;
-import java.awt.event.WindowStateListener;
 import java.beans.PropertyVetoException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -410,6 +406,7 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
             transferFrame.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            Util.out("MainWindow : menuItemTransferActionPerformed >> " +  ex.getMessage());
         }
     }//GEN-LAST:event_menuItemTransferActionPerformed
 
@@ -443,6 +440,7 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         java.awt.EventQueue.invokeLater(() -> {
             Util.out("OptiZen - Start...");
             Settings.iniFilename = "OptiZen.ini";
+            Util.out("Initialisation du fichier de configuration...");
             if (Settings.createIniFile()) {
                 Settings.writeDefaultClientSetup();
             }

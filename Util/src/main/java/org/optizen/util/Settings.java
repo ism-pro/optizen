@@ -30,6 +30,7 @@ public class Settings {
 
     public static final String CONFIG = "CONFIG";
     public static final String COMPANY = "company";
+    public static final String GMT = "gmt";
     public static final String URL_OPTI = "urloptimaint";
     public static final String URL_ZEN = "urlzenon";
     public static final String LINK_ZEN = "LINKZEN";
@@ -172,6 +173,7 @@ public class Settings {
         try {
             Wini ini = new Wini(new File(iniFilename));
             ini.put(Settings.CONFIG, Settings.COMPANY, "11");
+            ini.put(Settings.CONFIG, Settings.GMT, 3);
 
             ini.put(Settings.CONFIG, Settings.URL_OPTI, "jdbc:sqlserver:");
             ini.put(Settings.CONFIG, Settings.URL_ZEN, "jdbc:sqlserver:");

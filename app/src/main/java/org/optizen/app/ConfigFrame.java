@@ -12,6 +12,10 @@ import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -54,6 +58,15 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         String company = Settings.read(Settings.CONFIG, Settings.COMPANY).toString();
         tfCompany.setText(company);
 
+        // Read GMT
+        Object o = Settings.read(Settings.CONFIG, Settings.GMT);
+        Integer gmt = 0;
+        if (o != null) {
+            gmt = Integer.valueOf(o.toString());
+        }
+        fillGMT();
+        cbGMT.setSelectedIndex(gmt);
+
         // Read saved data
         String urlOpti = Settings.read(Settings.CONFIG, Settings.URL_OPTI).toString();//"jdbc:sqlserver:10.116.26.35\\SQLSERVER:1433;databaseName=optimaint?sa?Opt!M@!nt";
         String urlZen = Settings.read(Settings.CONFIG, Settings.URL_ZEN).toString();//"jdbc:sqlserver:10.243.59.27\\SQLSERVER;databaseName=scada?sa?s@z3non";
@@ -63,7 +76,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         // Init table model
         Integer counter = Integer.valueOf(Settings.read(Settings.LINK_ZEN, Settings.COUNTER).toString());
         TableParamDataModel tm = new TableParamDataModel();
-        for(int count = 0; count < counter; count++){
+        for (int count = 0; count < counter; count++) {
             String param = Settings.read(Settings.LINK_ZEN + "\\" + count, "param").toString();
             String data = Settings.read(Settings.LINK_ZEN + "\\" + count, "data").toString();
             tm.addRow(param, data);
@@ -93,6 +106,8 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tfCompany = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        cbGMT = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnDBConnectOpti = new javax.swing.JButton();
@@ -143,15 +158,24 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
 
         tfCompany.setText("11");
 
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("GMT");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfCompany, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfCompany, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbGMT, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -161,7 +185,11 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(tfCompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(344, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(cbGMT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(bundle.getString("ConfigFrameField_company"), jPanel1); // NOI18N
@@ -403,8 +431,8 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                 Logger.getLogger(ConfigFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(this, "Actualisation des données terminée", "Mise à jour des tables zenon", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, "Impossible de rafraichir les données du schéma ZENON \n" + DatabaseFrame.queryLastError, 
+        } else {
+            JOptionPane.showMessageDialog(this, "Impossible de rafraichir les données du schéma ZENON \n" + DatabaseFrame.queryLastError,
                     "Mise à jour des tables zenon", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnUpdateLinkActionPerformed
@@ -419,29 +447,28 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         try {
             Wini ini = new Wini(new File(Settings.iniFilename));
             ini.put(Settings.CONFIG, Settings.COMPANY, tfCompany.getText());
-            
+            ini.put(Settings.CONFIG, Settings.GMT, cbGMT.getSelectedIndex());
+
             ini.put(Settings.CONFIG, Settings.URL_OPTI, schemaOpti.getText());
             ini.put(Settings.CONFIG, Settings.URL_ZEN, schemaZen.getText());
-            
-            
+
             // Clean previous table 
             Integer counter = Integer.valueOf(Settings.read(Settings.LINK_ZEN, Settings.COUNTER).toString());
-            for(int count=0; count < counter; count++){
+            for (int count = 0; count < counter; count++) {
                 ini.remove(Settings.LINK_ZEN + "\\" + count);
             }
-            
-            
+
             TableParamDataModel tm = (TableParamDataModel) tableLink.getModel();
             ini.put(Settings.LINK_ZEN, Settings.COUNTER, tm.getRowCount());
-            for(int row = 0; row < tm.getRowCount(); row++){
+            for (int row = 0; row < tm.getRowCount(); row++) {
                 ini.add(Settings.LINK_ZEN + "\\" + row + "\\param");
                 ini.add(Settings.LINK_ZEN + "\\" + row + "\\data");
-                
+
                 Wini.Section root = ini.get(Settings.LINK_ZEN);
-                Wini.Section sec = root.lookup(""+row);
+                Wini.Section sec = root.lookup("" + row);
                 sec.add("param", tm.getValueAt(row, 1).toString());
                 sec.add("data", tm.getValueAt(row, 2).toString());
-                
+
                 //ini.put(Settings.LINK_ZEN, ""+row , tm.getValueAt(row, 1).toString() + " + " + tm.getValueAt(row, 2));
             }
             ini.store();
@@ -484,6 +511,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
     private javax.swing.JButton btnDelLink;
     private javax.swing.JButton btnSaveConfig;
     private javax.swing.JButton btnUpdateLink;
+    private javax.swing.JComboBox<String> cbGMT;
     private javax.swing.JComboBox<String> cbTableData;
     private javax.swing.JComboBox<String> cbTableParam;
     private javax.swing.JLabel jLabel1;
@@ -491,6 +519,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -504,9 +533,6 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
     private javax.swing.JTextField tfCompany;
     // End of variables declaration//GEN-END:variables
 
-    
-    
-    
     @Override
     public void internalFrameOpened(InternalFrameEvent e) {
         String methodName = getClass().getSimpleName() + Logger.getLogger(Util.class
@@ -570,5 +596,133 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
                 .getName()).getResourceBundleName() + " : databaseFrameEventCancel() >> ";
         System.out.println(methodName + "databaseFrameEventCancel !");
     }
+
+    private void fillGMT() {
+        List<String> l = orderTimeZones();
+        for (String s : l) {
+            cbGMT.addItem(s);
+        }
+    }
+
+    private static List<String> orderTimeZones() {
+        List<String> tzs = timeZones();
+        Collections.sort(tzs);
+        return tzs;
+    }
+
+    private static List<String> timeZones() {
+        List<String> tzs = new ArrayList<>();
+        String[] ids = TimeZone.getAvailableIDs();
+        for (String id : ids) {
+            tzs.add(displayTimeZone(TimeZone.getTimeZone(id)));
+        }
+        return tzs;
+    }
+
+    private static String displayTimeZone(TimeZone tz) {
+
+        long hours = TimeUnit.MILLISECONDS.toHours(tz.getRawOffset());
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(tz.getRawOffset()) - TimeUnit.HOURS.toMinutes(hours);
+        // avoid -4:-30 issue
+        minutes = Math.abs(minutes);
+
+        String result = "";
+        if (hours >= 0) {
+            result = String.format("[GMT]+[%02d:%02d] \t %s", hours, minutes, tz.getID());
+        } else {
+            result = String.format("[GMT]-[%02d:%02d] \t %s", hours, minutes, tz.getID());
+        }
+
+        return result;
+
+    }
+
+    /**
+     * Get part hour from a display time zone
+     *
+     * @param timeZone is like [GMT]+[%02d:%02d] \t %s or like [GMT]-[%02d:%02d]
+     * \t %s
+     * @return
+     */
+    public static Integer hourFromDisplayTimeZone(String timeZone) {
+        if (timeZone == null) {
+            return 0;
+        }
+        if (timeZone.isEmpty()) {
+            return 0;
+        }
+        String clean = timeZone.replace("[GMT]", "").split("\t")[0].replace("+", "").replace("-", "").replace("[", "").replace("]", "");
+        String[] a = clean.split(":");
+        if (a.length >= 1) {
+            return Integer.valueOf(a[0]);
+        }
+        return 0;
+    }
+
+    /**
+     * Get part hour from a display time zone
+     *
+     * @param timeZone is like [GMT]+[%02d:%02d] \t %s or like [GMT]-[%02d:%02d]
+     * \t %s
+     * @return
+     */
+    public static Integer minFromDisplayTimeZone(String timeZone) {
+        if (timeZone == null) {
+            return 0;
+        }
+        if (timeZone.isEmpty()) {
+            return 0;
+        }
+        String clean = timeZone.replace("[GMT]", "").split("\t")[0].replace("+", "").replace("-", "").replace("[", "").replace("]", "");
+        String[] a = clean.split(":");
+        if (a.length >= 2) {
+            return Integer.valueOf(a[1]);
+        }
+        return 0;
+    }
+
+    public static Integer hourAtOrderTimeZonePosition(Integer position) {
+        return hourFromDisplayTimeZone(orderTimeZones().get(position));
+    }
+
+    public static Integer minAtOrderTimeZonePosition(Integer position) {
+        return minFromDisplayTimeZone(orderTimeZones().get(position));
+    }
+
+    /**
+     * HTZ hours of time zone saved
+     *
+     * @return hours of time zone save in config
+     */
+    public static Integer hTZ() {
+        Object o = Settings.read(Settings.CONFIG, Settings.GMT);
+        Integer gmt = 0;
+        if (o != null) {
+            gmt = Integer.valueOf(o.toString());
+        }
+        return hourAtOrderTimeZonePosition(gmt);
+    }
+
+    /**
+     * MTZ minute of time zone saved
+     *
+     * @return minute of time zone saved in config
+     */
+    public static Integer mTZ() {
+        Object o = Settings.read(Settings.CONFIG, Settings.GMT);
+        Integer gmt = 0;
+        if (o != null) {
+            gmt = Integer.valueOf(o.toString());
+        }
+        return minAtOrderTimeZonePosition(gmt);
+    }
     
+    /**
+     * STZ secode corresponding of time zone saved mean combination of hour and minute
+     * @return 
+     */
+    public static Integer sTZ(){
+        return (hTZ()*3600)+(mTZ()*60);
+    }
+
 }
