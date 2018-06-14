@@ -910,7 +910,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
      * @param data is the name of the data table in zenon
      */
     public void initTableZenon(String variable, String data) {
-        String query = "SELECT * FROM " + variable + " ORDER BY " + variable + ".\"NAME\"";
+        String query = "SELECT * FROM " + variable + " ORDER BY " + variable + ".NAME";
 
         DatabaseModel dbm = DatabaseModel.parse(Settings.read(Settings.CONFIG, Settings.URL_ZEN).toString());
         try {
@@ -921,6 +921,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
             tcm.getColumn(0).setMaxWidth(60);
             tcm.getColumn(2).setMaxWidth(50);
         } catch (SQLException | ClassNotFoundException ex) {
+            Util.out("LinkFrame : initTableZenon >> " + ex.getMessage());
             Logger.getLogger(LinkFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

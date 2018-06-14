@@ -11,3 +11,675 @@
 2018-04-26T11:47:57.832Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
 2018-04-26T11:47:59.339Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
 2018-04-26T11:47:59.369Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T12:20:47.518Z >> OptiZen - Start...
+2018-04-26T12:20:47.535Z >> Initialisation du fichier de configuration...
+2018-04-26T12:20:47.536Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T12:20:47.827Z >> OptiZen - End run...
+2018-04-26T12:20:50.294Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T12:21:03.185Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T12:21:03.217Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T12:53:36.886Z >> OptiZen - Start...
+2018-04-26T12:53:36.901Z >> Initialisation du fichier de configuration...
+2018-04-26T12:53:36.902Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T12:53:37.169Z >> OptiZen - End run...
+2018-04-26T12:53:42.697Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T12:54:53.258Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T12:54:53.397Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T12:54:53.508Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T12:54:53.508Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T12:57:38.828Z >> OptiZen - Start...
+2018-04-26T12:57:38.849Z >> Initialisation du fichier de configuration...
+2018-04-26T12:57:38.850Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T12:57:39.134Z >> OptiZen - End run...
+2018-04-26T12:57:43.733Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T12:57:50.125Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T12:57:50.188Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T12:57:50.219Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T12:57:50.220Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T12:57:50.226Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T15:26:04.649Z >> OptiZen - Start...
+2018-04-26T15:26:04.667Z >> Initialisation du fichier de configuration...
+2018-04-26T15:26:04.668Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T15:26:04.992Z >> OptiZen - End run...
+2018-04-26T15:26:28.349Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:26:31.381Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T15:26:31.447Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T15:26:31.477Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:26:31.478Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T15:26:31.484Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T15:26:31.544Z >> Date = 2018-04-26 11:00:00.0
+2018-04-26T15:30:40.711Z >> OptiZen - Start...
+2018-04-26T15:30:40.730Z >> Initialisation du fichier de configuration...
+2018-04-26T15:30:40.730Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T15:30:41.022Z >> OptiZen - End run...
+2018-04-26T15:30:45.644Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:30:47.689Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T15:30:47.742Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T15:30:47.772Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:30:47.773Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T15:30:47.780Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T15:31:29.126Z >> OptiZen - Start...
+2018-04-26T15:31:29.145Z >> Initialisation du fichier de configuration...
+2018-04-26T15:31:29.145Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T15:31:29.394Z >> OptiZen - End run...
+2018-04-26T15:31:34.243Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:32:11.919Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T15:32:11.984Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T15:32:12.017Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:32:12.018Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T15:32:12.025Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T15:35:13.357Z >> OptiZen - Start...
+2018-04-26T15:35:13.378Z >> Initialisation du fichier de configuration...
+2018-04-26T15:35:13.379Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T15:35:13.646Z >> OptiZen - End run...
+2018-04-26T15:35:26.357Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:35:28.099Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T15:35:28.151Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T15:35:28.183Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:35:28.183Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T15:35:28.190Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T15:45:40.294Z >> OptiZen - Start...
+2018-04-26T15:45:40.314Z >> Initialisation du fichier de configuration...
+2018-04-26T15:45:40.314Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T15:45:40.625Z >> OptiZen - End run...
+2018-04-26T15:45:44.250Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:45:46.003Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T15:45:46.055Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T15:45:46.087Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:45:46.088Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T15:45:46.094Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T15:49:02.990Z >> OptiZen - Start...
+2018-04-26T15:49:03.010Z >> Initialisation du fichier de configuration...
+2018-04-26T15:49:03.010Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T15:49:03.303Z >> OptiZen - End run...
+2018-04-26T15:49:06.612Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:49:08.748Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T15:49:08.795Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T15:49:08.825Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T15:49:08.825Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 108
+2018-04-26T15:49:08.833Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T15:50:10.680Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T15:50:23.533Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_BENI_1D WHERE "VARIABLE"='21' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T15:50:23.878Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nom d'objet 'GEBAR_BENI_1D' non valide.
+2018-04-26T15:54:51.197Z >> OptiZen - Start...
+2018-04-26T15:54:51.217Z >> Initialisation du fichier de configuration...
+2018-04-26T15:54:51.218Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T15:54:51.494Z >> OptiZen - End run...
+2018-04-26T15:54:53.336Z >> Extension : doc
+2018-04-26T15:54:53.337Z >> Extension : accdb
+2018-04-26T15:54:53.337Z >> Extension : accdb
+2018-04-26T15:54:53.337Z >> Extension : accdb
+2018-04-26T15:54:53.338Z >> Extension : accdb
+2018-04-26T15:54:53.338Z >> Extension : accdb
+2018-04-26T15:54:53.339Z >> Extension : accdb
+2018-04-26T15:54:53.339Z >> Extension : accdb
+2018-04-26T15:54:53.340Z >> Extension : accdb
+2018-04-26T15:54:53.340Z >> Extension : xlsx
+2018-04-26T15:54:53.341Z >> Extension : accdb
+2018-04-26T15:54:53.341Z >> Extension : laccdb
+2018-04-26T15:54:53.342Z >> Extension : accdb
+2018-04-26T15:54:53.342Z >> Extension : accdb
+2018-04-26T15:54:53.342Z >> Extension : pdf
+2018-04-26T15:54:53.343Z >> Extension : msg
+2018-04-26T15:54:53.344Z >> Extension : pdf
+2018-04-26T15:54:53.344Z >> Extension : accdb
+2018-04-26T15:54:53.345Z >> Extension : laccdb
+2018-04-26T15:54:53.345Z >> Extension : log
+2018-04-26T15:54:53.345Z >> Extension : docx
+2018-04-26T15:54:53.346Z >> Extension : xls
+2018-04-26T15:54:53.372Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-04-26T15:54:53.458Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-04-26T15:55:42.057Z >> Extension : doc
+2018-04-26T15:55:42.058Z >> Extension : accdb
+2018-04-26T15:55:42.058Z >> Extension : accdb
+2018-04-26T15:55:42.059Z >> Extension : accdb
+2018-04-26T15:55:42.060Z >> Extension : accdb
+2018-04-26T15:55:42.060Z >> Extension : accdb
+2018-04-26T15:55:42.061Z >> Extension : accdb
+2018-04-26T15:55:42.061Z >> Extension : accdb
+2018-04-26T15:55:42.062Z >> Extension : accdb
+2018-04-26T15:55:42.062Z >> Extension : xlsx
+2018-04-26T15:55:42.063Z >> Extension : accdb
+2018-04-26T15:55:42.063Z >> Extension : laccdb
+2018-04-26T15:55:42.064Z >> Extension : accdb
+2018-04-26T15:55:42.064Z >> Extension : accdb
+2018-04-26T15:55:42.065Z >> Extension : pdf
+2018-04-26T15:55:42.065Z >> Extension : msg
+2018-04-26T15:55:42.066Z >> Extension : pdf
+2018-04-26T15:55:42.066Z >> Extension : accdb
+2018-04-26T15:55:42.067Z >> Extension : laccdb
+2018-04-26T15:55:42.067Z >> Extension : log
+2018-04-26T15:55:42.067Z >> Extension : docx
+2018-04-26T15:55:42.068Z >> Extension : xls
+2018-04-26T15:55:46.439Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-04-26T15:55:47.118Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-04-26T15:56:03.637Z >> Extension : doc
+2018-04-26T15:56:03.637Z >> Extension : accdb
+2018-04-26T15:56:03.638Z >> Extension : accdb
+2018-04-26T15:56:03.638Z >> Extension : accdb
+2018-04-26T15:56:03.638Z >> Extension : accdb
+2018-04-26T15:56:03.639Z >> Extension : accdb
+2018-04-26T15:56:03.639Z >> Extension : accdb
+2018-04-26T15:56:03.640Z >> Extension : accdb
+2018-04-26T15:56:03.640Z >> Extension : accdb
+2018-04-26T15:56:03.640Z >> Extension : xlsx
+2018-04-26T15:56:03.641Z >> Extension : accdb
+2018-04-26T15:56:03.641Z >> Extension : laccdb
+2018-04-26T15:56:03.642Z >> Extension : accdb
+2018-04-26T15:56:03.642Z >> Extension : accdb
+2018-04-26T15:56:03.643Z >> Extension : pdf
+2018-04-26T15:56:03.644Z >> Extension : msg
+2018-04-26T15:56:03.644Z >> Extension : pdf
+2018-04-26T15:56:03.645Z >> Extension : accdb
+2018-04-26T15:56:03.645Z >> Extension : laccdb
+2018-04-26T15:56:03.646Z >> Extension : log
+2018-04-26T15:56:03.646Z >> Extension : docx
+2018-04-26T15:56:03.647Z >> Extension : xls
+2018-04-26T15:56:03.653Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-04-26T15:56:03.678Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-04-26T16:00:12.827Z >> OptiZen - Start...
+2018-04-26T16:00:12.847Z >> Initialisation du fichier de configuration...
+2018-04-26T16:00:12.848Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T16:00:13.118Z >> OptiZen - End run...
+2018-04-26T16:00:25.898Z >> Extension : doc
+2018-04-26T16:00:25.899Z >> Extension : accdb
+2018-04-26T16:00:25.899Z >> Extension : accdb
+2018-04-26T16:00:25.900Z >> Extension : accdb
+2018-04-26T16:00:25.900Z >> Extension : accdb
+2018-04-26T16:00:25.901Z >> Extension : accdb
+2018-04-26T16:00:25.901Z >> Extension : accdb
+2018-04-26T16:00:25.901Z >> Extension : accdb
+2018-04-26T16:00:25.902Z >> Extension : accdb
+2018-04-26T16:00:25.902Z >> Extension : xlsx
+2018-04-26T16:00:25.903Z >> Extension : accdb
+2018-04-26T16:00:25.903Z >> Extension : laccdb
+2018-04-26T16:00:25.904Z >> Extension : accdb
+2018-04-26T16:00:25.904Z >> Extension : accdb
+2018-04-26T16:00:25.905Z >> Extension : pdf
+2018-04-26T16:00:25.905Z >> Extension : msg
+2018-04-26T16:00:25.906Z >> Extension : pdf
+2018-04-26T16:00:25.906Z >> Extension : accdb
+2018-04-26T16:00:25.907Z >> Extension : laccdb
+2018-04-26T16:00:25.907Z >> Extension : log
+2018-04-26T16:00:25.908Z >> Extension : docx
+2018-04-26T16:00:25.908Z >> Extension : xls
+2018-04-26T16:00:25.953Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-04-26T16:00:26.044Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-04-26T16:01:38.097Z >> Extension : doc
+2018-04-26T16:01:38.099Z >> Extension : accdb
+2018-04-26T16:01:38.099Z >> Extension : accdb
+2018-04-26T16:01:38.100Z >> Extension : accdb
+2018-04-26T16:01:38.100Z >> Extension : accdb
+2018-04-26T16:01:38.100Z >> Extension : accdb
+2018-04-26T16:01:38.101Z >> Extension : accdb
+2018-04-26T16:01:38.101Z >> Extension : accdb
+2018-04-26T16:01:38.101Z >> Extension : accdb
+2018-04-26T16:01:38.102Z >> Extension : xlsx
+2018-04-26T16:01:38.102Z >> Extension : accdb
+2018-04-26T16:01:38.103Z >> Extension : laccdb
+2018-04-26T16:01:38.104Z >> Extension : accdb
+2018-04-26T16:01:38.104Z >> Extension : accdb
+2018-04-26T16:01:38.105Z >> Extension : pdf
+2018-04-26T16:01:38.106Z >> Extension : msg
+2018-04-26T16:01:38.106Z >> Extension : pdf
+2018-04-26T16:01:38.107Z >> Extension : accdb
+2018-04-26T16:01:38.107Z >> Extension : laccdb
+2018-04-26T16:01:38.107Z >> Extension : log
+2018-04-26T16:01:38.108Z >> Extension : docx
+2018-04-26T16:01:38.108Z >> Extension : xls
+2018-04-26T16:01:38.143Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-04-26T16:01:38.169Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-04-26T16:01:49.574Z >> Extension : doc
+2018-04-26T16:01:49.576Z >> Extension : accdb
+2018-04-26T16:01:49.576Z >> Extension : accdb
+2018-04-26T16:01:49.577Z >> Extension : accdb
+2018-04-26T16:01:49.577Z >> Extension : accdb
+2018-04-26T16:01:49.578Z >> Extension : accdb
+2018-04-26T16:01:49.578Z >> Extension : accdb
+2018-04-26T16:01:49.578Z >> Extension : accdb
+2018-04-26T16:01:49.579Z >> Extension : accdb
+2018-04-26T16:01:49.579Z >> Extension : xlsx
+2018-04-26T16:01:49.580Z >> Extension : accdb
+2018-04-26T16:01:49.580Z >> Extension : laccdb
+2018-04-26T16:01:49.581Z >> Extension : accdb
+2018-04-26T16:01:49.581Z >> Extension : accdb
+2018-04-26T16:01:49.582Z >> Extension : pdf
+2018-04-26T16:01:49.582Z >> Extension : msg
+2018-04-26T16:01:49.583Z >> Extension : pdf
+2018-04-26T16:01:49.583Z >> Extension : accdb
+2018-04-26T16:01:49.584Z >> Extension : laccdb
+2018-04-26T16:01:49.584Z >> Extension : log
+2018-04-26T16:01:49.585Z >> Extension : docx
+2018-04-26T16:01:49.585Z >> Extension : xls
+2018-04-26T16:01:49.590Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-04-26T16:01:49.607Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-04-26T16:03:27.323Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T16:05:16.635Z >> OptiZen - Start...
+2018-04-26T16:05:16.656Z >> Initialisation du fichier de configuration...
+2018-04-26T16:05:16.657Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T16:05:17.056Z >> OptiZen - End run...
+2018-04-26T16:05:20.305Z >> Extension : doc
+2018-04-26T16:05:20.306Z >> Extension : accdb
+2018-04-26T16:05:20.307Z >> Extension : accdb
+2018-04-26T16:05:20.307Z >> Extension : accdb
+2018-04-26T16:05:20.308Z >> Extension : accdb
+2018-04-26T16:05:20.308Z >> Extension : accdb
+2018-04-26T16:05:20.309Z >> Extension : accdb
+2018-04-26T16:05:20.309Z >> Extension : accdb
+2018-04-26T16:05:20.310Z >> Extension : accdb
+2018-04-26T16:05:20.310Z >> Extension : xlsx
+2018-04-26T16:05:20.311Z >> Extension : accdb
+2018-04-26T16:05:20.311Z >> Extension : laccdb
+2018-04-26T16:05:20.312Z >> Extension : accdb
+2018-04-26T16:05:20.312Z >> Extension : accdb
+2018-04-26T16:05:20.313Z >> Extension : pdf
+2018-04-26T16:05:20.314Z >> Extension : msg
+2018-04-26T16:05:20.314Z >> Extension : pdf
+2018-04-26T16:05:20.315Z >> Extension : accdb
+2018-04-26T16:05:20.315Z >> Extension : laccdb
+2018-04-26T16:05:20.316Z >> Extension : log
+2018-04-26T16:05:20.316Z >> Extension : docx
+2018-04-26T16:05:20.316Z >> Extension : xls
+2018-04-26T16:05:20.354Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-04-26T16:05:20.443Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-04-26T16:05:41.618Z >> LinkFrame : internalFrameClosing() >> internal Frame Is Closing !
+2018-04-26T16:07:55.669Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:07:57.167Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T16:07:57.198Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T16:07:57.225Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:07:57.225Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-04-26T16:07:57.230Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0085' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:07:57.328Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:07:57.329Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='102' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.396Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0086' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:00.485Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.486Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='105' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.569Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0087' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:00.682Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.683Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='108' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.734Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0088' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:00.819Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.820Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='111' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.875Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0049' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:00.959Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:00.959Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='114' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.034Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0050' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:01.159Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.160Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='121' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.244Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0053' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:01.368Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.368Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='124' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.418Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0051' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:01.502Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.503Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='127' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.582Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0052' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:01.670Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.670Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='130' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.723Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0054' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:01.814Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.815Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='133' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.876Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0055' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:01.964Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:01.964Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='136' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.029Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0056' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:02.113Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.113Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='139' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.163Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0057' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:02.238Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.239Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='142' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.287Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0058' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:02.362Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.362Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='145' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.412Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0059' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:02.485Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.485Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='148' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.550Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0060' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:02.671Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.671Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='151' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.724Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0061' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:02.846Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.847Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='154' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.911Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0062' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:02.996Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:02.996Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='157' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.046Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0063' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:03.123Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.123Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='160' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.173Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0064' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:03.247Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.248Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='163' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.324Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0018' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:03.401Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.402Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='166' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.461Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0019' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:03.537Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.537Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='169' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.586Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0020' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:03.665Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.665Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='172' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.715Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0017' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:03.794Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.794Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='175' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.851Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0021' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:03.926Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:03.927Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='178' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0022' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:04.078Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.079Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='182' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.133Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0023' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:04.265Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.265Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='185' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.337Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0024' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:04.409Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.409Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='188' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.458Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0025' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:04.531Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.532Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='191' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.581Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0026' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:04.698Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.699Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='194' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.769Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0027' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:04.850Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.851Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='197' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.900Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0033' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:04.978Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:04.978Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='200' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.029Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0034' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:05.108Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.108Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='203' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.164Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0035' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:05.246Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.247Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='206' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.316Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0036' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:05.399Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.400Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='209' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.455Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0059-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:05.535Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.535Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='21' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.584Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0037' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:05.662Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.662Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='212' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.742Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0030' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:05.822Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.823Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='215' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.875Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0038' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:05.951Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:05.951Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='218' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.007Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0041' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:06.082Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.083Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='221' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.137Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0042' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:06.212Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.212Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='224' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.264Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0039' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:06.378Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.379Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='227' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.433Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0039-0002' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:06.508Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.509Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='23' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.557Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0040' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:06.705Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.706Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='230' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.765Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0043' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:06.840Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.840Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='233' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.889Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0044' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:06.966Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:06.966Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='236' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.014Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0045' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:07.101Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.101Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='239' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.168Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0047-0004' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:07.238Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.238Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='24' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.302Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0046' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:07.375Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.376Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='242' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.424Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0047' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:07.497Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.497Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='245' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.546Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0048' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:07.623Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.624Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='248' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.672Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0025-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:07.771Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.771Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='25' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.842Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0066' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:07.915Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.915Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='251' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:07.970Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0067' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:08.045Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.045Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='255' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.096Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0068' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:08.174Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.175Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='258' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.238Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0023-0002' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:08.312Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.313Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='26' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.387Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0069' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:08.465Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.465Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='261' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.518Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0070' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:08.598Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.598Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='264' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.647Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0071' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:08.727Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.728Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='267' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.778Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0048-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:08.876Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.877Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='27' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:08.942Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0072' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:09.016Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.017Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='270' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.066Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0073' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:09.156Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.157Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='273' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.225Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0074' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:09.341Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.341Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='276' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.392Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0075' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:09.467Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.468Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='279' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.517Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0047-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:09.616Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.616Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='28' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.687Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0076' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:09.761Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.762Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='282' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.821Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0077' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:09.895Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.896Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='285' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:09.945Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0078' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.013Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.014Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='288' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.061Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0023-0001' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.106Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.106Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='29' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.157Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0079' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.235Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.236Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='291' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.285Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0080' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.359Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.360Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='294' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.408Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0106' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.485Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.486Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='297' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.547Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0107' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.624Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.626Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='300' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.693Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0108' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.771Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.771Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='303' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.821Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0109' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:10.902Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.902Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='306' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:10.951Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0110' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.032Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.033Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='309' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.083Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0111' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.159Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.159Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='312' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.220Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0261' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.300Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.301Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='315' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.363Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0096' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.437Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.437Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='319' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.486Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0097' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.560Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.560Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='322' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.610Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0098' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.682Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.683Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='325' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.733Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0099' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.827Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.827Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='328' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.892Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0112' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:11.969Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:11.969Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='331' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.023Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0113' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:12.094Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.095Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='334' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.147Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0114' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:12.221Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.254Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='337' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.317Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0256' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:12.429Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.430Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='340' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.478Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0100' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:12.557Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.557Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='343' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.606Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0101' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:12.682Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.682Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='346' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.731Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0102' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:12.809Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.810Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='349' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.895Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0103' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:12.971Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:12.972Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='352' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.022Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0104' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:13.092Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.093Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='355' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.141Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0105' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:13.212Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.213Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='358' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.262Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0028' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:13.333Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.333Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='359' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.381Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0029' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:13.453Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.454Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='360' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.503Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0015-0033' AND CMV_ORGANE='01-000053' AND CMV_UNITE='T' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:13.651Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.651Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_5B WHERE "VARIABLE"='396' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 10:30:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:13.946Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0012-0001' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:14.036Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.036Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='398' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.102Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0012-0002' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:14.192Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.193Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='400' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.242Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0012-0003' AND CMV_ORGANE='01-000001' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:14.342Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.343Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='402' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.394Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0089' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:14.471Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.471Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='68' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.535Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0090' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:14.609Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.609Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='69' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.667Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0091' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:14.783Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.784Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='73' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:14.843Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0092' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.057Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.058Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='78' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.110Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0093' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.184Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.185Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='81' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.234Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0094' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.316Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.316Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='84' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.367Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0095' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.490Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.490Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='87' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.544Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0081' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.616Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.616Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='90' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.664Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0082' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.735Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.736Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='93' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.783Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0083' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.856Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.856Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='96' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.905Z >> QLastOptiRecord : SELECT TOP 1  CMV_DATE_MVT FROM Optimaint.dbo.COMPTEURS_MVTS WHERE CMV_SOCIETE = '11' AND CMV_EQUIPEMENT='0003-0084' AND CMV_ORGANE='*' AND CMV_UNITE='H' ORDER BY CMV_DATE_MVT DESC
+2018-04-26T16:08:15.977Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:08:15.978Z >> Query Datas : SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM GEBAR_1D WHERE "VARIABLE"='99' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '2018-04-26 11:00:00.0' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-04-26T16:13:48.353Z >> OptiZen - Start...
+2018-04-26T16:13:48.374Z >> Initialisation du fichier de configuration...
+2018-04-26T16:13:48.375Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T16:13:48.747Z >> OptiZen - End run...
+2018-04-26T16:13:50.942Z >> OptiZen - Start...
+2018-04-26T16:13:50.963Z >> Initialisation du fichier de configuration...
+2018-04-26T16:13:50.964Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T16:13:51.323Z >> OptiZen - End run...
+2018-04-26T16:14:03.156Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:14:03.570Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:14:08.625Z >> OptiZen - Start...
+2018-04-26T16:14:08.645Z >> Initialisation du fichier de configuration...
+2018-04-26T16:14:08.646Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T16:14:08.950Z >> OptiZen - End run...
+2018-04-26T16:14:36.434Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:14:40.296Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T16:14:40.354Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T16:14:40.387Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:14:40.388Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-04-26T16:17:11.359Z >> OptiZen - Start...
+2018-04-26T16:17:11.380Z >> Initialisation du fichier de configuration...
+2018-04-26T16:17:11.381Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T16:17:11.697Z >> OptiZen - End run...
+2018-04-26T16:17:15.297Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:17:16.832Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T16:17:16.880Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T16:17:16.912Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:17:16.912Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-04-26T16:19:03.999Z >> OptiZen - Start...
+2018-04-26T16:19:04.017Z >> Initialisation du fichier de configuration...
+2018-04-26T16:19:04.017Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-04-26T16:19:04.288Z >> OptiZen - End run...
+2018-04-26T16:20:33.360Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:20:36.040Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-04-26T16:20:36.094Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-04-26T16:20:36.127Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-04-26T16:20:36.128Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-05-05T11:19:14.284Z >> OptiZen - Start...
+2018-05-05T11:19:14.300Z >> Initialisation du fichier de configuration...
+2018-05-05T11:19:14.301Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-05-05T11:19:14.590Z >> OptiZen - End run...
+2018-05-05T11:19:21.095Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-05-05T11:19:25.712Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-05-05T11:19:25.763Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-05-05T11:19:25.796Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-05-05T11:19:25.797Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-06-05T08:58:37.359Z >> OptiZen - Start...
+2018-06-05T08:58:37.452Z >> Initialisation du fichier de configuration...
+2018-06-05T08:58:37.452Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-05T08:58:38.868Z >> OptiZen - End run...
+2018-06-05T09:17:03.091Z >> OptiZen - Start...
+2018-06-05T09:17:03.107Z >> Initialisation du fichier de configuration...
+2018-06-05T09:17:03.107Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-05T09:17:03.369Z >> OptiZen - End run...
+2018-06-05T09:17:07.614Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-05T09:17:11.534Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-05T09:17:11.645Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-05T09:17:11.669Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-05T09:17:11.670Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-06-05T09:21:45.127Z >> OptiZen - Start...
+2018-06-05T09:21:45.143Z >> Initialisation du fichier de configuration...
+2018-06-05T09:21:45.144Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-05T09:21:45.377Z >> OptiZen - End run...
+2018-06-05T09:22:17.963Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-05T09:22:19.392Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-05T09:22:19.448Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-05T09:22:19.481Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-05T09:22:19.481Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109

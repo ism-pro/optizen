@@ -673,7 +673,7 @@ public class ConfigFrame extends javax.swing.JInternalFrame implements InternalF
         if (timeZone.isEmpty()) {
             return 0;
         }
-        String clean = timeZone.replace("[GMT]", "").split("\t")[0].replace("+", "").replace("-", "").replace("[", "").replace("]", "");
+        String clean = timeZone.replace("[GMT]", "").split("\t")[0].replace("+", "").replace("-", "").replace("[", "").replace("]", "").replace(" ", "");
         String[] a = clean.split(":");
         if (a.length >= 2) {
             return Integer.valueOf(a[1]);

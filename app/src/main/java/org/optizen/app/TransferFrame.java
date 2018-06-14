@@ -26,6 +26,8 @@ import java.util.TimerTask;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingWorker;
@@ -52,15 +54,19 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     static Integer openFrameCount = 0;
     static final int xOffset = 30, yOffset = 30;
     static String MoniteurExportFilename = "MoniteurExport_TR_CPT_MVTS.bat";
-    LoadingFrame loadingFrame;
+    LoadingFrame loadingFrame = null;
 
     private FrequencyUp frequencyUp;
     private Integer autoStep = 0;
+    
+    private JFrame owner = null;
 
     /**
      * Creates new form TransferFrame
+     * @param parent
      */
-    public TransferFrame() {
+    public TransferFrame(JFrame parent) {
+        owner = parent;
         initComponents();
         refreshTableTr();
 
@@ -110,6 +116,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         btnSendToDatabase = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         sendToDatabaseError = new javax.swing.JLabel();
+        btnShowLoadingFrame = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         cbMDay = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -258,6 +265,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         sendToDatabaseError.setForeground(new java.awt.Color(0, 102, 0));
         sendToDatabaseError.setText("-");
 
+        btnShowLoadingFrame.setText("Voir Charg...");
+        btnShowLoadingFrame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowLoadingFrameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -269,7 +283,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sendToDatabaseError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnShowLoadingFrame)
+                .addGap(160, 160, 160)
                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jSeparator1)
@@ -281,14 +297,15 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sendToDatabaseError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnSendToDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 10, Short.MAX_VALUE))
-                    .addComponent(sendToDatabaseError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnShowLoadingFrame))
+                        .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -559,8 +576,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             wonm.execute();
 
             //This is what's called in the .execute method
-            loadingFrame = new LoadingFrame(null, "", Dialog.ModalityType.MODELESS);
-            loadingFrame.setTitle("Loading : transfert to database ...");
+            getLoadingFrame().setTitle("Loading : transfert to database ...");
             loadingFrame.setLocationRelativeTo(this);
             loadingFrame.setVisible(true);
 
@@ -588,8 +604,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         wons.execute();
 
         //This is what's called in the .execute method
-        loadingFrame = new LoadingFrame(null, "", Dialog.ModalityType.MODELESS);
-        loadingFrame.setTitle("Loading : searching ...");
+        getLoadingFrame().setTitle("Loading : searching ...");
         loadingFrame.setLocationRelativeTo(this);
         loadingFrame.setVisible(true);
 
@@ -634,8 +649,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         wonm.execute();
 
         //This is what's called in the .execute method
-        loadingFrame = new LoadingFrame(null, "", Dialog.ModalityType.MODELESS);
-        loadingFrame.setTitle("Loading : move data to TR ...");
+        getLoadingFrame().setTitle("Loading : move data to TR ...");
         loadingFrame.setLocationRelativeTo(this);
         loadingFrame.setVisible(true);
 
@@ -718,11 +732,17 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
     }//GEN-LAST:event_btnTogglerPlanActionPerformed
 
+    private void btnShowLoadingFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowLoadingFrameActionPerformed
+       
+        loadingFrame.setVisible(true);
+    }//GEN-LAST:event_btnShowLoadingFrameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSendToDatabase;
+    private javax.swing.JButton btnShowLoadingFrame;
     private javax.swing.JToggleButton btnTogglerPlan;
     private javax.swing.JComboBox<String> cbFDay;
     private javax.swing.JComboBox<String> cbFHour;
@@ -825,6 +845,17 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             Util.out("TransfertFrame : refreshTableTr >> " +  ex.getMessage());
         }
     }
+    
+    /**
+     * Get loading frame allow to get once the only window existing
+     * @return 
+     */
+    private LoadingFrame getLoadingFrame(){
+        if(loadingFrame==null){
+            loadingFrame = new LoadingFrame(owner, Dialog.ModalityType.MODELESS);
+        }
+        return loadingFrame;
+    }
 
     /**
      * This class searching available data from zenon to be import to optimaint
@@ -836,6 +867,10 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         protected String doInBackground() throws Exception {
 
             try {
+                
+                //
+                Util.out("TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...");
+                
                 // Remove all the specify row
                 DefaultTableModel tm = (DefaultTableModel) tableData.getModel();
 
@@ -854,9 +889,12 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 Statement optiState = optConn.createStatement(
                         ResultSet.TYPE_SCROLL_INSENSITIVE,
                         ResultSet.CONCUR_READ_ONLY);
+                
+                Util.out("TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = " + counter);
 
                 loadingFrame.onInit();
                 //counter = Math.min(counter, 8);
+                
                 for (int count = 0; count < counter; count++) {
                     // Gett link from settings
                     LinkModel link = Settings.readLinkModel(count);
@@ -882,6 +920,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     if (optiResult.next()) { // Date déjà existante
                         lastOptiDateTime = optiResult.getObject(1).toString();
                     }
+                    
 
                     // Recherche les données après la date enregistrée dans zenon
                     //
@@ -891,14 +930,15 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             + "FROM %s "
                             + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(" + ConfigFrame.sTZ()+ ")) "
                             + "ORDER BY TIMESTAMP_S ASC";
+                    //Util.out("QueryDatas = " + queryDatas);
                     queryDatas = String.format(queryDatas,
                             link.getTable(),
                             link.getVariable(),
                             lastOptiDateTime);
-                    Util.out("Query Datas : " + queryDatas);
+                    //Util.out("Query Datas : " + queryDatas);
 
                     ResultSet zenResult = zenState.executeQuery(queryDatas);
-
+                    
                     zenResult.last();
                     int size = zenResult.getRow();
                     zenResult.beforeFirst();
@@ -924,8 +964,10 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 tableData.setModel(tm);
                 loadingFrame.setVisible(false);
             } catch (SQLException ex) {
-                Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Util.out("TransfertFrame : WorkOnSearching : doInBackground >> " + ex.getMessage());
                 loadingFrame.setVisible(false);
+                
             }
             loadingFrame.setVisible(false);
             return null;

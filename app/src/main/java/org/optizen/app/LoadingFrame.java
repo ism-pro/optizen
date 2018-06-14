@@ -6,6 +6,8 @@
 package org.optizen.app;
 
 import java.awt.Window;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -15,12 +17,24 @@ public class LoadingFrame extends javax.swing.JDialog {
 
     /**
      * Creates new form LoadingFrame
+     * @param parent
+     * @param modal
      */
     public LoadingFrame(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
+    
+    public LoadingFrame(JFrame parent, boolean modal){
+        super(parent, modal);
+        initComponents();
+    }
 
+    public LoadingFrame(Window owner, ModalityType modalityType) {
+        super(owner, "", modalityType);
+        initComponents();
+    }
+    
     public LoadingFrame(Window owner, String title, ModalityType modalityType) {
         super(owner, title, modalityType);
         initComponents();
@@ -41,8 +55,8 @@ public class LoadingFrame extends javax.swing.JDialog {
         loading = new javax.swing.JLabel();
         sub = new javax.swing.JProgressBar();
         main = new javax.swing.JProgressBar();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        hideLoadingFrame = new javax.swing.JButton();
+        stopLoadingFrame = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Loading");
@@ -66,9 +80,19 @@ public class LoadingFrame extends javax.swing.JDialog {
         main.setValue(100);
         main.setStringPainted(true);
 
-        jButton1.setText("Cacher");
+        hideLoadingFrame.setText("Cacher");
+        hideLoadingFrame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hideLoadingFrameActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Arrêter");
+        stopLoadingFrame.setText("Arrêter");
+        stopLoadingFrame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stopLoadingFrameActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,8 +106,8 @@ public class LoadingFrame extends javax.swing.JDialog {
                     .addComponent(sub, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(hideLoadingFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stopLoadingFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -94,11 +118,11 @@ public class LoadingFrame extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
+                            .addComponent(hideLoadingFrame))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2)))
+                            .addComponent(stopLoadingFrame)))
                     .addComponent(loading)))
         );
 
@@ -116,14 +140,22 @@ public class LoadingFrame extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void stopLoadingFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopLoadingFrameActionPerformed
+        stopLoadingFrame();
+    }//GEN-LAST:event_stopLoadingFrameActionPerformed
+
+    private void hideLoadingFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hideLoadingFrameActionPerformed
+        hideLoadingFrame();
+    }//GEN-LAST:event_hideLoadingFrameActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton hideLoadingFrame;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel loading;
     private javax.swing.JProgressBar main;
+    private javax.swing.JButton stopLoadingFrame;
     private javax.swing.JProgressBar sub;
     // End of variables declaration//GEN-END:variables
 
@@ -157,6 +189,14 @@ public class LoadingFrame extends javax.swing.JDialog {
      */
     void sub(Integer progress){
         sub.setValue(progress);
+    }
+
+    public void stopLoadingFrame() {
+        setVisible(false);
+    }
+
+    private void hideLoadingFrame() {
+        setVisible(false);
     }
     
 }

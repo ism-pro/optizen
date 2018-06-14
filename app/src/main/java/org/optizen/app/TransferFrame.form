@@ -294,7 +294,9 @@
                   <Component id="btnSendToDatabase" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="sendToDatabaseError" max="32767" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnShowLoadingFrame" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
                   <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -308,6 +310,7 @@
                   <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="sendToDatabaseError" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -315,10 +318,10 @@
                                   <Component id="btnSendToDatabase" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="btnCancel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnShowLoadingFrame" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="sendToDatabaseError" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -392,6 +395,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnShowLoadingFrame">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Voir Charg..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnShowLoadingFrameActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -394,7 +394,7 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
 
     private void menuItemTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemTransferActionPerformed
         if (TransferFrame.openFrameCount == 0) {
-            transferFrame = new TransferFrame();
+            transferFrame = new TransferFrame(this);
             desktopPane.add(transferFrame);
         } else {
             revalidate();
