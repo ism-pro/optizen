@@ -6,8 +6,15 @@
         <artifactId>OptiZen</artifactId>
         <version>1710.15</version>
     </parent>
+    
+    
     <artifactId>app</artifactId>
+    <version>1806.15</version>
     <packaging>jar</packaging>
+    <description>
+        Application Optimaint Zenon.
+        Peremt le déversemment des données de base Zénon vers Optimaint.
+    </description>
     
     <dependencies>
         <!-- 
@@ -71,9 +78,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    <description>Application Optimaint Zenon.
-        Peremt le déversemment des données de base Zénon vers Optimaint.</description>
-    <version>1711.03</version>
+
     
 
     <build>

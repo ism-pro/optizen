@@ -966,7 +966,9 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     public void updateTableOptimaint() {
         String company = Settings.read(Settings.CONFIG, Settings.COMPANY).toString();
         String query = "SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE "
-                + "FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE "
+                + "FROM COMPTEURS "
+                + "INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT AND  CPT_SOCIETE = EQU_SOCIETE "
+                + "LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE "
                 + "WHERE CPT_SOCIETE = '" + company + "'";
 
         query += !tfFilterEquCode.getText().isEmpty() ? " AND CPT_EQUIPEMENT like '" + tfFilterEquCode.getText() + "'" : "";
@@ -974,7 +976,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         query += !tfFilterOrgCode.getText().isEmpty() ? " AND CPT_ORGANE like '" + tfFilterOrgCode.getText() + "'" : "";
         query += !tfFilterOrg.getText().isEmpty() ? " AND ORG_DESIGNATION like '" + tfFilterOrg.getText() + "'" : "";
         query += !tfFilterUnite.getText().isEmpty() ? " AND CPT_UNITE like '" + tfFilterUnite.getText() + "'" : "";
-
+        Util.out(query);
         ResultSetTableModel rstModel = (ResultSetTableModel) tableOpti.getModel();
         rstModel.setQuery(query);
 

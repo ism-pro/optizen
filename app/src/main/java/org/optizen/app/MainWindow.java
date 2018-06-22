@@ -97,7 +97,17 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         setSize(new java.awt.Dimension(1024, 680));
 
         desktopPane.setBackground(new java.awt.Color(153, 153, 153));
-        desktopPane.setLayout(new java.awt.BorderLayout());
+
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1015, Short.MAX_VALUE)
+        );
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
 
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
@@ -273,7 +283,7 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
+            .addComponent(desktopPane)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -281,7 +291,7 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE))
+                .addComponent(desktopPane))
         );
 
         pack();

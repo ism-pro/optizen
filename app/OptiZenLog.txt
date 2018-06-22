@@ -683,3 +683,867 @@
 2018-06-05T09:22:19.448Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
 2018-06-05T09:22:19.481Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
 2018-06-05T09:22:19.481Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-06-19T14:19:49.767Z >> OptiZen - Start...
+2018-06-19T14:19:49.785Z >> Initialisation du fichier de configuration...
+2018-06-19T14:19:49.785Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-19T14:19:50.658Z >> OptiZen - End run...
+2018-06-19T14:19:57.666Z >> Extension : doc
+2018-06-19T14:19:57.667Z >> Extension : accdb
+2018-06-19T14:19:57.667Z >> Extension : accdb
+2018-06-19T14:19:57.667Z >> Extension : accdb
+2018-06-19T14:19:57.668Z >> Extension : accdb
+2018-06-19T14:19:57.668Z >> Extension : accdb
+2018-06-19T14:19:57.668Z >> Extension : accdb
+2018-06-19T14:19:57.669Z >> Extension : accdb
+2018-06-19T14:19:57.669Z >> Extension : accdb
+2018-06-19T14:19:57.670Z >> Extension : xlsx
+2018-06-19T14:19:57.670Z >> Extension : accdb
+2018-06-19T14:19:57.671Z >> Extension : laccdb
+2018-06-19T14:19:57.671Z >> Extension : log
+2018-06-19T14:19:57.672Z >> Extension : accdb
+2018-06-19T14:19:57.672Z >> Extension : accdb
+2018-06-19T14:19:57.672Z >> Extension : pdf
+2018-06-19T14:19:57.673Z >> Extension : msg
+2018-06-19T14:19:57.674Z >> Extension : pdf
+2018-06-19T14:19:57.674Z >> Extension : accdb
+2018-06-19T14:19:57.675Z >> Extension : laccdb
+2018-06-19T14:19:57.675Z >> Extension : log
+2018-06-19T14:19:57.676Z >> Extension : docx
+2018-06-19T14:19:57.676Z >> Extension : xls
+2018-06-19T14:19:57.901Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-06-19T14:19:57.976Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-06-19T14:20:03.042Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-19T14:22:15.129Z >> OptiZen - Start...
+2018-06-19T14:22:15.149Z >> Initialisation du fichier de configuration...
+2018-06-19T14:22:15.149Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-19T14:22:15.402Z >> OptiZen - End run...
+2018-06-19T14:22:18.576Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-19T14:22:29.720Z >> Extension : doc
+2018-06-19T14:22:29.720Z >> Extension : accdb
+2018-06-19T14:22:29.721Z >> Extension : accdb
+2018-06-19T14:22:29.722Z >> Extension : accdb
+2018-06-19T14:22:29.723Z >> Extension : accdb
+2018-06-19T14:22:29.723Z >> Extension : accdb
+2018-06-19T14:22:29.723Z >> Extension : accdb
+2018-06-19T14:22:29.723Z >> Extension : accdb
+2018-06-19T14:22:29.724Z >> Extension : accdb
+2018-06-19T14:22:29.724Z >> Extension : xlsx
+2018-06-19T14:22:29.725Z >> Extension : accdb
+2018-06-19T14:22:29.725Z >> Extension : laccdb
+2018-06-19T14:22:29.726Z >> Extension : log
+2018-06-19T14:22:29.727Z >> Extension : accdb
+2018-06-19T14:22:29.727Z >> Extension : accdb
+2018-06-19T14:22:29.727Z >> Extension : pdf
+2018-06-19T14:22:29.728Z >> Extension : msg
+2018-06-19T14:22:29.729Z >> Extension : pdf
+2018-06-19T14:22:29.729Z >> Extension : accdb
+2018-06-19T14:22:29.729Z >> Extension : laccdb
+2018-06-19T14:22:29.730Z >> Extension : log
+2018-06-19T14:22:29.730Z >> Extension : docx
+2018-06-19T14:22:29.731Z >> Extension : xls
+2018-06-19T14:22:29.755Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-06-19T14:22:29.810Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-06-19T14:22:54.291Z >> LinkFrame : internalFrameClosing() >> internal Frame Is Closing !
+2018-06-19T14:22:55.564Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-19T14:23:10.632Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-19T14:23:10.667Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-19T14:23:10.693Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-19T14:23:10.694Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-06-19T14:41:56.442Z >> OptiZen - Start...
+2018-06-19T14:41:56.460Z >> Initialisation du fichier de configuration...
+2018-06-19T14:41:56.460Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-19T14:41:56.715Z >> OptiZen - End run...
+2018-06-19T14:42:00.523Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-19T14:42:19.422Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-19T14:42:19.473Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-19T14:42:19.503Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-19T14:42:19.503Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 109
+2018-06-22T08:25:03.017Z >> OptiZen - Start...
+2018-06-22T08:25:03.051Z >> Initialisation du fichier de configuration...
+2018-06-22T08:25:03.051Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T08:25:03.588Z >> OptiZen - End run...
+2018-06-22T08:25:07.518Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:01:57.957Z >> OptiZen - Start...
+2018-06-22T09:01:57.973Z >> Initialisation du fichier de configuration...
+2018-06-22T09:01:57.974Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T09:01:58.213Z >> OptiZen - End run...
+2018-06-22T09:02:14.765Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:05:22.854Z >> OptiZen - Start...
+2018-06-22T09:05:22.870Z >> Initialisation du fichier de configuration...
+2018-06-22T09:05:22.871Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T09:05:23.287Z >> OptiZen - End run...
+2018-06-22T09:05:28.084Z >> Extension : doc
+2018-06-22T09:05:28.085Z >> Extension : accdb
+2018-06-22T09:05:28.085Z >> Extension : accdb
+2018-06-22T09:05:28.085Z >> Extension : accdb
+2018-06-22T09:05:28.086Z >> Extension : accdb
+2018-06-22T09:05:28.086Z >> Extension : accdb
+2018-06-22T09:05:28.086Z >> Extension : accdb
+2018-06-22T09:05:28.087Z >> Extension : accdb
+2018-06-22T09:05:28.087Z >> Extension : accdb
+2018-06-22T09:05:28.088Z >> Extension : xlsx
+2018-06-22T09:05:28.088Z >> Extension : accdb
+2018-06-22T09:05:28.090Z >> Extension : laccdb
+2018-06-22T09:05:28.090Z >> Extension : log
+2018-06-22T09:05:28.091Z >> Extension : accdb
+2018-06-22T09:05:28.091Z >> Extension : accdb
+2018-06-22T09:05:28.092Z >> Extension : pdf
+2018-06-22T09:05:28.093Z >> Extension : msg
+2018-06-22T09:05:28.093Z >> Extension : pdf
+2018-06-22T09:05:28.094Z >> Extension : accdb
+2018-06-22T09:05:28.094Z >> Extension : laccdb
+2018-06-22T09:05:28.095Z >> Extension : log
+2018-06-22T09:05:28.095Z >> Extension : docx
+2018-06-22T09:05:28.095Z >> Extension : xls
+2018-06-22T09:05:28.268Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-06-22T09:05:28.346Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-06-22T09:05:34.631Z >> Extension : doc
+2018-06-22T09:05:34.631Z >> Extension : accdb
+2018-06-22T09:05:34.632Z >> Extension : accdb
+2018-06-22T09:05:34.632Z >> Extension : accdb
+2018-06-22T09:05:34.632Z >> Extension : accdb
+2018-06-22T09:05:34.633Z >> Extension : accdb
+2018-06-22T09:05:34.762Z >> Extension : accdb
+2018-06-22T09:05:34.763Z >> Extension : accdb
+2018-06-22T09:05:34.763Z >> Extension : accdb
+2018-06-22T09:05:34.764Z >> Extension : xlsx
+2018-06-22T09:05:34.764Z >> Extension : accdb
+2018-06-22T09:05:34.764Z >> Extension : laccdb
+2018-06-22T09:05:34.765Z >> Extension : log
+2018-06-22T09:05:34.766Z >> Extension : accdb
+2018-06-22T09:05:34.766Z >> Extension : accdb
+2018-06-22T09:05:34.766Z >> Extension : pdf
+2018-06-22T09:05:34.767Z >> Extension : msg
+2018-06-22T09:05:34.768Z >> Extension : pdf
+2018-06-22T09:05:34.768Z >> Extension : accdb
+2018-06-22T09:05:34.768Z >> Extension : laccdb
+2018-06-22T09:05:34.769Z >> Extension : log
+2018-06-22T09:05:34.769Z >> Extension : docx
+2018-06-22T09:05:34.769Z >> Extension : xls
+2018-06-22T09:05:45.123Z >> Extension : kml
+2018-06-22T09:05:45.124Z >> Extension : xlsx
+2018-06-22T09:05:45.124Z >> Extension : pdf
+2018-06-22T09:05:45.125Z >> Extension : xlsx
+2018-06-22T09:05:45.126Z >> Extension : lnk
+2018-06-22T09:05:45.126Z >> Extension : docx
+2018-06-22T09:05:45.127Z >> Extension : pdf
+2018-06-22T09:05:45.127Z >> Extension : rvt
+2018-06-22T09:05:45.127Z >> Extension : pdf
+2018-06-22T09:05:45.128Z >> Extension : PNG
+2018-06-22T09:05:45.128Z >> Extension : xlsx
+2018-06-22T09:05:45.129Z >> Extension : xlsx
+2018-06-22T09:05:45.129Z >> Extension : mp4
+2018-06-22T09:05:45.130Z >> Extension : pdf
+2018-06-22T09:05:45.130Z >> Extension : pdf
+2018-06-22T09:05:45.131Z >> Extension : lnk
+2018-06-22T09:05:45.132Z >> Extension : xlsx
+2018-06-22T09:05:45.132Z >> Extension : xlsx
+2018-06-22T09:05:45.133Z >> Extension : mpp
+2018-06-22T09:05:45.133Z >> Extension : pdf
+2018-06-22T09:05:45.133Z >> Extension : pdf
+2018-06-22T09:05:45.134Z >> Extension : docx
+2018-06-22T09:05:45.134Z >> Extension : pdf
+2018-06-22T09:05:45.137Z >> Extension : lnk
+2018-06-22T09:05:45.138Z >> Extension : pdf
+2018-06-22T09:05:45.139Z >> Extension : lnk
+2018-06-22T09:05:45.141Z >> Extension : lnk
+2018-06-22T09:05:45.142Z >> Extension : lnk
+2018-06-22T09:05:45.143Z >> Extension : lnk
+2018-06-22T09:05:45.144Z >> Extension : lnk
+2018-06-22T09:05:45.145Z >> Extension : lnk
+2018-06-22T09:05:45.147Z >> Extension : lnk
+2018-06-22T09:05:45.148Z >> Extension : lnk
+2018-06-22T09:05:45.149Z >> Extension : lnk
+2018-06-22T09:05:45.150Z >> Extension : lnk
+2018-06-22T09:05:45.152Z >> Extension : lnk
+2018-06-22T09:05:45.153Z >> Extension : lnk
+2018-06-22T09:05:45.154Z >> Extension : lnk
+2018-06-22T09:05:45.155Z >> Extension : lnk
+2018-06-22T09:05:45.156Z >> Extension : lnk
+2018-06-22T09:05:45.157Z >> Extension : lnk
+2018-06-22T09:05:45.158Z >> Extension : lnk
+2018-06-22T09:05:45.159Z >> Extension : lnk
+2018-06-22T09:05:45.161Z >> Extension : lnk
+2018-06-22T09:05:45.162Z >> Extension : lnk
+2018-06-22T09:05:45.163Z >> Extension : lnk
+2018-06-22T09:05:45.164Z >> Extension : lnk
+2018-06-22T09:05:45.166Z >> Extension : lnk
+2018-06-22T09:05:45.167Z >> Extension : lnk
+2018-06-22T09:05:45.169Z >> Extension : lnk
+2018-06-22T09:05:45.170Z >> Extension : lnk
+2018-06-22T09:05:45.172Z >> Extension : lnk
+2018-06-22T09:05:45.173Z >> Extension : lnk
+2018-06-22T09:05:47.622Z >> File to read : C:\Users\r.hendrick\Desktop\OptiZenLink_Fri_Jun_22_11_04_50_CAT_2018.xlsx
+2018-06-22T09:06:06.032Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:10:21.099Z >> OptiZen - Start...
+2018-06-22T09:10:21.116Z >> Initialisation du fichier de configuration...
+2018-06-22T09:10:21.116Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T09:10:21.541Z >> OptiZen - End run...
+2018-06-22T09:10:27.595Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:10:45.171Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T09:10:45.205Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T09:10:45.229Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:10:45.230Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T09:13:41.746Z >> OptiZen - Start...
+2018-06-22T09:13:41.763Z >> Initialisation du fichier de configuration...
+2018-06-22T09:13:41.764Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T09:13:41.997Z >> OptiZen - End run...
+2018-06-22T09:13:45.847Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:14:05.010Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T09:14:05.045Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T09:14:05.072Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:14:05.073Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T09:14:05.073Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 109 et counter = 110
+2018-06-22T09:14:05.201Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:11.558Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:11.787Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:11.978Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:12.237Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:12.451Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:12.644Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:12.854Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:13.063Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:13.304Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:13.474Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:13.645Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:13.796Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:14.036Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:14.227Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:14.396Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:14.566Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:14.722Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:14.870Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:15.049Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:15.233Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:15.383Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:15.545Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:15.708Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:15.856Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:16.035Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:16.202Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:16.382Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:16.542Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:16.703Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:16.871Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:17.053Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:17.215Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:17.375Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:17.539Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:17.698Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:17.850Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:18.018Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:18.201Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:18.364Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:18.515Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:18.673Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:18.900Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:19.082Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:19.246Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:19.408Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:19.576Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:19.725Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:19.889Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:20.035Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:20.205Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:20.350Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:20.543Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:20.694Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:20.858Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:21Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:21.191Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:21.360Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:21.512Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:21.668Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:21.829Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:21.993Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:22.159Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:22.320Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:22.473Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:22.627Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:22.806Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:22.969Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:23.115Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:23.267Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:23.418Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:23.584Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:23.731Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:23.896Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:24.044Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:24.206Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:24.373Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:24.559Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:24.709Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:24.880Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:25.030Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:25.205Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:25.350Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:25.503Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:25.666Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:25.828Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:25.989Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:26.135Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:26.289Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:26.466Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:26.639Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:26.797Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:26.945Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:27.097Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:27.321Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:27.843Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:28.017Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:28.183Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:28.338Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:28.486Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:28.656Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:28.819Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:28.987Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:29.137Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:29.295Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:29.447Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:29.610Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:29.771Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:29.935Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:14:30.171Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:06.992Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T09:15:07.018Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T09:15:07.043Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:15:07.043Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T09:15:07.043Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 110 et counter = 111
+2018-06-22T09:15:07.155Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:07.338Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:07.486Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:07.647Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:07.814Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:07.987Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:08.138Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:08.286Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:08.420Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:08.561Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:08.705Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:08.863Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:08.998Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:09.153Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:09.316Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:09.470Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:09.608Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:09.727Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:09.860Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:09.989Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:10.123Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:10.273Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:10.422Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:10.575Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:10.723Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:10.852Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:10.992Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:11.148Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:11.306Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:11.463Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:11.631Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:11.768Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:11.936Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:12.088Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:12.234Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:12.384Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:12.545Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:12.694Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:12.848Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:12.988Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:13.139Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:13.288Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:13.499Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:13.642Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:13.778Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:13.945Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:14.099Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:14.239Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:14.394Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:14.536Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:14.673Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:14.833Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:14.984Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:15.152Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:15.296Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:15.428Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:15.579Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:15.716Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:15.871Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:16.017Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:16.170Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:16.318Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:16.475Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:16.622Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:16.751Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:16.889Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.041Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.179Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.303Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.436Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.588Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.721Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.854Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:17.992Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:18.135Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:18.277Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:18.414Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:18.548Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:18.697Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:18.848Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:18.984Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:19.166Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:19.307Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:19.474Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:19.610Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:19.745Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:19.896Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:20.028Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:20.161Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:20.320Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:20.470Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:20.602Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:20.736Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:20.881Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:21.125Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:21.260Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:21.428Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:21.585Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:21.722Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:21.854Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:22.007Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:22.162Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:22.306Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:22.476Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:22.616Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:22.752Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:22.909Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:23.049Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:23.186Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:23.429Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:15:23.869Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:18.029Z >> OptiZen - Start...
+2018-06-22T09:17:18.044Z >> Initialisation du fichier de configuration...
+2018-06-22T09:17:18.044Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T09:17:18.295Z >> OptiZen - End run...
+2018-06-22T09:17:21.253Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:17:30.439Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T09:17:30.468Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T09:17:30.494Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:17:30.494Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T09:17:30.495Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 110 et counter = 111
+2018-06-22T09:17:30.655Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:30.823Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:30.984Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:31.125Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:31.266Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:31.446Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:31.584Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:31.727Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:31.868Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:32.013Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:32.161Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:32.310Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:32.451Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:32.580Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:32.737Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:32.892Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:33.030Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:33.186Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:33.326Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:33.476Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:33.625Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:33.762Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:33.895Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:34.033Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:34.199Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:34.335Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:34.473Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:34.626Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:34.760Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:34.919Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:35.116Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:35.268Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:35.414Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:35.565Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:35.735Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:35.874Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:36.012Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:36.186Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:36.333Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:36.491Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:36.628Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:36.778Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:37.013Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:37.165Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:37.313Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:37.478Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:37.626Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:37.774Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:37.938Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:38.086Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:38.240Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:38.394Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:38.535Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:38.695Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:38.827Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:38.960Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:39.108Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:39.253Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:39.405Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:39.562Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:39.709Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:39.840Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:39.984Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:40.131Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:40.279Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:40.434Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:40.590Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:40.737Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:40.855Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:41.007Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:41.143Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:41.293Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:41.452Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:41.597Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:41.772Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:41.905Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:42.047Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:42.211Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:42.368Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:42.522Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:42.672Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:42.823Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:42.981Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:43.119Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:43.281Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:43.415Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:43.561Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:43.727Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:43.855Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:43.990Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:44.125Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:44.291Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:44.427Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:44.587Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:44.796Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:44.922Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:45.076Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:45.227Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:45.375Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:45.510Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:45.647Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:45.802Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:45.942Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:46.095Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:46.246Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:46.389Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:46.527Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:46.694Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:46.827Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:47.033Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:17:47.419Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:13.315Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T09:20:13.342Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T09:20:13.370Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T09:20:13.370Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T09:20:13.371Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 109 et counter = 110
+2018-06-22T09:20:13.465Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:13.623Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:13.780Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:13.914Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:14.069Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:14.232Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:14.377Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:14.528Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:14.676Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:14.834Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:14.975Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:15.122Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:15.291Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:15.438Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:15.586Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:15.748Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:15.881Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:16.016Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:16.169Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:16.325Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:16.456Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:16.593Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:16.739Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:16.882Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:17.013Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:17.149Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:17.291Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:17.439Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:17.583Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:17.716Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:17.860Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:18.019Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:18.160Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:18.323Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:18.466Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:18.597Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:18.730Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:18.884Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:19.018Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:19.154Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:19.296Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:19.439Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:19.652Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:19.791Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:19.927Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:20.096Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:20.244Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:20.375Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:20.519Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:20.697Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:20.869Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:21.010Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:21.140Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:21.276Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:21.428Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:21.579Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:21.725Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:21.856Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:22.001Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:22.169Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:22.299Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:22.445Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:22.596Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:22.745Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:22.879Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.029Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.162Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.295Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.404Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.551Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.688Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.817Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:23.950Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:24.100Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:24.257Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:24.390Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:24.527Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:24.685Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:24.816Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:24.952Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:25.089Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:25.258Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:25.435Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:25.572Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:25.714Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:25.870Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:26.019Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:26.167Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:26.314Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:26.472Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:26.619Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:26.789Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:26.924Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:27.058Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:27.290Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:27.429Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:27.577Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:27.736Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:27.889Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:28.025Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:28.159Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:28.310Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:28.457Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:28.594Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:28.750Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:28.897Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:29.032Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:29.186Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:29.316Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T09:20:29.524Z >> QueryDatas = SELECT "VALUE", DATEADD (second , TIMESTAMP_S+7200 , '1970-01-01' ) AS CPT_DATE_MVT FROM %s WHERE "VARIABLE"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(7200)) ORDER BY TIMESTAMP_S ASC
+2018-06-22T10:24:27.565Z >> OptiZen - Start...
+2018-06-22T10:24:27.584Z >> Initialisation du fichier de configuration...
+2018-06-22T10:24:27.584Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T10:24:27.844Z >> OptiZen - End run...
+2018-06-22T10:24:31.590Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T10:24:40.003Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T10:24:40.039Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T10:24:40.068Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T10:24:40.068Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T10:24:40.069Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 110 et counter = 111
+2018-06-22T10:25:28.487Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T10:25:28.513Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T10:25:28.538Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T10:25:28.538Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T10:25:28.538Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 110 et counter = 111
+2018-06-22T14:58:54.212Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T15:43:15.014Z >> OptiZen - Start...
+2018-06-22T15:43:15.034Z >> Initialisation du fichier de configuration...
+2018-06-22T15:43:15.034Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T15:43:15.342Z >> OptiZen - End run...
+2018-06-22T15:43:34.283Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T15:43:57.801Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T15:46:24.151Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T15:47:17.528Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T15:47:22.950Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T16:08:12.353Z >> OptiZen - Start...
+2018-06-22T16:08:12.372Z >> Initialisation du fichier de configuration...
+2018-06-22T16:08:12.373Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T16:08:12.607Z >> OptiZen - End run...
+2018-06-22T16:08:26.767Z >> Extension : doc
+2018-06-22T16:08:26.768Z >> Extension : accdb
+2018-06-22T16:08:26.768Z >> Extension : accdb
+2018-06-22T16:08:26.769Z >> Extension : accdb
+2018-06-22T16:08:26.770Z >> Extension : accdb
+2018-06-22T16:08:26.770Z >> Extension : accdb
+2018-06-22T16:08:26.771Z >> Extension : accdb
+2018-06-22T16:08:26.771Z >> Extension : accdb
+2018-06-22T16:08:26.772Z >> Extension : accdb
+2018-06-22T16:08:26.772Z >> Extension : xlsx
+2018-06-22T16:08:26.772Z >> Extension : accdb
+2018-06-22T16:08:26.773Z >> Extension : laccdb
+2018-06-22T16:08:26.773Z >> Extension : log
+2018-06-22T16:08:26.774Z >> Extension : accdb
+2018-06-22T16:08:26.774Z >> Extension : accdb
+2018-06-22T16:08:26.775Z >> Extension : pdf
+2018-06-22T16:08:26.776Z >> Extension : msg
+2018-06-22T16:08:26.777Z >> Extension : pdf
+2018-06-22T16:08:26.777Z >> Extension : accdb
+2018-06-22T16:08:26.778Z >> Extension : laccdb
+2018-06-22T16:08:26.778Z >> Extension : log
+2018-06-22T16:08:26.778Z >> Extension : docx
+2018-06-22T16:08:26.779Z >> Extension : xls
+2018-06-22T16:08:26.811Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-06-22T16:08:26.899Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-06-22T16:08:40.485Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002'
+2018-06-22T16:08:52.749Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:13:31.497Z >> OptiZen - Start...
+2018-06-22T16:13:31.515Z >> Initialisation du fichier de configuration...
+2018-06-22T16:13:31.516Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T16:13:31.766Z >> OptiZen - End run...
+2018-06-22T16:13:36.761Z >> Extension : doc
+2018-06-22T16:13:36.762Z >> Extension : accdb
+2018-06-22T16:13:36.762Z >> Extension : accdb
+2018-06-22T16:13:36.767Z >> Extension : accdb
+2018-06-22T16:13:36.768Z >> Extension : accdb
+2018-06-22T16:13:36.769Z >> Extension : accdb
+2018-06-22T16:13:36.769Z >> Extension : accdb
+2018-06-22T16:13:36.769Z >> Extension : accdb
+2018-06-22T16:13:36.770Z >> Extension : accdb
+2018-06-22T16:13:36.770Z >> Extension : xlsx
+2018-06-22T16:13:36.771Z >> Extension : accdb
+2018-06-22T16:13:36.771Z >> Extension : laccdb
+2018-06-22T16:13:36.772Z >> Extension : log
+2018-06-22T16:13:36.772Z >> Extension : accdb
+2018-06-22T16:13:36.773Z >> Extension : accdb
+2018-06-22T16:13:36.774Z >> Extension : pdf
+2018-06-22T16:13:36.775Z >> Extension : msg
+2018-06-22T16:13:36.775Z >> Extension : pdf
+2018-06-22T16:13:36.776Z >> Extension : accdb
+2018-06-22T16:13:36.776Z >> Extension : laccdb
+2018-06-22T16:13:36.777Z >> Extension : log
+2018-06-22T16:13:36.777Z >> Extension : docx
+2018-06-22T16:13:36.778Z >> Extension : xls
+2018-06-22T16:13:36.796Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-06-22T16:13:36.873Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-06-22T16:13:53.217Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_SOCIETE = EQU_SOCIETE INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:13:54.864Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_SOCIETE = EQU_SOCIETE INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:13:55.513Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_SOCIETE = EQU_SOCIETE INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:14:02.901Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_SOCIETE = EQU_SOCIETE INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:15:25.329Z >> OptiZen - Start...
+2018-06-22T16:15:25.347Z >> Initialisation du fichier de configuration...
+2018-06-22T16:15:25.348Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T16:15:25.605Z >> OptiZen - End run...
+2018-06-22T16:15:27.541Z >> Extension : doc
+2018-06-22T16:15:27.543Z >> Extension : accdb
+2018-06-22T16:15:27.543Z >> Extension : accdb
+2018-06-22T16:15:27.543Z >> Extension : accdb
+2018-06-22T16:15:27.544Z >> Extension : accdb
+2018-06-22T16:15:27.544Z >> Extension : accdb
+2018-06-22T16:15:27.544Z >> Extension : accdb
+2018-06-22T16:15:27.545Z >> Extension : accdb
+2018-06-22T16:15:27.545Z >> Extension : accdb
+2018-06-22T16:15:27.546Z >> Extension : xlsx
+2018-06-22T16:15:27.546Z >> Extension : accdb
+2018-06-22T16:15:27.546Z >> Extension : laccdb
+2018-06-22T16:15:27.547Z >> Extension : log
+2018-06-22T16:15:27.547Z >> Extension : accdb
+2018-06-22T16:15:27.548Z >> Extension : accdb
+2018-06-22T16:15:27.548Z >> Extension : pdf
+2018-06-22T16:15:27.549Z >> Extension : msg
+2018-06-22T16:15:27.549Z >> Extension : pdf
+2018-06-22T16:15:27.550Z >> Extension : accdb
+2018-06-22T16:15:27.550Z >> Extension : laccdb
+2018-06-22T16:15:27.551Z >> Extension : log
+2018-06-22T16:15:27.551Z >> Extension : docx
+2018-06-22T16:15:27.552Z >> Extension : xls
+2018-06-22T16:15:27.566Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-06-22T16:15:27.644Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-06-22T16:15:42.687Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT ON CPT_SOCIETE = EQU_SOCIETE LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-00' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:15:44.236Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT ON CPT_SOCIETE = EQU_SOCIETE LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-00' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:15:48.538Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT ON CPT_SOCIETE = EQU_SOCIETE LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:17:19.537Z >> OptiZen - Start...
+2018-06-22T16:17:19.553Z >> Initialisation du fichier de configuration...
+2018-06-22T16:17:19.554Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T16:17:19.818Z >> OptiZen - End run...
+2018-06-22T16:17:24.416Z >> Extension : doc
+2018-06-22T16:17:24.416Z >> Extension : accdb
+2018-06-22T16:17:24.420Z >> Extension : accdb
+2018-06-22T16:17:24.421Z >> Extension : accdb
+2018-06-22T16:17:24.421Z >> Extension : accdb
+2018-06-22T16:17:24.422Z >> Extension : accdb
+2018-06-22T16:17:24.422Z >> Extension : accdb
+2018-06-22T16:17:24.423Z >> Extension : accdb
+2018-06-22T16:17:24.423Z >> Extension : accdb
+2018-06-22T16:17:24.424Z >> Extension : xlsx
+2018-06-22T16:17:24.425Z >> Extension : accdb
+2018-06-22T16:17:24.425Z >> Extension : laccdb
+2018-06-22T16:17:24.425Z >> Extension : log
+2018-06-22T16:17:24.426Z >> Extension : accdb
+2018-06-22T16:17:24.426Z >> Extension : accdb
+2018-06-22T16:17:24.427Z >> Extension : pdf
+2018-06-22T16:17:24.428Z >> Extension : msg
+2018-06-22T16:17:24.429Z >> Extension : pdf
+2018-06-22T16:17:24.429Z >> Extension : accdb
+2018-06-22T16:17:24.430Z >> Extension : laccdb
+2018-06-22T16:17:24.430Z >> Extension : log
+2018-06-22T16:17:24.430Z >> Extension : docx
+2018-06-22T16:17:24.431Z >> Extension : xls
+2018-06-22T16:17:24.450Z >> org.optizen.util.Settings : zenTableData() >> Tentative de lecture de la section zenTableData ...
+2018-06-22T16:17:24.522Z >> org.optizen.util.Settings : zenTableData() >> ...Lecture réussie
+2018-06-22T16:17:40.788Z >> SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE FROM COMPTEURS INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT AND  CPT_SOCIETE = EQU_SOCIETE LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE WHERE CPT_SOCIETE = '11' AND CPT_EQUIPEMENT like '0039-0002' AND CPT_ORGANE like '05-000082'
+2018-06-22T16:18:03.323Z >> Requested Query : SELECT * FROM GEBAR_VARIABLES WHERE GEBAR_VARIABLES.NAME like '%load%' ORDER BY GEBAR_VARIABLES."NAME"
+2018-06-22T16:18:07.708Z >> Requested Query : SELECT * FROM GEBAR_VARIABLES WHERE GEBAR_VARIABLES.NAME like '%load%2%' ORDER BY GEBAR_VARIABLES."NAME"
+2018-06-22T16:36:36.307Z >> OptiZen - Start...
+2018-06-22T16:36:36.322Z >> Initialisation du fichier de configuration...
+2018-06-22T16:36:36.323Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T16:36:36.548Z >> OptiZen - End run...
+2018-06-22T16:36:52.961Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T16:37:07.773Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T16:37:07.925Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T16:37:07.952Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T16:37:07.952Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T16:37:07.954Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 109 et counter = 110
+2018-06-22T16:37:58.645Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T16:37:58.690Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T16:37:58.716Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T16:37:58.716Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T16:37:58.717Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 109 et counter = 110
+2018-06-22T16:38:04.348Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T16:38:04.373Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T16:38:04.398Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T16:38:04.399Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T16:38:04.399Z >> TransertFrame : WorkOnSearching : doInBackground >> Count = 109 et counter = 110
+2018-06-22T17:04:08.298Z >> OptiZen - Start...
+2018-06-22T17:04:08.315Z >> Initialisation du fichier de configuration...
+2018-06-22T17:04:08.316Z >> org.optizen.util.Settings : createIniFile(String) >> Le fichier OptiZen.ini existe déjà !
+2018-06-22T17:04:08.542Z >> OptiZen - End run...
+2018-06-22T17:04:10.523Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T17:04:13.394Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T17:04:18.525Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T17:04:18.550Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T17:04:18.551Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T17:05:28.388Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T17:05:29.013Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T17:05:29.037Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T17:05:29.037Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T17:06:50.301Z >> TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...
+2018-06-22T17:06:52.034Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.42\SQLSERVER;databaseName=scada
+2018-06-22T17:06:52.064Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint
+2018-06-22T17:06:52.065Z >> TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = 114
+2018-06-22T17:10:02.866Z >> La connexion suivante est active :  jdbc:sqlserver://10.116.26.35\SQLSERVER:1433;databaseName=optimaint

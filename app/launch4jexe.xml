@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>D:\APPLICATIONS\JAVA\optizen\app\target\app-1711.03-jar-with-dependencies.jar</jar>
+  <jar>D:\APPLICATIONS\JAVA\optizen\app\target\app-1806.15-jar-with-dependencies.jar</jar>
   <outfile>D:\APPLICATIONS\JAVA\optizen\app\target\OptiZen.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>

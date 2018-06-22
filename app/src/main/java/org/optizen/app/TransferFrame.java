@@ -26,7 +26,6 @@ import java.util.TimerTask;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -55,14 +54,27 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     static final int xOffset = 30, yOffset = 30;
     static String MoniteurExportFilename = "MoniteurExport_TR_CPT_MVTS.bat";
     LoadingFrame loadingFrame = null;
+    /**
+     * This variable will bloc any request operation while loading frame in
+     * process
+     */
+    static Boolean loadingFrameInProcess = false;
+
+    static Boolean stopBackgroundProcess = false;
+
+    /**
+     * Process permet de garder en mémoire la procédure d'excution du moniteur
+     * transactionnel.
+     */
+    private Process pidMoniteur;
 
     private FrequencyUp frequencyUp;
     private Integer autoStep = 0;
-    
     private JFrame owner = null;
 
     /**
      * Creates new form TransferFrame
+     *
      * @param parent
      */
     public TransferFrame(JFrame parent) {
@@ -72,22 +84,35 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
         TableCellRenderer tableCellRenderer = new DefaultTableCellRenderer() {
             SimpleDateFormat f = new SimpleDateFormat("dd/MM/yy hh:mm:ss");
+
             @Override
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,int row, int column) {
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 if (value instanceof Date) {
                     value = f.format(value);
                 }
                 return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
             }
         };
-        
+
         tableData.getColumnModel().getColumn(6).setCellRenderer(tableCellRenderer);
         tableData.getColumnModel().getColumn(9).setCellRenderer(tableCellRenderer);
         tableData.getColumnModel().getColumn(10).setCellRenderer(tableCellRenderer);
-        
+
         tableTr.getColumnModel().getColumn(6).setCellRenderer(tableCellRenderer);
         tableTr.getColumnModel().getColumn(9).setCellRenderer(tableCellRenderer);
         tableTr.getColumnModel().getColumn(10).setCellRenderer(tableCellRenderer);
+        
+        
+        // Initialiser recher
+        cbSearchFilter.addItem("Tous");
+        Object obj = Settings.read(Settings.LINK_LINK, Settings.COUNTER);
+        Integer linkCounter = Integer.valueOf(obj == null ? "0" : obj.toString());
+        for (int count = 0; count < linkCounter; count++) {
+            // Gett link from settings
+            LinkModel link = Settings.readLinkModel(count);
+            cbSearchFilter.addItem(link.getName());
+        }
+        
     }
 
     /**
@@ -105,8 +130,11 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         jScrollPane1 = new javax.swing.JScrollPane();
         tableData = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
+        cbSearchFilter = new javax.swing.JComboBox<>();
+        spMaxRecord = new javax.swing.JSpinner();
         search = new javax.swing.JButton();
         moveToTr = new javax.swing.JButton();
+        searchResult = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableTr = new javax.swing.JTable();
@@ -174,6 +202,11 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         jPanel3.setPreferredSize(new java.awt.Dimension(1062, 34));
         jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 2, 5));
 
+        jPanel3.add(cbSearchFilter);
+
+        spMaxRecord.setPreferredSize(new java.awt.Dimension(64, 20));
+        jPanel3.add(spMaxRecord);
+
         search.setIcon(Ico.i16("/img/oz/search.png")
         );
         search.setText("Chercher...");
@@ -194,6 +227,10 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             }
         });
         jPanel3.add(moveToTr);
+
+        searchResult.setForeground(new java.awt.Color(0, 102, 0));
+        searchResult.setText("-");
+        jPanel3.add(searchResult);
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
@@ -514,6 +551,13 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
     private void btnSendToDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendToDatabaseActionPerformed
 
+        // Check loading frame use
+        if (!loadingFrameInProcess) {
+            loadingFrameInProcess = true;
+        } else {
+            return;
+        }
+
         // Génération du fichier batch pour exécution
         File f = new File(MoniteurExportFilename);
         if (!f.exists()) {
@@ -552,25 +596,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         String[] commands = {MoniteurExportFilename};
 
         try {
-            Process proc = rt.exec(commands);
-//            BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-//
-//        BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
-//
-//// read the output from the command
-//        System.out.println("Here is the standard output of the command:\n");
-//        String s = null;
-//        while ((s = stdInput.readLine()) != null) {
-//            System.out.println(s);
-//        }
-//
-//// read any errors from the attempted command
-//        System.out.println("Here is the standard error of the command (if any):\n");
-//        while ((s = stdError.readLine()) != null) {
-//            System.out.println(s);
-//        }
-            btnSendToDatabase.setEnabled(false);
-            btnRefresh.setEnabled(false);
+            pidMoniteur = rt.exec(commands);
+
+            disableOptions();
 
             WorkOnTransferToOpti wonm = new WorkOnTransferToOpti();
             wonm.execute();
@@ -580,8 +608,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             loadingFrame.setLocationRelativeTo(this);
             loadingFrame.setVisible(true);
 
-            btnSendToDatabase.setEnabled(true);
-            btnRefresh.setEnabled(true);
+            enableOptions();
             autoStep++;
         } catch (IOException ex) {
             Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -592,13 +619,20 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
 
+        // Check loading frame use
+        if (!loadingFrameInProcess) {
+            loadingFrameInProcess = true;
+        } else {
+            return;
+        }
+
         // Remove existing rows
         DefaultTableModel tm = (DefaultTableModel) tableData.getModel();
         tm.getDataVector().removeAllElements();
         tm.fireTableDataChanged();
 
-        search.setEnabled(false);
-        moveToTr.setEnabled(false);
+        // No button available
+        disableOptions();
 
         WorkOnSearching wons = new WorkOnSearching();
         wons.execute();
@@ -608,14 +642,20 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         loadingFrame.setLocationRelativeTo(this);
         loadingFrame.setVisible(true);
 
-        search.setEnabled(true);
-        moveToTr.setEnabled(true);
+        enableOptions();
 
         // Can go to next step
         autoStep++;
     }//GEN-LAST:event_searchActionPerformed
 
     private void moveToTrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveToTrActionPerformed
+
+        // Check loading frame use
+        if (!loadingFrameInProcess) {
+            loadingFrameInProcess = true;
+        } else {
+            return;
+        }
 
         // Vérifie que des données sont disponible pour le transfere
         if (tableData.getRowCount() == 0) {
@@ -642,8 +682,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             }
         }
 
-        search.setEnabled(false);
-        moveToTr.setEnabled(false);
+        disableOptions();
 
         WorkOnMoveToTr wonm = new WorkOnMoveToTr();
         wonm.execute();
@@ -653,8 +692,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         loadingFrame.setLocationRelativeTo(this);
         loadingFrame.setVisible(true);
 
-        search.setEnabled(true);
-        moveToTr.setEnabled(true);
+        enableOptions();
 
         autoStep++;
     }//GEN-LAST:event_moveToTrActionPerformed
@@ -733,7 +771,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     }//GEN-LAST:event_btnTogglerPlanActionPerformed
 
     private void btnShowLoadingFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowLoadingFrameActionPerformed
-       
+
         loadingFrame.setVisible(true);
     }//GEN-LAST:event_btnShowLoadingFrameActionPerformed
 
@@ -752,6 +790,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     private javax.swing.JComboBox<String> cbMHour;
     private javax.swing.JComboBox<String> cbMMin;
     private javax.swing.JComboBox<String> cbMSec;
+    private javax.swing.JComboBox<String> cbSearchFilter;
     private javax.swing.ButtonGroup gpPlanifMode;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -780,7 +819,9 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
     private javax.swing.JRadioButton rbModeFrequence;
     private javax.swing.JRadioButton rbModeMoment;
     private javax.swing.JButton search;
+    private javax.swing.JLabel searchResult;
     private javax.swing.JLabel sendToDatabaseError;
+    private javax.swing.JSpinner spMaxRecord;
     private javax.swing.JTable tableData;
     private javax.swing.JTable tableTr;
     // End of variables declaration//GEN-END:variables
@@ -842,19 +883,40 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             tableTr.setModel(tm);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
-            Util.out("TransfertFrame : refreshTableTr >> " +  ex.getMessage());
+            Util.out("TransfertFrame : refreshTableTr >> " + ex.getMessage());
         }
     }
-    
+
     /**
      * Get loading frame allow to get once the only window existing
-     * @return 
+     *
+     * @return
      */
-    private LoadingFrame getLoadingFrame(){
-        if(loadingFrame==null){
+    private LoadingFrame getLoadingFrame() {
+        if (loadingFrame == null) {
             loadingFrame = new LoadingFrame(owner, Dialog.ModalityType.MODELESS);
         }
         return loadingFrame;
+    }
+
+    /**
+     * Disable options command on edition
+     */
+    private void disableOptions() {
+        search.setEnabled(false);
+        moveToTr.setEnabled(false);
+        btnSendToDatabase.setEnabled(false);
+        btnRefresh.setEnabled(false);
+    }
+
+    /**
+     * Enable options command on edition
+     */
+    private void enableOptions() {
+        search.setEnabled(true);
+        moveToTr.setEnabled(true);
+        btnSendToDatabase.setEnabled(true);
+        btnRefresh.setEnabled(true);
     }
 
     /**
@@ -867,7 +929,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         protected String doInBackground() throws Exception {
 
             try {
-                
+
                 //
                 Util.out("TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...");
                 
@@ -889,13 +951,20 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 Statement optiState = optConn.createStatement(
                         ResultSet.TYPE_SCROLL_INSENSITIVE,
                         ResultSet.CONCUR_READ_ONLY);
-                
+
                 Util.out("TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = " + counter);
 
                 loadingFrame.onInit();
                 //counter = Math.min(counter, 8);
-                
-                for (int count = 0; count < counter; count++) {
+
+                int count = 0;
+                if(cbSearchFilter.getSelectedIndex()!=0){
+                    count = cbSearchFilter.getSelectedIndex()-1;
+                    counter = count + 1;
+                    Util.out("TransertFrame : WorkOnSearching : doInBackground >> Count = " + count + " et counter = " + counter);
+                }
+                for (; count < counter; count++) {
+
                     // Gett link from settings
                     LinkModel link = Settings.readLinkModel(count);
 
@@ -910,9 +979,8 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             link.getEquEquipement(),
                             link.getOrgOrgane(),
                             link.getUnite());
-                    
-                    //Util.out("QLastOptiRecord : " + qLastOptiRecord);
 
+                    //Util.out("QLastOptiRecord : " + qLastOptiRecord);
                     String lastOptiDateTime = "2000-01-01";
 
                     //L'objet ResultSet contient le résultat de la requête SQL
@@ -920,15 +988,14 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     if (optiResult.next()) { // Date déjà existante
                         lastOptiDateTime = optiResult.getObject(1).toString();
                     }
-                    
 
                     // Recherche les données après la date enregistrée dans zenon
                     //
                     //link.getVariable();
                     String queryDatas
-                            = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S+" + ConfigFrame.sTZ()+ " , '1970-01-01' ) AS CPT_DATE_MVT "
+                            = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S+" + ConfigFrame.sTZ() + " , '1970-01-01' ) AS CPT_DATE_MVT "
                             + "FROM %s "
-                            + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(" + ConfigFrame.sTZ()+ ")) "
+                            + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(" + ConfigFrame.sTZ() + ")) "
                             + "ORDER BY TIMESTAMP_S ASC";
                     //Util.out("QueryDatas = " + queryDatas);
                     queryDatas = String.format(queryDatas,
@@ -938,13 +1005,14 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     //Util.out("Query Datas : " + queryDatas);
 
                     ResultSet zenResult = zenState.executeQuery(queryDatas);
-                    
+
                     zenResult.last();
                     int size = zenResult.getRow();
                     zenResult.beforeFirst();
                     loadingFrame.sub(0);
-                    int subs = 0;
-                    while (zenResult.next()) {
+                    int subs = 0, maxRecord = Integer.valueOf(spMaxRecord.getValue().toString());
+                    boolean maxRecordReach = false;
+                    while (zenResult.next() && !maxRecordReach) {
                         String value = zenResult.getObject(1).toString();
                         String dateMvt = zenResult.getObject(2).toString();
 
@@ -956,20 +1024,45 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                         Integer subValue = (100 * (subs + 1)) / size;
                         loadingFrame.sub(subValue);
                         subs++;
+                        if(maxRecord != 0 && subs==maxRecord){
+                            maxRecordReach = true;
+                        }
+                        if (stopBackgroundProcess) {
+                            searchResult.setText("Arreter au lien " + count + " enregistrement "+subs+ " / "+size);
+                            searchResult.setForeground(new java.awt.Color(255, 51, 0));
+                            count = counter;
+                            loadingFrame.onFinish();
+                            loadingFrame.setVisible(false);
+                            loadingFrameInProcess = false;
+                            stopBackgroundProcess = false;
+                            return null;
+                        }
                     }
                     Integer mainValue = (100 * (count + 1)) / counter;
                     loadingFrame.main(mainValue);
                     Thread.sleep(5);
+                    if (stopBackgroundProcess) {
+                         searchResult.setText("Arreter au lien " + count + " sur " + counter );
+                         searchResult.setForeground(new java.awt.Color(255, 51, 0));
+                        count = counter;
+                        loadingFrame.onFinish();
+                        loadingFrame.setVisible(false);
+                        loadingFrameInProcess = false;
+                        stopBackgroundProcess = false;
+                        return null;
+                    }
                 }
                 tableData.setModel(tm);
-                loadingFrame.setVisible(false);
+                searchResult.setText("Reussi, nombre de liens traités " + count + " pour " + tm.getRowCount() +" enregistrement" );
+                searchResult.setForeground(new java.awt.Color(0, 102, 0));
             } catch (SQLException ex) {
                 //Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
                 Util.out("TransfertFrame : WorkOnSearching : doInBackground >> " + ex.getMessage());
-                loadingFrame.setVisible(false);
-                
             }
+            loadingFrame.onFinish();
             loadingFrame.setVisible(false);
+            loadingFrameInProcess = false;
+           
             return null;
         }
 
@@ -1018,17 +1111,24 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
                     ps.executeUpdate();
                     loadingFrame.main((100 * (row + 1)) / rowCount);
+                    if (stopBackgroundProcess) {
+                        row = rowCount;
+                        loadingFrame.onFinish();
+                        loadingFrame.setVisible(false);
+                        loadingFrameInProcess = false;
+                        refreshTableTr();
+                        stopBackgroundProcess = false;
+                        return null;
+                    }
                 }
-                loadingFrame.onFinish();
                 refreshTableTr();
-                loadingFrame.setVisible(false);
-                return null;
             } catch (SQLException ex) {
                 Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
-                loadingFrame.onFinish();
-                loadingFrame.setVisible(false);
-                return null;
             }
+            loadingFrame.onFinish();
+            loadingFrame.setVisible(false);
+            loadingFrameInProcess = false;
+            return null;
         }
 
         @Override
@@ -1060,27 +1160,47 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                     traited = Integer.valueOf(tm.getValueAt(0, 0).toString());
                     Thread.sleep(1000);
                     loadingFrame.main((100 * (traited)) / rowCount);
+                    if (stopBackgroundProcess) {
+                        System.out.println("PID PROCESSUS : " + pidMoniteur);
+                        pidMoniteur.destroyForcibly();
+                        pidMoniteur.destroy();
+                        Process proc = Runtime.getRuntime().exec("Taskkill /IM Optimaint_Moniteur.exe /F");
+                        Thread.sleep(500);
+                        tm.setQuery("SELECT count(*) from TR_CPT_MVTS WHERE TRCPT_SITUATION=-1");
+                        Integer errorCounter = Integer.valueOf(tm.getValueAt(0, 0).toString());
+                        if (errorCounter != 0) {
+                            sendToDatabaseError.setText("Impossible d'importer " + errorCounter + "/" + rowCount + " enrgistrement(s) ! Veuillez vérifier vos informations");
+                            sendToDatabaseError.setForeground(new java.awt.Color(255, 51, 0));
+                        } else {
+                            sendToDatabaseError.setText("Traitement réussi !" + errorCounter + " erreur sur " + rowCount);
+                            sendToDatabaseError.setForeground(new java.awt.Color(0, 102, 0));
+                        }
+                        refreshTableTr();
+                        loadingFrame.onFinish();
+                        loadingFrame.setVisible(false);
+                        loadingFrameInProcess = false;
+                        stopBackgroundProcess = false;
+                        return null;
+                    }
                 };
                 tm.setQuery("SELECT count(*) from TR_CPT_MVTS WHERE TRCPT_SITUATION=-1");
                 Integer errorCounter = Integer.valueOf(tm.getValueAt(0, 0).toString());
-                if(errorCounter!=0){
+                if (errorCounter != 0) {
                     sendToDatabaseError.setText("Impossible d'importer " + errorCounter + "/" + rowCount + " enrgistrement(s) ! Veuillez vérifier vos informations");
                     sendToDatabaseError.setForeground(new java.awt.Color(255, 51, 0));
-                }else{
+                } else {
                     sendToDatabaseError.setText("Traitement réussi !" + errorCounter + " erreur sur " + rowCount);
                     sendToDatabaseError.setForeground(new java.awt.Color(0, 102, 0));
                 }
-
-                loadingFrame.onFinish();
                 refreshTableTr();
-                loadingFrame.setVisible(false);
-                return null;
-            } catch (SQLException | ClassNotFoundException | InterruptedException ex) {
+            } catch (SQLException | ClassNotFoundException | InterruptedException | IOException ex) {
                 Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
-                loadingFrame.onFinish();
-                loadingFrame.setVisible(false);
-                return null;
             }
+            loadingFrame.onFinish();
+            loadingFrame.setVisible(false);
+            loadingFrameInProcess = false;
+            return null;
+
         }
 
         @Override

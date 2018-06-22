@@ -192,7 +192,7 @@ public class LoadingFrame extends javax.swing.JDialog {
     }
 
     public void stopLoadingFrame() {
-        setVisible(false);
+        TransferFrame.stopBackgroundProcess = true;
     }
 
     private void hideLoadingFrame() {
