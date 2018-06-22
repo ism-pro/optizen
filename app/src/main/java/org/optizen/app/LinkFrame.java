@@ -968,7 +968,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         String query = "SELECT CPT_EQUIPEMENT, EQU_DESIGNATION, CPT_ORGANE, ORG_DESIGNATION, CPT_UNITE, CPT_COMMENTAIRE, CPT_SOCIETE "
                 + "FROM COMPTEURS "
                 + "INNER JOIN EQUIPEMENTS ON CPT_EQUIPEMENT = EQU_EQUIPEMENT AND  CPT_SOCIETE = EQU_SOCIETE "
-                + "LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE "
+                + "LEFT JOIN ORGANES ON CPT_ORGANE = ORG_ORGANE AND CPT_SOCIETE = ORG_SOCIETE"
                 + "WHERE CPT_SOCIETE = '" + company + "'";
 
         query += !tfFilterEquCode.getText().isEmpty() ? " AND CPT_EQUIPEMENT like '" + tfFilterEquCode.getText() + "'" : "";
