@@ -90,6 +90,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                 if (value instanceof Date) {
                     value = f.format(value);
                 }
+
                 return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
             }
         };
@@ -101,8 +102,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         tableTr.getColumnModel().getColumn(6).setCellRenderer(tableCellRenderer);
         tableTr.getColumnModel().getColumn(9).setCellRenderer(tableCellRenderer);
         tableTr.getColumnModel().getColumn(10).setCellRenderer(tableCellRenderer);
-        
-        
+
         // Initialiser recher
         cbSearchFilter.addItem("Tous");
         Object obj = Settings.read(Settings.LINK_LINK, Settings.COUNTER);
@@ -112,7 +112,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             LinkModel link = Settings.readLinkModel(count);
             cbSearchFilter.addItem(link.getName());
         }
-        
+
     }
 
     /**
@@ -634,6 +634,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
         // No button available
         disableOptions();
 
+        // Thread loop searching available data from link
         WorkOnSearching wons = new WorkOnSearching();
         wons.execute();
 
@@ -932,16 +933,16 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
                 //
                 Util.out("TransfertFrame : WorkOnSearching : doInBackground >> Début de la recherche de nouvelle donnée...");
-                
+
                 // Remove all the specify row
                 DefaultTableModel tm = (DefaultTableModel) tableData.getModel();
 
-                // Load from file
+                // Load link from file
                 Object obj = Settings.read(Settings.LINK_LINK, Settings.COUNTER);
                 Integer counter = Integer.valueOf(obj == null ? "0" : obj.toString());
                 String company = Settings.read(Settings.CONFIG, Settings.COMPANY).toString();
 
-                // Loop over available link
+                //Get database connexion
                 Connection zenConn = DatabaseFrame.loadConnectionZenon();
                 Statement zenState = zenConn.createStatement(
                         ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -954,81 +955,100 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
 
                 Util.out("TransfertFrame : WorkOnSearching : doInBackground >> Nombre total de liaison = " + counter);
 
+                //Set to init position loading frame
                 loadingFrame.onInit();
                 //counter = Math.min(counter, 8);
 
+                //add search filter
                 int count = 0;
-                if(cbSearchFilter.getSelectedIndex()!=0){
-                    count = cbSearchFilter.getSelectedIndex()-1;
+                if (cbSearchFilter.getSelectedIndex() != 0) {
+                    count = cbSearchFilter.getSelectedIndex() - 1;
                     counter = count + 1;
                     Util.out("TransertFrame : WorkOnSearching : doInBackground >> Count = " + count + " et counter = " + counter);
                 }
+
+                // Loop over available link
                 for (; count < counter; count++) {
 
                     // Gett link from settings
                     LinkModel link = Settings.readLinkModel(count);
+                    if (link.getState()) {
 
-                    // Get last record from optimaint for this link
-                    String qLastOptiRecord
-                            = "SELECT TOP 1  CMV_DATE_MVT "
-                            + "FROM Optimaint.dbo.COMPTEURS_MVTS "
-                            + "WHERE CMV_SOCIETE = '%s' AND CMV_EQUIPEMENT='%s' AND CMV_ORGANE='%s' AND CMV_UNITE='%s' "
-                            + "ORDER BY CMV_DATE_MVT DESC";
-                    qLastOptiRecord = String.format(qLastOptiRecord,
-                            company,
-                            link.getEquEquipement(),
-                            link.getOrgOrgane(),
-                            link.getUnite());
+                        // Get last record from optimaint for this link
+                        String qLastOptiRecord
+                                = "SELECT TOP 1  CMV_DATE_MVT "
+                                + "FROM Optimaint.dbo.COMPTEURS_MVTS "
+                                + "WHERE CMV_SOCIETE = '%s' AND CMV_EQUIPEMENT='%s' AND CMV_ORGANE='%s' AND CMV_UNITE='%s' "
+                                + "ORDER BY CMV_DATE_MVT DESC";
+                        qLastOptiRecord = String.format(qLastOptiRecord,
+                                company,
+                                link.getEquEquipement(),
+                                link.getOrgOrgane(),
+                                link.getUnite());
 
-                    //Util.out("QLastOptiRecord : " + qLastOptiRecord);
-                    String lastOptiDateTime = "2000-01-01";
+                        //Util.out("QLastOptiRecord : " + qLastOptiRecord);
+                        String lastOptiDateTime = "2000-01-01";
 
-                    //L'objet ResultSet contient le résultat de la requête SQL
-                    ResultSet optiResult = optiState.executeQuery(qLastOptiRecord);
-                    if (optiResult.next()) { // Date déjà existante
-                        lastOptiDateTime = optiResult.getObject(1).toString();
-                    }
-
-                    // Recherche les données après la date enregistrée dans zenon
-                    //
-                    //link.getVariable();
-                    String queryDatas
-                            = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S+" + ConfigFrame.sTZ() + " , '1970-01-01' ) AS CPT_DATE_MVT "
-                            + "FROM %s "
-                            + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(" + ConfigFrame.sTZ() + ")) "
-                            + "ORDER BY TIMESTAMP_S ASC";
-                    //Util.out("QueryDatas = " + queryDatas);
-                    queryDatas = String.format(queryDatas,
-                            link.getTable(),
-                            link.getVariable(),
-                            lastOptiDateTime);
-                    //Util.out("Query Datas : " + queryDatas);
-
-                    ResultSet zenResult = zenState.executeQuery(queryDatas);
-
-                    zenResult.last();
-                    int size = zenResult.getRow();
-                    zenResult.beforeFirst();
-                    loadingFrame.sub(0);
-                    int subs = 0, maxRecord = Integer.valueOf(spMaxRecord.getValue().toString());
-                    boolean maxRecordReach = false;
-                    while (zenResult.next() && !maxRecordReach) {
-                        String value = zenResult.getObject(1).toString();
-                        String dateMvt = zenResult.getObject(2).toString();
-
-                        Object[] rowObject = new Object[]{
-                            tableData.getRowCount() + 1, company, link.getEquEquipement(), link.getUnite(),
-                            link.getOrgOrgane(), value, dateMvt, "MPRV", "", "", "", "", 0
-                        };
-                        tm.addRow(rowObject);
-                        Integer subValue = (100 * (subs + 1)) / size;
-                        loadingFrame.sub(subValue);
-                        subs++;
-                        if(maxRecord != 0 && subs==maxRecord){
-                            maxRecordReach = true;
+                        //L'objet ResultSet contient le résultat de la requête SQL
+                        ResultSet optiResult = optiState.executeQuery(qLastOptiRecord);
+                        if (optiResult.next()) { // Date déjà existante
+                            lastOptiDateTime = optiResult.getObject(1).toString();
                         }
+
+                        // Recherche les données après la date enregistrée dans zenon
+                        //
+                        //link.getVariable();
+                        String queryDatas
+                                = "SELECT \"VALUE\", DATEADD (second , TIMESTAMP_S+" + ConfigFrame.sTZ() + " , '1970-01-01' ) AS CPT_DATE_MVT "
+                                + "FROM %s "
+                                + "WHERE \"VARIABLE\"='%s' AND TIMESTAMP_S > (cast(DATEDIFF(s, '1970-01-01 00:00:00.000', '%s' ) as bigint)-(" + ConfigFrame.sTZ() + ")) "
+                                + "ORDER BY TIMESTAMP_S ASC";
+                        //Util.out("QueryDatas = " + queryDatas);
+                        queryDatas = String.format(queryDatas,
+                                link.getTable(),
+                                link.getVariable(),
+                                lastOptiDateTime);
+                        //Util.out("Query Datas : " + queryDatas);
+
+                        ResultSet zenResult = zenState.executeQuery(queryDatas);
+
+                        zenResult.last();
+                        int size = zenResult.getRow();
+                        zenResult.beforeFirst();
+                        loadingFrame.sub(0);
+                        int subs = 0, maxRecord = Integer.valueOf(spMaxRecord.getValue().toString());
+                        boolean maxRecordReach = false;
+                        while (zenResult.next() && !maxRecordReach) {
+                            String value = zenResult.getObject(1).toString();
+                            String dateMvt = zenResult.getObject(2).toString();
+
+                            Object[] rowObject = new Object[]{
+                                tableData.getRowCount() + 1, company, link.getEquEquipement(), link.getUnite(),
+                                link.getOrgOrgane(), value, dateMvt, "MPRV", "", "", "", "", 0
+                            };
+                            tm.addRow(rowObject);
+                            Integer subValue = (100 * (subs + 1)) / size;
+                            loadingFrame.sub(subValue);
+                            subs++;
+                            if (maxRecord != 0 && subs == maxRecord) {
+                                maxRecordReach = true;
+                            }
+                            if (stopBackgroundProcess) {
+                                searchResult.setText("Arreter au lien " + count + " enregistrement " + subs + " / " + size);
+                                searchResult.setForeground(new java.awt.Color(255, 51, 0));
+                                count = counter;
+                                loadingFrame.onFinish();
+                                loadingFrame.setVisible(false);
+                                loadingFrameInProcess = false;
+                                stopBackgroundProcess = false;
+                                return null;
+                            }
+                        }
+                        Integer mainValue = (100 * (count + 1)) / counter;
+                        loadingFrame.main(mainValue);
+                        Thread.sleep(5);
                         if (stopBackgroundProcess) {
-                            searchResult.setText("Arreter au lien " + count + " enregistrement "+subs+ " / "+size);
+                            searchResult.setText("Arreter au lien " + count + " sur " + counter);
                             searchResult.setForeground(new java.awt.Color(255, 51, 0));
                             count = counter;
                             loadingFrame.onFinish();
@@ -1037,23 +1057,15 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             stopBackgroundProcess = false;
                             return null;
                         }
-                    }
-                    Integer mainValue = (100 * (count + 1)) / counter;
-                    loadingFrame.main(mainValue);
-                    Thread.sleep(5);
-                    if (stopBackgroundProcess) {
-                         searchResult.setText("Arreter au lien " + count + " sur " + counter );
-                         searchResult.setForeground(new java.awt.Color(255, 51, 0));
-                        count = counter;
-                        loadingFrame.onFinish();
-                        loadingFrame.setVisible(false);
-                        loadingFrameInProcess = false;
-                        stopBackgroundProcess = false;
-                        return null;
+                    } else {
+                        JOptionPane.showMessageDialog(owner,
+                                "Cette variable est désactivée !! Veuillez l'activer dans la table de correspondance.",
+                                "Recherceh de données - Lien désactivé !",
+                                JOptionPane.WARNING_MESSAGE);
                     }
                 }
                 tableData.setModel(tm);
-                searchResult.setText("Reussi, nombre de liens traités " + count + " pour " + tm.getRowCount() +" enregistrement" );
+                searchResult.setText("Reussi, nombre de liens traités " + count + " pour " + tm.getRowCount() + " enregistrement");
                 searchResult.setForeground(new java.awt.Color(0, 102, 0));
             } catch (SQLException ex) {
                 //Logger.getLogger(TransferFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -1062,7 +1074,7 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
             loadingFrame.onFinish();
             loadingFrame.setVisible(false);
             loadingFrameInProcess = false;
-           
+
             return null;
         }
 

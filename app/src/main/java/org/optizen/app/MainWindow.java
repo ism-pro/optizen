@@ -64,12 +64,12 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPane = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
         tbBtnConfigurations = new javax.swing.JButton();
         tbBtnLinks = new javax.swing.JButton();
         tbBtnTransfer = new javax.swing.JButton();
         tbBtnExit = new javax.swing.JButton();
+        desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -95,19 +95,6 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         );
         setName("MainWindowFrame"); // NOI18N
         setSize(new java.awt.Dimension(1024, 680));
-
-        desktopPane.setBackground(new java.awt.Color(153, 153, 153));
-
-        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
-        desktopPane.setLayout(desktopPaneLayout);
-        desktopPaneLayout.setHorizontalGroup(
-            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1015, Short.MAX_VALUE)
-        );
-        desktopPaneLayout.setVerticalGroup(
-            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 581, Short.MAX_VALUE)
-        );
 
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
@@ -159,6 +146,20 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
             }
         });
         jToolBar1.add(tbBtnExit);
+
+        desktopPane.setBackground(new java.awt.Color(153, 153, 153));
+        desktopPane.setPreferredSize(new java.awt.Dimension(901, 600));
+
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 631, Short.MAX_VALUE)
+        );
 
         fileMenu.setMnemonic('f');
         fileMenu.setText(bundle.getString("MenuFile")); // NOI18N
@@ -283,15 +284,15 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(desktopPane))
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE))
         );
 
         pack();
@@ -311,7 +312,7 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         }
         configFrame.setVisible(true);
         try {
-            //configFrame.setMaximum(true);
+            configFrame.setMaximum(true);
             configFrame.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
@@ -338,12 +339,13 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
             revalidate();
             repaint();
         }
+        
         linkFrame.setVisible(true);
         try {
-            //linkFrame.setMaximum(true);
+            linkFrame.setMaximum(true);
             linkFrame.setSelected(true);
         } catch (PropertyVetoException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+          Util.out("MainWindows: menuItemLinksActionPerformed >> "+ex.getLocalizedMessage());
         }
     }//GEN-LAST:event_menuItemLinksActionPerformed
 
@@ -406,16 +408,16 @@ public class MainWindow extends javax.swing.JFrame implements InternalFrameListe
         if (TransferFrame.openFrameCount == 0) {
             transferFrame = new TransferFrame(this);
             desktopPane.add(transferFrame);
+            internalFrameListeners.add(transferFrame);
         } else {
             revalidate();
             repaint();
         }
         transferFrame.setVisible(true);
         try {
-            //configFrame.setMaximum(true);
+            transferFrame.setMaximum(true);
             transferFrame.setSelected(true);
         } catch (PropertyVetoException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
             Util.out("MainWindow : menuItemTransferActionPerformed >> " +  ex.getMessage());
         }
     }//GEN-LAST:event_menuItemTransferActionPerformed

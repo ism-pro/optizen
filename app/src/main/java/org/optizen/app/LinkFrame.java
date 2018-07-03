@@ -6,6 +6,8 @@
 package org.optizen.app;
 
 import com.sun.glass.events.KeyEvent;
+import java.awt.Color;
+import java.awt.Component;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,21 +17,26 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.WindowConstants;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.ini4j.Wini;
 import org.optizen.model.DatabaseModel;
+import org.optizen.model.TableLinkModel;
+import org.optizen.model.LinkModelCellRenderer;
 import org.optizen.model.ResultSetTableModel;
 import org.optizen.util.DateUtil;
 import org.optizen.util.Settings;
 import org.optizen.util.Util;
+import org.optizen.util.model.LinkModel;
 import org.optizen.xlsx.ExcelFilter;
 import org.optizen.xlsx.ExcelReader;
 import org.optizen.xlsx.ExcelWriter;
@@ -49,11 +56,15 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     private ArrayList<Object> selectedRowZenon = null;
     private ArrayList<Object> selectedRowOpti = null;
 
+    private javax.swing.JTable tableLink;
+    private JScrollPane jScrollPane3 = new javax.swing.JScrollPane();
+
     /**
      * Creates new form LinkFrame
      */
     public LinkFrame() {
         initComponents();
+        initComponentTableLink();
 
         // Initialisation des tables disponibles
         DefaultComboBoxModel cbModelDataZen = new javax.swing.DefaultComboBoxModel<>(Settings.zenTableData().toArray());
@@ -87,6 +98,9 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     private void initComponents() {
 
         tableLinkPopupMenu = new javax.swing.JPopupMenu();
+        menuItemPopupEnable = new javax.swing.JMenuItem();
+        menuItemPopupDisable = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
         menuItemPopupDelete = new javax.swing.JMenuItem();
         excelFileChooserExporter = new javax.swing.JFileChooser();
         excelFileChooserImport = new javax.swing.JFileChooser();
@@ -119,8 +133,6 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         tfSetOpti = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         LinkPane = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tableLink = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         btnExport = new javax.swing.JButton();
         btnImport = new javax.swing.JButton();
@@ -131,6 +143,27 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+
+        menuItemPopupEnable.setIcon(Ico.i16("/img/std/CheckedYes.png"));
+        menuItemPopupEnable.setText("Activer");
+        menuItemPopupEnable.setToolTipText("Active la liaon dans le mécanisme de traitement");
+        menuItemPopupEnable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPopupEnableActionPerformed(evt);
+            }
+        });
+        tableLinkPopupMenu.add(menuItemPopupEnable);
+
+        menuItemPopupDisable.setIcon(Ico.i16("/img/std/CheckedNo.png"));
+        menuItemPopupDisable.setText("Désactiver");
+        menuItemPopupDisable.setToolTipText("Désactive la liaon dans le mécanisme de traitement");
+        menuItemPopupDisable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPopupDisableActionPerformed(evt);
+            }
+        });
+        tableLinkPopupMenu.add(menuItemPopupDisable);
+        tableLinkPopupMenu.add(jSeparator4);
 
         menuItemPopupDelete.setIcon(Ico.i16("/img/std/Delete.png")
         );
@@ -408,44 +441,15 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
 
         LinkPane.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Correspondance Existantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 153, 0))); // NOI18N
 
-        tableLink.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "N°", "TABLE", "VARIABLE", "NOM", "CODE EQU.", "EQUIPEMENT", "CODE ORG.", "ORGANE", "UNITE", "COMMENTAIRES", "DATE MODIF."
-            }
-        ));
-        tableLink.setComponentPopupMenu(tableLinkPopupMenu);
-        jScrollPane3.setViewportView(tableLink);
-        if (tableLink.getColumnModel().getColumnCount() > 0) {
-            tableLink.getColumnModel().getColumn(0).setPreferredWidth(60);
-            tableLink.getColumnModel().getColumn(0).setMaxWidth(60);
-            tableLink.getColumnModel().getColumn(1).setPreferredWidth(80);
-            tableLink.getColumnModel().getColumn(2).setPreferredWidth(65);
-            tableLink.getColumnModel().getColumn(2).setMaxWidth(65);
-            tableLink.getColumnModel().getColumn(3).setPreferredWidth(200);
-            tableLink.getColumnModel().getColumn(4).setPreferredWidth(80);
-            tableLink.getColumnModel().getColumn(4).setMaxWidth(90);
-            tableLink.getColumnModel().getColumn(5).setPreferredWidth(200);
-            tableLink.getColumnModel().getColumn(6).setPreferredWidth(80);
-            tableLink.getColumnModel().getColumn(6).setMaxWidth(90);
-            tableLink.getColumnModel().getColumn(7).setPreferredWidth(65);
-            tableLink.getColumnModel().getColumn(7).setMaxWidth(65);
-            tableLink.getColumnModel().getColumn(8).setPreferredWidth(65);
-            tableLink.getColumnModel().getColumn(8).setMaxWidth(65);
-            tableLink.getColumnModel().getColumn(10).setMaxWidth(100);
-        }
-
         javax.swing.GroupLayout LinkPaneLayout = new javax.swing.GroupLayout(LinkPane);
         LinkPane.setLayout(LinkPaneLayout);
         LinkPaneLayout.setHorizontalGroup(
             LinkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
+            .addGap(0, 994, Short.MAX_VALUE)
         );
         LinkPaneLayout.setVerticalGroup(
             LinkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+            .addGap(0, 261, Short.MAX_VALUE)
         );
 
         mainSplitPane.setRightComponent(LinkPane);
@@ -637,7 +641,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         String commentaire = so[5];
         String company = so[6];
 
-        Object rowObject[] = new Object[]{row, tableName, variable, varName, codeEqu, codeEquipement, codeOrg, codeOrgane, unite, commentaire, company};
+        Object rowObject[] = new Object[]{row, tableName, variable, varName, codeEqu, codeEquipement, codeOrg, codeOrgane, unite, commentaire, company, true};
 
         // Vérifie que ce n'est pas un doublons 
         for (int lgn = 0; lgn < tableLink.getRowCount(); lgn++) {
@@ -670,8 +674,10 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         }
 
         // Ajoute la ligne
-        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
-        tm.addRow(rowObject);
+        TableLinkModel tm = (TableLinkModel) tableLink.getModel();
+        LinkModel link = new LinkModel();
+        link.set(rowObject);
+        tm.addRow(link);
 
 
     }//GEN-LAST:event_btnLinkSetActionPerformed
@@ -712,19 +718,22 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         for (int col = 1; col < tcm.getColumnCount(); col++) {
             rowString.add(tcm.getColumn(col).getHeaderValue().toString());
         }
+        rowString.add("State");
         ew.writeRow(rowString);
         for (int col = 1; col < tcm.getColumnCount(); col++) {
             ew.setCellColour(1, col + 1, IndexedColors.LIGHT_BLUE);
         }
+        ew.setCellColour(1, tcm.getColumnCount(), IndexedColors.LIGHT_BLUE);
 
         // Write content
-        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+        TableLinkModel tm = (TableLinkModel) tableLink.getModel();
 
         for (int row = 0; row < tm.getRowCount(); row++) {
             rowString = new ArrayList<>();
             for (int col = 1; col < tm.getColumnCount(); col++) {
                 rowString.add(tm.getValueAt(row, col).toString());
             }
+            rowString.add(tm.getValueAt(row, tm.getColumnCount()).toString());
             ew.writeRow(rowString);
         }
 
@@ -750,12 +759,14 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
             er.switchToSheet("Export");
 
             int i = 1;
-            DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+            TableLinkModel tm = (TableLinkModel) tableLink.getModel();
             while (!er.read(i).isEmpty()) {
                 ArrayList<Object> rowObject = er.read(i);
                 rowObject.add(0, tableLink.getRowCount() + 1);
                 if (!isRowExist(rowObject)) {
-                    tm.addRow(rowObject.toArray());
+                    LinkModel link = new LinkModel();
+                    link.set(rowObject.toArray());
+                    tm.addRow(link);
                 }
                 i++;
             }
@@ -797,7 +808,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 ini.remove(Settings.LINK_LINK + "\\" + count);
             }
 
-            JTable tm = tableLink;
+            TableLinkModel tm = (TableLinkModel) tableLink.getModel();
             ini.put(Settings.LINK_LINK, Settings.COUNTER, tm.getRowCount());
             for (int row = 0; row < tm.getRowCount(); row++) {
                 ini.add(Settings.LINK_LINK + "\\" + row + "\\num");
@@ -811,6 +822,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 ini.add(Settings.LINK_LINK + "\\" + row + "\\unite");
                 ini.add(Settings.LINK_LINK + "\\" + row + "\\commentaire");
                 ini.add(Settings.LINK_LINK + "\\" + row + "\\autre");
+                ini.add(Settings.LINK_LINK + "\\" + row + "\\state");
 
                 Wini.Section root = ini.get(Settings.LINK_LINK);
                 Wini.Section sec = root.lookup("" + row);
@@ -825,6 +837,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                 sec.add("unite", tm.getValueAt(row, 8).toString());
                 sec.add("commentaire", tm.getValueAt(row, 9).toString());
                 sec.add("autre", tm.getValueAt(row, 10).toString());
+                sec.add("state", tm.getValueAt(row, 11).toString());
             }
             ini.store();
             JOptionPane.showMessageDialog(this, "Sauvegarde terminée avec succès", "Sauvegarde", JOptionPane.INFORMATION_MESSAGE);
@@ -844,7 +857,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         // TODO add your handling code here:
         int[] rows = tableLink.getSelectedRows();
         // Remove all the specify row
-        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+        TableLinkModel tm = (TableLinkModel) tableLink.getModel();
         for (int row = rows.length - 1; row >= 0; row--) {
             tm.removeRow(rows[row]);
         }
@@ -854,6 +867,37 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         }
     }//GEN-LAST:event_menuItemPopupDeleteActionPerformed
 
+    private void menuItemPopupEnableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPopupEnableActionPerformed
+        // TODO add your handling code here:
+        Util.out("Enable cliked");
+        int[] rows = tableLink.getSelectedRows();
+        // Color bg of selected row
+        TableLinkModel tm = (TableLinkModel) tableLink.getModel();
+        for (int row = rows.length - 1; row >= 0; row--) {
+            tm.getRowAt(rows[row]).setState(true);
+        }
+        tm.fireTableDataChanged();
+
+    }//GEN-LAST:event_menuItemPopupEnableActionPerformed
+
+    private void menuItemPopupDisableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPopupDisableActionPerformed
+        // TODO add your handling code here:
+        Util.out("Disable cliked");
+        int[] rows = tableLink.getSelectedRows();
+        // Color bg of selected row
+        TableLinkModel tm = (TableLinkModel) tableLink.getModel();
+        for (int row = rows.length - 1; row >= 0; row--) {
+            tm.getRowAt(rows[row]).setState(false);
+        }
+        tm.fireTableDataChanged();
+    }//GEN-LAST:event_menuItemPopupDisableActionPerformed
+
+    private void tableLinkMouseClicked(java.awt.event.MouseEvent evt) {
+        // TODO add your handling code here:
+        //        int rowSelect = tableLink.getSelectedRow();
+        //        tableLink.addRowSelectionInterval(rowSelect, rowSelect);
+        //        tableLink.changeSelection(rowSelect, rowSelect, true, true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LinkPane;
@@ -879,15 +923,16 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JSplitPane mainSplitPane;
     private javax.swing.JMenuItem menuItemPopupDelete;
+    private javax.swing.JMenuItem menuItemPopupDisable;
+    private javax.swing.JMenuItem menuItemPopupEnable;
     private javax.swing.JPanel optiPane;
     private javax.swing.JSplitPane subSplitPaneCounter;
-    private javax.swing.JTable tableLink;
     private javax.swing.JPopupMenu tableLinkPopupMenu;
     private javax.swing.JTable tableOpti;
     private javax.swing.JTable tableZen;
@@ -987,7 +1032,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
      */
     public void clearAndLoadSavedLink() {
         // Remove all the specify row
-        DefaultTableModel tm = (DefaultTableModel) tableLink.getModel();
+        TableLinkModel tm = (TableLinkModel) tableLink.getModel();
         for (int row = tm.getRowCount() - 1; row >= 0; row--) {
             tm.removeRow(row);
         }
@@ -997,7 +1042,7 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
         Integer counter = Integer.valueOf(obj == null ? "0" : obj.toString());
 
         for (int count = 0; count < counter; count++) {
-            tm.addRow(Settings.readLink(count));
+            tm.addRow(Settings.readLinkModel(count));
         }
         tableLink.setModel(tm);
 
@@ -1137,6 +1182,52 @@ public class LinkFrame extends javax.swing.JInternalFrame implements InternalFra
                     + " | " + selectedRowOpti.get(5)
                     + " | " + selectedRowOpti.get(6));
         }
+    }
+
+    private void initComponentTableLink() {
+        tableLink = new javax.swing.JTable();
+        tableLink.setModel(new TableLinkModel());
+        tableLink.setComponentPopupMenu(tableLinkPopupMenu);
+        tableLink.getTableHeader().setReorderingAllowed(false);
+        tableLink.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableLinkMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tableLink);
+        javax.swing.GroupLayout LinkPaneLayout = new javax.swing.GroupLayout(LinkPane);
+        LinkPane.setLayout(LinkPaneLayout);
+        LinkPaneLayout.setHorizontalGroup(
+                LinkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
+        );
+        LinkPaneLayout.setVerticalGroup(
+                LinkPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+        );
+        if (tableLink.getColumnModel().getColumnCount() > 0) {
+            tableLink.getColumnModel().getColumn(0).setPreferredWidth(60);
+            tableLink.getColumnModel().getColumn(0).setMaxWidth(60);
+            tableLink.getColumnModel().getColumn(1).setPreferredWidth(80);
+            tableLink.getColumnModel().getColumn(2).setPreferredWidth(65);
+            tableLink.getColumnModel().getColumn(2).setMaxWidth(65);
+            tableLink.getColumnModel().getColumn(3).setPreferredWidth(200);
+            tableLink.getColumnModel().getColumn(4).setPreferredWidth(80);
+            tableLink.getColumnModel().getColumn(4).setMaxWidth(90);
+            tableLink.getColumnModel().getColumn(5).setPreferredWidth(200);
+            tableLink.getColumnModel().getColumn(6).setPreferredWidth(80);
+            tableLink.getColumnModel().getColumn(6).setMaxWidth(90);
+            tableLink.getColumnModel().getColumn(7).setPreferredWidth(65);
+            tableLink.getColumnModel().getColumn(7).setMaxWidth(65);
+            tableLink.getColumnModel().getColumn(8).setPreferredWidth(65);
+            tableLink.getColumnModel().getColumn(8).setMaxWidth(65);
+            tableLink.getColumnModel().getColumn(10).setMaxWidth(100);
+        }
+
+        for (int col = 0; col < tableLink.getColumnCount(); col++) {
+            tableLink.getColumnModel().getColumn(col).setCellRenderer(new LinkModelCellRenderer());
+        }
+
     }
 
 }
