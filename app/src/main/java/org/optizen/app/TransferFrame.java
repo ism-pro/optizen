@@ -1058,10 +1058,12 @@ public class TransferFrame extends javax.swing.JInternalFrame implements Interna
                             return null;
                         }
                     } else {
-                        JOptionPane.showMessageDialog(owner,
-                                "Cette variable est désactivée !! Veuillez l'activer dans la table de correspondance.",
-                                "Recherceh de données - Lien désactivé !",
-                                JOptionPane.WARNING_MESSAGE);
+//                        JOptionPane.showMessageDialog(owner,
+//                                "Cette variable est désactivée !! Veuillez l'activer dans la table de correspondance.",
+//                                "Recherceh de données - Lien désactivé !",
+//                                JOptionPane.WARNING_MESSAGE);
+                        searchResult.setText("Le lien numéro " + count +" sélectionné est inexistant");
+                        searchResult.setForeground(new java.awt.Color(255, 51, 0));
                     }
                 }
                 tableData.setModel(tm);

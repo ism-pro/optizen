@@ -25,4 +25,5 @@
             <type>jar</type>
         </dependency>
     </dependencies>
+    <version>1806.27</version>
 </project>

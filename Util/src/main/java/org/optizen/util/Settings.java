@@ -130,13 +130,33 @@ public class Settings {
             obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "unite"));
             obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "commentaire"));
             obj.add(ini.get(Settings.LINK_LINK + "\\" + row, "autre"));
-
+            obj.add(Boolean.valueOf(ini.get(Settings.LINK_LINK + "\\" + row, "state")==null?"true":ini.get(Settings.LINK_LINK + "\\" + row, "state")));
             return obj.toArray();
         } catch (IOException ex) {
             Util.out(methodName + "...Erreur suivante est survenue pour lecture du lien ligne " + row + " : " + ex.getMessage());
             return null;
         }
     }
+    
+    /**
+     * Allow to read state of a specifed link defined by a row
+     * @param row specifying the number of the link
+     * @return true if the link is enable
+     */
+    public static Boolean readLinkState(Integer row){
+        String methodName = Settings.class.getName() + " : read(section, param, value) >> ";
+        try {
+            Wini ini = new Wini(new File(iniFilename));
+            String v = ini.get(Settings.LINK_LINK + "\\" + row, "state");
+            Boolean r = Boolean.valueOf(v);
+            return r;
+        } catch (IOException ex) {
+            Util.out(methodName + "...Erreur suivante est survenue pour lecture du lien ligne " + row + " : " + ex.getMessage());
+            return false;
+        }
+    }
+    
+    
     
     /**
      * Allow to read a link defined by his number 
@@ -159,6 +179,7 @@ public class Settings {
             link.setUnite(ini.get(Settings.LINK_LINK + "\\" + row, "unite"));
             link.setComment(ini.get(Settings.LINK_LINK + "\\" + row, "commentaire"));
             link.setDatemod(ini.get(Settings.LINK_LINK + "\\" + row, "autre"));
+            link.setState(Boolean.valueOf(ini.get(Settings.LINK_LINK + "\\" + row, "state")==null?"true":ini.get(Settings.LINK_LINK + "\\" + row, "state")));
             return link;
         } catch (IOException ex) {
             Util.out(methodName + "...Erreur suivante est survenue pour lecture du lien ligne " + row + " : " + ex.getMessage());
